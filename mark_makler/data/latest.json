@@ -1,31 +1,31 @@
 {
-  "schema_version": 1,
-  "mode": "initial",
-  "checked_at": "2026-09-07T18:43:00+02:00",
-  "scope": "Zwei bereits bekannte Anzeigen für den Seitenstart erneut geöffnet. Das ist eine Bestandsprüfung, keine vollständige neue Marktsuche.",
-  "strategy": "Bei der nächsten Suche verkehrsarme Randlagen priorisieren. Fehlende Adresse und widersprüchliche Kosten in der Klärgruppe halten; keine Anbieter anschreiben.",
+  "schema_version": 2,
+  "mode": "daily",
+  "checked_at": "2026-09-08T18:41:45+02:00",
+  "scope": "Aktuelle Neusuche über ImmoScout24, Kleinanzeigen und ergänzende Websuche für Östringen und nahe Orte; bekannte Klärfälle anschließend am Original geprüft.",
+  "strategy": "Passende niedrige Etagen und die Einzimmer-Ausnahme mit echter Garage getrennt suchen; Angebote über Preisgrenze, in höherer Etage oder ohne bestätigte Garage ausschließen.",
   "source_checks": [
     {
       "name": "GARANT Immobilien",
       "url": "https://www.garant-immo.de/immobilien/detail/sinsheim-etagenwohnung-mieten-77001593",
-      "result": "Direktes Anbieterexposé abrufbar. Mietbestandteile widersprechen der genannten Gesamtmiete."
+      "result": "Originalexposé am 08.09.2026 aktiv. 1. Obergeschoss, ruhige Lage laut Anbieter; Mietbestandteile widersprechen weiterhin der genannten Gesamtmiete."
     },
     {
       "name": "Immowelt",
       "url": "https://www.immowelt.de/expose/a91bcab9-72d4-42e4-8ee3-34518455452b",
-      "result": "Originalexposé geöffnet; genaue Adresse fehlt. Separater direkter Bildabruf durch eine Sicherheitsabfrage blockiert."
+      "result": "Originalexposé am 08.09.2026 aktiv. 65 m², 2,5 Zimmer und 975 € warm; genaue Adresse und Stellplatzkosten fehlen weiterhin."
     },
     {
-      "name": "ImmoScout24 · Weiher",
-      "url": "https://www.immobilienscout24.de/expose/170073313",
-      "result": "Originalanzeige meldet ausdrücklich deaktiviert und nicht mehr verfügbar. Nicht in den Kartenbestand übernommen."
+      "name": "ImmoScout24 · aktuelle Suche",
+      "url": "https://www.immobilienscout24.de/Suche/de/baden-wuerttemberg/karlsruhe-kreis/oestringen/wohnung-mit-garage-mieten",
+      "result": "Aktuelle Ergebnisliste geprüft. Neue sichtbare Kandidaten scheiterten an Preis, Etage oder fehlender echter Garage; die 90-m²-Wohnung in Mühlhausen liegt mit 1.300 € warm über der Grenze."
     }
   ],
   "updates": [
-    "Die fiktiven Wohnungen und generierten Wohnungsbilder aus dem Mockup wurden nicht übernommen.",
-    "Die bekannten Angebote werden nicht als neue Treffer gezählt.",
-    "Ritterstraße 33 in Weiher: Originalanzeige deaktiviert; nicht mehr als verfügbares Angebot geführt.",
-    "Die neue Klärgruppe macht fehlende Adresse und Kostenwidersprüche sichtbar, ohne Budgeteinhaltung oder Katzensicherheit zu behaupten."
+    "Neusuche vom 08.09.2026 durchgeführt.",
+    "Keine neue Wohnung erfüllte die bestätigten Kriterien vollständig.",
+    "Die zwei bekannten Klärfälle sind weiterhin aktiv und wurden nicht erneut als neu gezählt.",
+    "Preis-, Etagen- und Haustierangaben wurden nicht ergänzt, wenn sie im Original fehlten."
   ],
   "listings": [
     {
@@ -36,7 +36,7 @@
       "provider": "GARANT Immobilien",
       "url": "https://www.garant-immo.de/immobilien/detail/sinsheim-etagenwohnung-mieten-77001593",
       "original_active": true,
-      "verified_at": "2026-09-07T18:42:00+02:00",
+      "verified_at": "2026-09-08T18:40:30+02:00",
       "status": "known",
       "group": "clarify",
       "priority": 80,
@@ -117,7 +117,7 @@
       "provider": "Felix Hartmann Immobilien · Immowelt",
       "url": "https://www.immowelt.de/expose/a91bcab9-72d4-42e4-8ee3-34518455452b",
       "original_active": true,
-      "verified_at": "2026-09-07T18:42:00+02:00",
+      "verified_at": "2026-09-08T18:40:45+02:00",
       "status": "known",
       "group": "clarify",
       "priority": 65,
@@ -173,5 +173,92 @@
       ],
       "images": []
     }
-  ]
+  ],
+  "research": {
+    "status": "complete",
+    "actions": [
+      {
+        "id": "discovery-20260908",
+        "kind": "discovery",
+        "source": "Websuche",
+        "url": "https://www.google.com/search?q=Wohnung+mieten+Oestringen+Muehlhausen+Bad+Schoenborn",
+        "query": "Wohnung mieten Östringen Mühlhausen Bad Schönborn Erdgeschoss ruhig; Östringen Wohnung 1 Zimmer Garage mieten; Wohnung mieten Angelbachtal Malsch Kronau Garage Erdgeschoss",
+        "checked_at": "2026-09-08T18:39:00+02:00",
+        "outcome": "ok",
+        "result": "Aktuelle Portale, regionale Treffer und mehrere konkrete Anzeigen gefunden; ungeeignete ältere Aggregatortreffer getrennt erkannt.",
+        "evidence_ref": "turn1 search results"
+      },
+      {
+        "id": "source-immoscout-20260908",
+        "kind": "source_search",
+        "source": "ImmoScout24",
+        "url": "https://www.immobilienscout24.de/Suche/de/baden-wuerttemberg/karlsruhe-kreis/oestringen/wohnung-mit-garage-mieten",
+        "query": "Wohnungen mit Garage zur Miete in Östringen samt angrenzenden Ergebnissen",
+        "checked_at": "2026-09-08T18:39:30+02:00",
+        "outcome": "ok",
+        "result": "Sieben lokale Ergebnisse und angrenzende Treffer geprüft; sichtbare neue Kandidaten wegen Preis, Etage oder fehlender bestätigter Garage nicht übernommen.",
+        "evidence_ref": "turn1search3"
+      },
+      {
+        "id": "source-kleinanzeigen-20260908",
+        "kind": "source_search",
+        "source": "Kleinanzeigen",
+        "url": "https://www.kleinanzeigen.de/s-wohnung-mieten/bad-schoenborn/erdgeschosswohnung-mieten/k0c203l15113",
+        "query": "Erdgeschosswohnungen zur Miete in Bad Schönborn und Umgebung",
+        "checked_at": "2026-09-08T18:39:45+02:00",
+        "outcome": "ok",
+        "result": "Aktuelle Ergebnisliste geprüft; kompakte Treffer ohne bestätigte echte Garage und weitere unvollständige Angebote nicht als passend veröffentlicht.",
+        "evidence_ref": "turn1search6"
+      },
+      {
+        "id": "recheck-garant-20260908",
+        "kind": "recheck",
+        "source": "GARANT Immobilien",
+        "url": "https://www.garant-immo.de/immobilien/detail/sinsheim-etagenwohnung-mieten-77001593",
+        "query": "Originalanzeige 753.192 erneut auf Aktivität, Etage und Kosten geprüft",
+        "checked_at": "2026-09-08T18:40:30+02:00",
+        "outcome": "ok",
+        "result": "Anzeige aktiv; Kostenwiderspruch und fehlende genaue Adresse bleiben offen.",
+        "evidence_ref": "turn2view0"
+      },
+      {
+        "id": "recheck-immowelt-20260908",
+        "kind": "recheck",
+        "source": "Immowelt",
+        "url": "https://www.immowelt.de/expose/a91bcab9-72d4-42e4-8ee3-34518455452b",
+        "query": "Originalanzeige a91bcab9 erneut auf Aktivität, Etage und Kosten geprüft",
+        "checked_at": "2026-09-08T18:40:45+02:00",
+        "outcome": "ok",
+        "result": "Anzeige aktiv; genaue Adresse, unmittelbare Katzenlage und Stellplatzkosten bleiben offen.",
+        "evidence_ref": "turn2view1"
+      }
+    ],
+    "source_decisions": [
+      {
+        "source": "ImmoScout24",
+        "url": "https://www.immobilienscout24.de/Suche/de/baden-wuerttemberg/karlsruhe-kreis/oestringen/wohnung-mit-garage-mieten",
+        "decision": "search",
+        "reason": "Aktuelle lokale Ergebnisliste mit Garage- und Umgebungsbezug verfügbar."
+      },
+      {
+        "source": "Kleinanzeigen",
+        "url": "https://www.kleinanzeigen.de/s-wohnung-mieten/bad-schoenborn/erdgeschosswohnung-mieten/k0c203l15113",
+        "decision": "search",
+        "reason": "Aktuelle private und regionale Erdgeschossangebote im nahen Suchgebiet sichtbar."
+      },
+      {
+        "source": "Athaus",
+        "url": "https://www.athaus.ai/properties/161afadc-06b0-4ddf-b28e-abcfb45c5a98",
+        "decision": "skip",
+        "reason": "Der gefundene aktuelle Kandidat liegt im Dachgeschoss, nennt keine Warmmiete und schließt Haustiere aus."
+      }
+    ],
+    "review": {
+      "findings": "Die neue Suche brachte mehrere Anzeigen, aber keinen neuen vollständig passenden Treffer. Häufigste Ausschlussgründe waren höhere Etage, Überschreitung der Warmmietgrenze oder keine bestätigte echte Garage bei kompakten Wohnungen.",
+      "open_gaps": [],
+      "follow_up_action_ids": [],
+      "stop_reason": "Die ausgewählten aktuellen Ergebnislisten, ergänzende Webentdeckung und die beiden bekannten Originalanzeigen wurden für diesen Tageslauf geprüft.",
+      "criteria_proposal": "Keine Änderung vorgeschlagen"
+    }
+  }
 }
