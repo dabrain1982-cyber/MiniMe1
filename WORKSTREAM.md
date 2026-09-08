@@ -1,5 +1,8 @@
 # Monatliche Finanzbilanz
 
+## GitHub-Ausgabe fuer den Laptop
+Nach einer erfolgreichen Vorschlagsveroeffentlichung ausschliesslich `data/finanzbilanz.proposal.json` als Franzi-Ausgabe in das private Repository `MiniMe1` uebernehmen. Vom Projektordner aus nur diese Datei stagen, einen Commit mit eindeutigem Monatsbezug erstellen und nach `origin main` pushen. Niemals die Finanzdatenbank, Kontoauszuege, temporaere Dateien oder andere Aenderungen mitstagen. Anschliessend pruefen, dass der neue Commit auf `origin/main` liegt. Bei fehlender Aenderung nicht leer committen; bei Push-Fehlern nicht behaupten, dass der Laptop aktualisiert wurde.
+
 ## Verbindliche Veröffentlichung auf der Vorschlagsseite
 Vorschläge nicht nur im Chat nennen: Nach der Prüfung `proposal_store.py --db <aktive Datenbank>` lesen. `pending` bedeutet fehlende Prüfung für den aktuellen Datenstand. Den ausgegebenen revision-Wert vor der Prüfung festhalten. Einen einzigen neuen Vorschlag als JSON mit title, review, description, benefit, drawback in einer eigenen Projektdatei erstellen. Ehrliche Prüfergebnisse und Einschränkungen nennen. Dann `.venv/Scripts/python.exe proposal_store.py --db <aktive Datenbank> --publish <JSON-Datei> --revision <zuvor gelesener Wert>` ausführen. Der Befehl verhindert die Veröffentlichung für inzwischen veränderte Daten. Veröffentlichung ist vom Nutzer autorisiert, Design- oder Buchungsänderungen sind es nicht. Die App liest die datenbankspezifische .proposal.json alle zehn Sekunden; keine Codeänderung zur Veröffentlichung nötig. Danach im Chat zur Diskussion einladen. Bei unverändertem Datenstand und bereits aktuellem Vorschlag nichts doppelt erzeugen.
 

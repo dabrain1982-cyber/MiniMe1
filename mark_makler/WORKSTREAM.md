@@ -1,5 +1,8 @@
 # Mark Makler – tägliche Recherche und Seitenbericht
 
+## GitHub-Ausgabe fuer den Laptop
+Nach erfolgreicher Validierung, Veroeffentlichung und Statuspruefung ausschliesslich `mark_makler/data/latest.json` und die bei diesem Lauf neu erzeugte Archivdatei unter `mark_makler/data/reports/` als Mark-Ausgabe in das private Repository `MiniMe1` uebernehmen. Vom uebergeordneten MiniMe-Projektordner aus nur diese Ausgabedateien stagen, einen datierten Commit erstellen und nach `origin main` pushen. Keine Eingabedateien, App-Dateien, Finanzdateien oder sonstigen Aenderungen mitstagen. Anschliessend pruefen, dass der neue Commit auf `origin/main` liegt. Bei fehlender Aenderung nicht leer committen; bei Push-Fehlern nicht behaupten, dass der Laptop aktualisiert wurde.
+
 ## Arbeitsort und Grenze
 
 Dieser Ordner gehört ausschließlich zu Mark. Niemals MiniMes übergeordneten Finanz-WORKSTREAM ausführen, Finanzdateien verändern, die Finanzdatenbanken öffnen oder den Seiten-Code täglich neu bauen.
