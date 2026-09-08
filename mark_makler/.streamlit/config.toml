@@ -1,0 +1,29 @@
+[server]
+address = "127.0.0.1"
+port = 8503
+headless = true
+
+[browser]
+gatherUsageStats = false
+
+[theme]
+base = "dark"
+primaryColor = "#537D2D"
+backgroundColor = "#0B1012"
+secondaryBackgroundColor = "#141B1E"
+textColor = "#EEF1EF"
+borderColor = "#374044"
+linkColor = "#ACDA75"
+font = "'Segoe UI', sans-serif"
+baseFontSize = 16
+headingFontSizes = ["30px", "26px", "23px", "20px", "18px", "16px"]
+headingFontWeights = [600, 600, 600, 600, 500, 500]
+baseRadius = "10px"
+buttonRadius = "8px"
+showWidgetBorder = true
+greenTextColor = "#ACDA75"
+greenBackgroundColor = "#233616"
+blueTextColor = "#94BFE5"
+blueBackgroundColor = "#172C3D"
+orangeTextColor = "#F7CB65"
+orangeBackgroundColor = "#3A2D12"

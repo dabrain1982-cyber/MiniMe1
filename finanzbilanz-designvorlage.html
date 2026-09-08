@@ -1,0 +1,826 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Finanzbilanz – statische Designvorlage</title>
+  <meta name="description" content="Statische High-Fidelity-Designvorlage für eine persönliche Finanzbilanz mit fiktiven Beispieldaten.">
+  <style>
+    :root {
+      --ink: #172033;
+      --ink-soft: #566176;
+      --muted: #8490a5;
+      --line: #dfe5ef;
+      --surface: #ffffff;
+      --canvas: #eef2f8;
+      --navy: #14243b;
+      --navy-2: #213754;
+      --mint: #39d98a;
+      --mint-soft: #e7f9f0;
+      --blue: #5271ee;
+      --blue-soft: #edf0ff;
+      --coral: #f06e67;
+      --coral-soft: #fff0ee;
+      --gold: #e8b85c;
+      --shadow: 0 20px 55px rgba(42, 56, 82, .10);
+      --radius-lg: 28px;
+      --radius-md: 20px;
+      --radius-sm: 14px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 10% 4%, rgba(82, 113, 238, .09), transparent 27rem),
+        radial-gradient(circle at 92% 28%, rgba(57, 217, 138, .08), transparent 25rem),
+        var(--canvas);
+      color: var(--ink);
+      font-family: "Segoe UI Variable", "Segoe UI", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    a { color: inherit; }
+
+    .page-shell {
+      width: min(1500px, calc(100% - 48px));
+      margin: 30px auto 76px;
+    }
+
+    .prototype-note {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      margin: 0 4px 14px;
+      color: var(--ink-soft);
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .prototype-note span:last-child {
+      color: #718098;
+      font-weight: 600;
+      letter-spacing: .03em;
+      text-transform: none;
+    }
+
+    .screen {
+      overflow: hidden;
+      min-height: 860px;
+      margin-bottom: 58px;
+      border: 1px solid rgba(255, 255, 255, .88);
+      border-radius: 34px;
+      background: #f8fafd;
+      box-shadow: var(--shadow);
+    }
+
+    .topbar {
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr) auto;
+      align-items: center;
+      min-height: 88px;
+      padding: 0 32px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, .94);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: -.02em;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 38px;
+      height: 38px;
+      place-items: center;
+      border-radius: 12px;
+      background: var(--navy);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.08);
+    }
+
+    .brand-mark svg { width: 22px; height: 22px; }
+
+    .view-tabs {
+      display: flex;
+      justify-self: center;
+      gap: 5px;
+      padding: 5px;
+      border-radius: 13px;
+      background: #edf1f6;
+    }
+
+    .tab {
+      min-width: 128px;
+      padding: 9px 15px;
+      border-radius: 10px;
+      color: #667187;
+      font-size: .86rem;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .tab.active {
+      color: var(--ink);
+      background: #fff;
+      box-shadow: 0 4px 15px rgba(39, 52, 77, .08);
+    }
+
+    .account-chip {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      justify-self: end;
+      padding: 8px 10px 8px 8px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+    }
+
+    .avatar {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border-radius: 10px;
+      color: #fff;
+      background: var(--blue);
+      font-size: .74rem;
+      font-weight: 800;
+    }
+
+    .account-chip strong,
+    .account-chip small { display: block; }
+    .account-chip strong { font-size: .78rem; }
+    .account-chip small { color: var(--muted); font-size: .69rem; }
+
+    .workspace {
+      display: grid;
+      grid-template-columns: 240px minmax(0, 1fr);
+      min-height: 772px;
+    }
+
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      padding: 30px 24px 24px;
+      color: rgba(255,255,255,.78);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.035), transparent 28%),
+        var(--navy);
+    }
+
+    .sidebar-label {
+      margin: 0 10px 13px;
+      color: rgba(255,255,255,.40);
+      font-size: .66rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 5px;
+      padding: 11px 12px;
+      border-radius: 12px;
+      color: rgba(255,255,255,.65);
+      font-size: .86rem;
+      font-weight: 650;
+      text-decoration: none;
+    }
+
+    .nav-item.active {
+      color: #fff;
+      background: rgba(255,255,255,.10);
+      box-shadow: inset 3px 0 0 var(--mint);
+    }
+
+    .nav-icon {
+      display: grid;
+      width: 24px;
+      height: 24px;
+      place-items: center;
+      border-radius: 7px;
+      background: rgba(255,255,255,.07);
+      font-size: .75rem;
+    }
+
+    .sidebar-spacer { flex: 1; }
+
+    .data-note {
+      padding: 15px;
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 16px;
+      background: rgba(255,255,255,.055);
+    }
+
+    .data-note .eyebrow { color: var(--mint); }
+    .data-note p { margin: 7px 0 0; color: rgba(255,255,255,.60); font-size: .74rem; }
+
+    .content {
+      min-width: 0;
+      padding: 31px 34px 38px;
+    }
+
+    .content-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 28px;
+      margin-bottom: 25px;
+    }
+
+    .eyebrow {
+      margin: 0 0 5px;
+      color: var(--blue);
+      font-size: .68rem;
+      font-weight: 850;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { margin-bottom: 4px; font-size: clamp(1.65rem, 2.3vw, 2.35rem); line-height: 1.12; letter-spacing: -.045em; }
+    h2 { margin-bottom: 4px; font-size: 1.18rem; letter-spacing: -.025em; }
+    h3 { margin-bottom: 3px; font-size: .93rem; }
+
+    .subline { margin: 0; color: var(--ink-soft); font-size: .87rem; }
+
+    .period-control {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 225px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      box-shadow: 0 8px 20px rgba(46, 58, 82, .05);
+    }
+
+    .period-control .calendar {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border-radius: 10px;
+      color: var(--blue);
+      background: var(--blue-soft);
+      font-size: .9rem;
+    }
+
+    .period-control strong,
+    .period-control small { display: block; }
+    .period-control strong { font-size: .79rem; }
+    .period-control small { color: var(--muted); font-size: .7rem; }
+    .chevron { margin-left: auto; color: var(--muted); }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 15px;
+      margin-bottom: 17px;
+    }
+
+    .card {
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      box-shadow: 0 10px 28px rgba(43, 55, 80, .055);
+    }
+
+    .kpi {
+      position: relative;
+      min-height: 131px;
+      padding: 19px 20px;
+      overflow: hidden;
+    }
+
+    .kpi::after {
+      position: absolute;
+      right: -22px;
+      bottom: -27px;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: var(--glow, rgba(82,113,238,.07));
+      content: "";
+    }
+
+    .kpi-label { color: var(--ink-soft); font-size: .76rem; font-weight: 700; }
+    .kpi-value { margin: 12px 0 7px; font-size: 1.55rem; font-weight: 820; letter-spacing: -.04em; }
+    .positive { color: #159c62; }
+    .negative { color: #d65754; }
+    .kpi-meta { color: var(--muted); font-size: .69rem; }
+    .delta { margin-right: 4px; font-weight: 800; }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(260px, .85fr);
+      gap: 17px;
+      margin-bottom: 17px;
+    }
+
+    .chart-card { padding: 21px 22px 17px; }
+    .card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 18px; margin-bottom: 15px; }
+    .card-head p { margin: 0; color: var(--muted); font-size: .73rem; }
+    .legend { display: flex; gap: 13px; color: var(--ink-soft); font-size: .68rem; font-weight: 650; }
+    .legend span::before { display: inline-block; width: 8px; height: 8px; margin-right: 5px; border-radius: 50%; background: currentColor; content: ""; }
+    .legend .income { color: var(--blue); }
+    .legend .expense { color: var(--coral); }
+
+    .chart-wrap { height: 205px; }
+    .chart-wrap svg { width: 100%; height: 100%; overflow: visible; }
+    .axis-label { fill: #8a95a8; font-size: 10px; font-family: inherit; }
+    .grid-line { stroke: #e8edf4; stroke-width: 1; }
+
+    .insight-card {
+      position: relative;
+      padding: 23px;
+      color: #fff;
+      border: 0;
+      background:
+        radial-gradient(circle at 100% 0%, rgba(57,217,138,.26), transparent 44%),
+        linear-gradient(145deg, var(--navy), var(--navy-2));
+      overflow: hidden;
+    }
+
+    .insight-card .eyebrow { color: var(--mint); }
+    .insight-card h2 { max-width: 255px; font-size: 1.3rem; line-height: 1.22; }
+    .insight-card > p:not(.eyebrow) { color: rgba(255,255,255,.65); font-size: .78rem; }
+    .insight-stat { margin-top: 24px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.13); }
+    .insight-stat strong { display: block; font-size: 2rem; letter-spacing: -.05em; }
+    .insight-stat small { color: rgba(255,255,255,.55); }
+    .micro-copy { margin-top: 18px; color: rgba(255,255,255,.43); font-size: .68rem; font-style: italic; }
+
+    .bottom-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.13fr) minmax(0, .87fr);
+      gap: 17px;
+    }
+
+    .categories, .merchants, .transactions, .month-story { padding: 21px 22px; }
+
+    .category-row {
+      display: grid;
+      grid-template-columns: minmax(120px, 1fr) minmax(150px, 2fr) 75px;
+      align-items: center;
+      gap: 15px;
+      margin-top: 14px;
+      color: var(--ink-soft);
+      font-size: .75rem;
+      font-weight: 650;
+    }
+
+    .category-name { display: flex; align-items: center; gap: 8px; }
+    .category-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--bar); }
+    .bar-track { height: 7px; border-radius: 99px; background: #edf1f6; overflow: hidden; }
+    .bar-fill { height: 100%; width: var(--size); border-radius: inherit; background: var(--bar); }
+    .category-value { color: var(--ink); text-align: right; }
+
+    .merchant-row {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      padding: 10px 0;
+      border-top: 1px solid #edf0f5;
+    }
+
+    .merchant-row:first-of-type { border-top: 0; }
+    .merchant-logo { display: grid; width: 33px; height: 33px; flex: 0 0 auto; place-items: center; border-radius: 10px; color: var(--tone); background: var(--tone-bg); font-size: .68rem; font-weight: 850; }
+    .merchant-copy { min-width: 0; flex: 1; }
+    .merchant-copy strong, .merchant-copy small { display: block; }
+    .merchant-copy strong { overflow: hidden; font-size: .76rem; text-overflow: ellipsis; white-space: nowrap; }
+    .merchant-copy small { color: var(--muted); font-size: .65rem; }
+    .merchant-value { font-size: .75rem; font-weight: 760; }
+
+    .mini-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 8px;
+      border-radius: 99px;
+      color: #337054;
+      background: var(--mint-soft);
+      font-size: .64rem;
+      font-weight: 800;
+    }
+
+    .mini-badge::before { width: 6px; height: 6px; border-radius: 50%; background: var(--mint); content: ""; }
+
+    /* Monatsansicht */
+    .month-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr);
+      gap: 17px;
+      margin-bottom: 17px;
+    }
+
+    .month-story {
+      display: grid;
+      grid-template-columns: 1fr 248px;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .story-copy h2 { max-width: 470px; font-size: 1.38rem; line-height: 1.25; }
+    .story-copy > p { max-width: 500px; color: var(--ink-soft); font-size: .8rem; }
+    .story-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    .story-pill { padding: 7px 10px; border-radius: 99px; background: #f1f4f8; color: var(--ink-soft); font-size: .68rem; font-weight: 700; }
+
+    .savings-ring {
+      position: relative;
+      display: grid;
+      width: 198px;
+      height: 198px;
+      place-items: center;
+      margin: auto;
+      border-radius: 50%;
+      background: conic-gradient(var(--mint) 0 36%, #e9eef5 36% 100%);
+    }
+
+    .savings-ring::before {
+      position: absolute;
+      width: 152px;
+      height: 152px;
+      border-radius: 50%;
+      background: #fff;
+      content: "";
+    }
+
+    .ring-copy { position: relative; z-index: 1; text-align: center; }
+    .ring-copy strong { display: block; font-size: 2rem; letter-spacing: -.05em; }
+    .ring-copy small { color: var(--muted); font-size: .68rem; }
+
+    .balance-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 22px;
+      color: #fff;
+      border: 0;
+      background: linear-gradient(150deg, #5271ee 0%, #3856cc 100%);
+    }
+
+    .balance-card .eyebrow { color: rgba(255,255,255,.65); }
+    .balance-card strong { display: block; font-size: 2rem; letter-spacing: -.05em; }
+    .balance-card small { color: rgba(255,255,255,.62); }
+    .balance-line { height: 52px; margin: 19px 0 6px; }
+    .balance-line svg { width: 100%; height: 100%; }
+
+    .month-detail-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(260px, .72fr);
+      gap: 17px;
+    }
+
+    .transaction-head,
+    .transaction-row {
+      display: grid;
+      grid-template-columns: 82px minmax(170px, 1.5fr) minmax(120px, 1fr) 95px;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .transaction-head {
+      padding: 9px 11px;
+      border-radius: 9px;
+      color: var(--muted);
+      background: #f4f6fa;
+      font-size: .64rem;
+      font-weight: 800;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+
+    .transaction-row {
+      padding: 13px 11px;
+      border-bottom: 1px solid #edf0f5;
+      color: var(--ink-soft);
+      font-size: .72rem;
+    }
+
+    .transaction-row:last-child { border-bottom: 0; }
+    .transaction-row strong { color: var(--ink); font-size: .75rem; }
+    .transaction-amount { color: var(--ink); font-weight: 780; text-align: right; }
+    .category-tag { display: inline-block; width: fit-content; padding: 5px 8px; border-radius: 8px; color: var(--tag); background: var(--tag-bg); font-size: .65rem; font-weight: 750; }
+
+    .spend-split { padding: 21px 22px; }
+    .donut {
+      position: relative;
+      display: grid;
+      width: 158px;
+      height: 158px;
+      place-items: center;
+      margin: 19px auto 22px;
+      border-radius: 50%;
+      background: conic-gradient(#5271ee 0 38%, #39d98a 38% 63%, #f06e67 63% 81%, #e8b85c 81% 93%, #b6bfd0 93% 100%);
+    }
+
+    .donut::before { position: absolute; width: 105px; height: 105px; border-radius: 50%; background: #fff; content: ""; }
+    .donut-copy { position: relative; text-align: center; }
+    .donut-copy strong { display: block; font-size: 1.18rem; }
+    .donut-copy small { color: var(--muted); font-size: .65rem; }
+    .split-list { display: grid; gap: 9px; }
+    .split-row { display: flex; align-items: center; gap: 8px; color: var(--ink-soft); font-size: .7rem; }
+    .split-row::before { width: 8px; height: 8px; border-radius: 50%; background: var(--tone); content: ""; }
+    .split-row span:nth-child(2) { margin-left: auto; color: var(--ink); font-weight: 760; }
+
+    .static-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 19px 34px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      background: #fff;
+      font-size: .69rem;
+    }
+
+    .static-footer strong { color: var(--ink-soft); }
+
+    @media (max-width: 1100px) {
+      .topbar { grid-template-columns: 1fr auto; }
+      .view-tabs { display: none; }
+      .workspace { grid-template-columns: 78px minmax(0, 1fr); }
+      .sidebar { padding-inline: 15px; }
+      .sidebar-label, .nav-item span:last-child, .data-note { display: none; }
+      .nav-item { justify-content: center; padding-inline: 6px; }
+      .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .overview-grid, .bottom-grid, .month-hero, .month-detail-grid { grid-template-columns: 1fr; }
+      .month-story { grid-template-columns: 1fr 210px; }
+    }
+
+    @media (max-width: 720px) {
+      .page-shell { width: min(100% - 18px, 560px); margin-top: 10px; }
+      .prototype-note span:last-child, .account-chip { display: none; }
+      .screen { border-radius: 24px; }
+      .topbar { min-height: 70px; padding: 0 20px; }
+      .workspace { display: block; }
+      .sidebar { display: none; }
+      .content { padding: 24px 18px 28px; }
+      .content-header { align-items: stretch; flex-direction: column; gap: 16px; }
+      .period-control { min-width: 0; }
+      .kpi-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .kpi { min-height: 118px; padding: 16px; }
+      .kpi-value { font-size: 1.28rem; }
+      .overview-grid, .bottom-grid, .month-hero, .month-detail-grid { gap: 11px; }
+      .month-story { grid-template-columns: 1fr; }
+      .savings-ring { width: 168px; height: 168px; }
+      .savings-ring::before { width: 128px; height: 128px; }
+      .transaction-head { display: none; }
+      .transaction-row { grid-template-columns: 72px 1fr auto; gap: 8px; }
+      .transaction-row .category-tag { display: none; }
+      .category-row { grid-template-columns: 110px 1fr 66px; gap: 9px; }
+      .static-footer { align-items: flex-start; flex-direction: column; gap: 4px; padding-inline: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page-shell">
+    <div class="prototype-note">
+      <span>Designvorlage · Ansicht 01</span>
+      <span>Nicht funktional · alle Werte sind fiktiv</span>
+    </div>
+
+    <section class="screen" aria-label="Designvorlage Gesamtüberblick">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M5 15.5 9.2 11l3 2.8L19 6.5" stroke="#39d98a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.8 6.5v4.1" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg>
+          </span>
+          Meine Finanzbilanz
+        </div>
+        <nav class="view-tabs" aria-label="Ansichtsauswahl – statisch">
+          <a class="tab active" href="#gesamt">Gesamtüberblick</a>
+          <a class="tab" href="#monat">Monatsansicht</a>
+        </nav>
+        <div class="account-chip">
+          <span class="avatar">DB</span>
+          <span><strong>Privatkonto</strong><small>Ein Konto · EUR</small></span>
+        </div>
+      </header>
+
+      <div class="workspace" id="gesamt">
+        <aside class="sidebar">
+          <p class="sidebar-label">Navigation</p>
+          <a class="nav-item active" href="#gesamt"><span class="nav-icon">⌁</span><span>Überblick</span></a>
+          <a class="nav-item" href="#monat"><span class="nav-icon">◫</span><span>Monat prüfen</span></a>
+          <a class="nav-item" href="#kategorien"><span class="nav-icon">◌</span><span>Kategorien</span></a>
+          <a class="nav-item" href="#buchungen"><span class="nav-icon">≡</span><span>Buchungen</span></a>
+          <div class="sidebar-spacer"></div>
+          <div class="data-note">
+            <p class="eyebrow">Vorlagenstatus</p>
+            <strong>Beispieldaten</strong>
+            <p>Hier würden später die bestätigten Monatswerte erscheinen.</p>
+          </div>
+        </aside>
+
+        <div class="content">
+          <div class="content-header">
+            <div>
+              <p class="eyebrow">Dein finanzielles Gesamtbild</p>
+              <h1>Geld, aber übersichtlich.</h1>
+              <p class="subline">Von Januar bis August 2026 · acht fiktive Beispielmonate</p>
+            </div>
+            <div class="period-control" aria-label="Zeitraumauswahl – statisch">
+              <span class="calendar">▦</span>
+              <span><small>Zeitraum</small><strong>Jan. – Aug. 2026</strong></span>
+              <span class="chevron">⌄</span>
+            </div>
+          </div>
+
+          <section class="kpi-grid" aria-label="Wichtige Kennzahlen">
+            <article class="card kpi" style="--glow:rgba(82,113,238,.10)">
+              <span class="kpi-label">Einnahmen gesamt</span>
+              <div class="kpi-value positive">+27.480,00 €</div>
+              <span class="kpi-meta"><span class="delta positive">↗ 3,4 %</span> zum Vergleichszeitraum</span>
+            </article>
+            <article class="card kpi" style="--glow:rgba(240,110,103,.10)">
+              <span class="kpi-label">Ausgaben gesamt</span>
+              <div class="kpi-value negative">−18.936,40 €</div>
+              <span class="kpi-meta"><span class="delta negative">↗ 1,8 %</span> zum Vergleichszeitraum</span>
+            </article>
+            <article class="card kpi" style="--glow:rgba(57,217,138,.12)">
+              <span class="kpi-label">Tatsächlich gespart</span>
+              <div class="kpi-value positive">+8.543,60 €</div>
+              <span class="kpi-meta"><span class="delta positive">↗ 620,00 €</span> gegenüber dem Ziel</span>
+            </article>
+            <article class="card kpi" style="--glow:rgba(232,184,92,.14)">
+              <span class="kpi-label">Sparquote</span>
+              <div class="kpi-value">31,1 %</div>
+              <span class="kpi-meta"><span class="delta positive">Gut im Takt</span> · Ziel 28 %</span>
+            </article>
+          </section>
+
+          <section class="overview-grid">
+            <article class="card chart-card">
+              <div class="card-head">
+                <div><h2>Monatlicher Geldfluss</h2><p>Einnahmen und Ausgaben im direkten Vergleich</p></div>
+                <div class="legend"><span class="income">Einnahmen</span><span class="expense">Ausgaben</span></div>
+              </div>
+              <div class="chart-wrap" role="img" aria-label="Beispieldiagramm Einnahmen und Ausgaben von Januar bis August">
+                <svg viewBox="0 0 650 205" preserveAspectRatio="none">
+                  <line class="grid-line" x1="24" y1="28" x2="632" y2="28"/><line class="grid-line" x1="24" y1="78" x2="632" y2="78"/><line class="grid-line" x1="24" y1="128" x2="632" y2="128"/><line class="grid-line" x1="24" y1="178" x2="632" y2="178"/>
+                  <path d="M30 67 C61 68,75 53,108 56 S158 77,187 66 S238 45,266 55 S319 69,346 54 S396 39,425 51 S478 64,506 44 S558 31,622 37" fill="none" stroke="#5271ee" stroke-width="4" stroke-linecap="round"/>
+                  <path d="M30 119 C61 112,78 127,108 116 S158 132,187 126 S238 104,266 114 S316 128,346 117 S397 99,425 108 S478 122,506 103 S560 116,622 93" fill="none" stroke="#f06e67" stroke-width="4" stroke-linecap="round"/>
+                  <g fill="#5271ee"><circle cx="30" cy="67" r="4"/><circle cx="108" cy="56" r="4"/><circle cx="187" cy="66" r="4"/><circle cx="266" cy="55" r="4"/><circle cx="346" cy="54" r="4"/><circle cx="425" cy="51" r="4"/><circle cx="506" cy="44" r="4"/><circle cx="622" cy="37" r="4"/></g>
+                  <g fill="#f06e67"><circle cx="30" cy="119" r="4"/><circle cx="108" cy="116" r="4"/><circle cx="187" cy="126" r="4"/><circle cx="266" cy="114" r="4"/><circle cx="346" cy="117" r="4"/><circle cx="425" cy="108" r="4"/><circle cx="506" cy="103" r="4"/><circle cx="622" cy="93" r="4"/></g>
+                  <g class="axis-label" text-anchor="middle"><text x="30" y="199">Jan</text><text x="108" y="199">Feb</text><text x="187" y="199">Mär</text><text x="266" y="199">Apr</text><text x="346" y="199">Mai</text><text x="425" y="199">Jun</text><text x="506" y="199">Jul</text><text x="622" y="199">Aug</text></g>
+                </svg>
+              </div>
+            </article>
+
+            <article class="card insight-card">
+              <p class="eyebrow">Der ruhige Blick</p>
+              <h2>Deine Ausgaben bleiben stabil – trotz eines teureren Augusts.</h2>
+              <p>Der größte Ausschlag kommt aus „Tanken & Auto“. Lebensmittel liegen dagegen unter Deinem Beispiel-Durchschnitt.</p>
+              <div class="insight-stat"><strong>+310,20 €</strong><small>mehr Ausgaben als im Juli</small></div>
+              <p class="micro-copy">Kein Drama. Nur ein Monat mit etwas mehr Durst.</p>
+            </article>
+          </section>
+
+          <section class="bottom-grid" id="kategorien">
+            <article class="card categories">
+              <div class="card-head"><div><h2>Wohin das Geld fließt</h2><p>Ausgaben nach Hauptkategorie</p></div><span class="mini-badge">8 Monate</span></div>
+              <div class="category-row" style="--bar:#5271ee;--size:88%"><span class="category-name"><i class="category-dot"></i>Wohnen</span><span class="bar-track"><i class="bar-fill"></i></span><span class="category-value">7.840 €</span></div>
+              <div class="category-row" style="--bar:#39d98a;--size:61%"><span class="category-name"><i class="category-dot"></i>Lebensmittel</span><span class="bar-track"><i class="bar-fill"></i></span><span class="category-value">3.246 €</span></div>
+              <div class="category-row" style="--bar:#f06e67;--size:46%"><span class="category-name"><i class="category-dot"></i>Tanken & Auto</span><span class="bar-track"><i class="bar-fill"></i></span><span class="category-value">2.591 €</span></div>
+              <div class="category-row" style="--bar:#e8b85c;--size:31%"><span class="category-name"><i class="category-dot"></i>Freizeit</span><span class="bar-track"><i class="bar-fill"></i></span><span class="category-value">1.744 €</span></div>
+            </article>
+
+            <article class="card merchants">
+              <div class="card-head"><div><h2>Häufige Händler</h2><p>Untergruppen der Hauptkategorien</p></div></div>
+              <div class="merchant-row" style="--tone:#5271ee;--tone-bg:#edf0ff"><span class="merchant-logo">AL</span><span class="merchant-copy"><strong>Aldi</strong><small>Lebensmittel · Supermarkt</small></span><span class="merchant-value">−1.184,20 €</span></div>
+              <div class="merchant-row" style="--tone:#159c62;--tone-bg:#e7f9f0"><span class="merchant-logo">RE</span><span class="merchant-copy"><strong>Rewe</strong><small>Lebensmittel · Supermarkt</small></span><span class="merchant-value">−842,70 €</span></div>
+              <div class="merchant-row" style="--tone:#d65754;--tone-bg:#fff0ee"><span class="merchant-logo">TA</span><span class="merchant-copy"><strong>Beispiel-Tankstelle</strong><small>Tanken & Auto · Kraftstoff</small></span><span class="merchant-value">−731,40 €</span></div>
+            </article>
+          </section>
+        </div>
+      </div>
+      <footer class="static-footer"><span><strong>Hinweis:</strong> Diese Oberfläche ist eine reine Designvorlage.</span><span>Keine echten Finanzdaten · keine Berechnungslogik</span></footer>
+    </section>
+
+    <div class="prototype-note">
+      <span>Designvorlage · Ansicht 02</span>
+      <span>Monatsansicht · statische Darstellung</span>
+    </div>
+
+    <section class="screen" aria-label="Designvorlage Monatsansicht" id="monat">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M5 15.5 9.2 11l3 2.8L19 6.5" stroke="#39d98a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.8 6.5v4.1" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg>
+          </span>
+          Meine Finanzbilanz
+        </div>
+        <nav class="view-tabs" aria-label="Ansichtsauswahl – statisch">
+          <a class="tab" href="#gesamt">Gesamtüberblick</a>
+          <a class="tab active" href="#monat">Monatsansicht</a>
+        </nav>
+        <div class="account-chip">
+          <span class="avatar">DB</span>
+          <span><strong>Privatkonto</strong><small>Ein Konto · EUR</small></span>
+        </div>
+      </header>
+
+      <div class="workspace">
+        <aside class="sidebar">
+          <p class="sidebar-label">Navigation</p>
+          <a class="nav-item" href="#gesamt"><span class="nav-icon">⌁</span><span>Überblick</span></a>
+          <a class="nav-item active" href="#monat"><span class="nav-icon">◫</span><span>Monat prüfen</span></a>
+          <a class="nav-item" href="#kategorien"><span class="nav-icon">◌</span><span>Kategorien</span></a>
+          <a class="nav-item" href="#buchungen"><span class="nav-icon">≡</span><span>Buchungen</span></a>
+          <div class="sidebar-spacer"></div>
+          <div class="data-note">
+            <p class="eyebrow">Vorlagenstatus</p>
+            <strong>Beispieldaten</strong>
+            <p>Der spätere Workflow würde hier einen bestätigten Monat anzeigen.</p>
+          </div>
+        </aside>
+
+        <div class="content">
+          <div class="content-header">
+            <div>
+              <p class="eyebrow">Monat im Detail</p>
+              <h1>August 2026</h1>
+              <p class="subline">31 Tage · 42 fiktive Beispielbuchungen</p>
+            </div>
+            <div class="period-control" aria-label="Monatsauswahl – statisch">
+              <span class="calendar">▦</span>
+              <span><small>Ausgewählter Monat</small><strong>August 2026</strong></span>
+              <span class="chevron">⌄</span>
+            </div>
+          </div>
+
+          <section class="kpi-grid">
+            <article class="card kpi"><span class="kpi-label">Einnahmen</span><div class="kpi-value positive">+3.420,00 €</div><span class="kpi-meta"><span class="delta positive">↗ 2,1 %</span> zum Juli</span></article>
+            <article class="card kpi"><span class="kpi-label">Ausgaben</span><div class="kpi-value negative">−2.184,60 €</div><span class="kpi-meta"><span class="delta negative">↗ 16,5 %</span> zum Juli</span></article>
+            <article class="card kpi"><span class="kpi-label">Gespart</span><div class="kpi-value positive">+1.235,40 €</div><span class="kpi-meta">Einnahmen minus bereinigte Ausgaben</span></article>
+            <article class="card kpi"><span class="kpi-label">Buchungen</span><div class="kpi-value">42</div><span class="kpi-meta">3 davon als Erstattung erkannt</span></article>
+          </section>
+
+          <section class="month-hero">
+            <article class="card month-story">
+              <div class="story-copy">
+                <p class="eyebrow">August in einem Satz</p>
+                <h2>Solide gespart, beim Auto etwas großzügiger gewesen.</h2>
+                <p>Die Sparquote liegt über dem Beispielziel. Der Ausgabenanstieg gegenüber Juli wird hauptsächlich durch Kraftstoff und eine fiktive Werkstattbuchung erklärt.</p>
+                <div class="story-pills"><span class="story-pill">↗ Auto +214 €</span><span class="story-pill">↘ Lebensmittel −8 %</span><span class="story-pill">✓ Keine Doppelbuchung</span></div>
+              </div>
+              <div class="savings-ring" aria-label="Beispiel-Sparquote 36,1 Prozent"><div class="ring-copy"><strong>36,1 %</strong><small>Sparquote</small></div></div>
+            </article>
+
+            <article class="card balance-card">
+              <div><p class="eyebrow">Kontostand</p><strong>+8.924,18 €</strong><small>Stand 31.08.2026 · Beispieldaten</small></div>
+              <div class="balance-line" role="img" aria-label="Beispielhafte Kontostandentwicklung"><svg viewBox="0 0 250 52" preserveAspectRatio="none"><path d="M2 46 C28 40,38 45,62 34 S98 38,124 24 S160 29,184 17 S218 18,248 5" fill="none" stroke="rgba(255,255,255,.78)" stroke-width="3" stroke-linecap="round"/><path d="M2 46 C28 40,38 45,62 34 S98 38,124 24 S160 29,184 17 S218 18,248 5 L248 52 L2 52Z" fill="rgba(255,255,255,.10)"/></svg></div>
+              <small>+1.235,40 € seit Monatsbeginn</small>
+            </article>
+          </section>
+
+          <section class="month-detail-grid" id="buchungen">
+            <article class="card transactions">
+              <div class="card-head"><div><h2>Letzte Buchungen</h2><p>Beispielhafte Detailtiefe für den ausgewählten Monat</p></div><span class="mini-badge">42 gesamt</span></div>
+              <div class="transaction-head"><span>Datum</span><span>Händler</span><span>Kategorie</span><span style="text-align:right">Betrag</span></div>
+              <div class="transaction-row"><span>29.08.2026</span><strong>Aldi Süd</strong><span class="category-tag" style="--tag:#337054;--tag-bg:#e7f9f0">Lebensmittel</span><span class="transaction-amount negative">−54,87 €</span></div>
+              <div class="transaction-row"><span>27.08.2026</span><strong>Beispiel-Tankstelle</strong><span class="category-tag" style="--tag:#b34c49;--tag-bg:#fff0ee">Tanken & Auto</span><span class="transaction-amount negative">−76,42 €</span></div>
+              <div class="transaction-row"><span>25.08.2026</span><strong>Arbeitgeber Muster GmbH</strong><span class="category-tag" style="--tag:#425ac0;--tag-bg:#edf0ff">Einnahmen</span><span class="transaction-amount positive">+3.420,00 €</span></div>
+              <div class="transaction-row"><span>21.08.2026</span><strong>Rewe</strong><span class="category-tag" style="--tag:#337054;--tag-bg:#e7f9f0">Lebensmittel</span><span class="transaction-amount negative">−38,19 €</span></div>
+              <div class="transaction-row"><span>18.08.2026</span><strong>Muster-Werkstatt</strong><span class="category-tag" style="--tag:#b34c49;--tag-bg:#fff0ee">Tanken & Auto</span><span class="transaction-amount negative">−189,00 €</span></div>
+            </article>
+
+            <article class="card spend-split">
+              <div class="card-head"><div><h2>Ausgabenmix</h2><p>Hauptkategorien im August</p></div></div>
+              <div class="donut" aria-label="Beispielhafte Verteilung der Monatsausgaben"><div class="donut-copy"><strong>2.184 €</strong><small>Ausgaben</small></div></div>
+              <div class="split-list">
+                <div class="split-row" style="--tone:#5271ee"><span>Wohnen</span><span>38 %</span></div>
+                <div class="split-row" style="--tone:#39d98a"><span>Lebensmittel</span><span>25 %</span></div>
+                <div class="split-row" style="--tone:#f06e67"><span>Tanken & Auto</span><span>18 %</span></div>
+                <div class="split-row" style="--tone:#e8b85c"><span>Freizeit</span><span>12 %</span></div>
+                <div class="split-row" style="--tone:#b6bfd0"><span>Sonstiges</span><span>7 %</span></div>
+              </div>
+            </article>
+          </section>
+        </div>
+      </div>
+      <footer class="static-footer"><span><strong>Hinweis:</strong> Händler, Buchungen und Werte sind frei erfunden.</span><span>Statische Designprobe · keine Finanzanalyse</span></footer>
+    </section>
+  </main>
+</body>
+</html>

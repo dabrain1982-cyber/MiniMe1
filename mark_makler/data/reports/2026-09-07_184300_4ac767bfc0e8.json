@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "mode": "initial",
+  "checked_at": "2026-09-07T18:43:00+02:00",
+  "scope": "Zwei bereits bekannte Anzeigen für den Seitenstart erneut geöffnet. Das ist eine Bestandsprüfung, keine vollständige neue Marktsuche.",
+  "strategy": "Bei der nächsten Suche verkehrsarme Randlagen priorisieren. Fehlende Adresse und widersprüchliche Kosten in der Klärgruppe halten; keine Anbieter anschreiben.",
+  "source_checks": [
+    {
+      "name": "GARANT Immobilien",
+      "url": "https://www.garant-immo.de/immobilien/detail/sinsheim-etagenwohnung-mieten-77001593",
+      "result": "Direktes Anbieterexposé abrufbar. Mietbestandteile widersprechen der genannten Gesamtmiete."
+    },
+    {
+      "name": "Immowelt",
+      "url": "https://www.immowelt.de/expose/a91bcab9-72d4-42e4-8ee3-34518455452b",
+      "result": "Originalexposé geöffnet; genaue Adresse fehlt. Separater direkter Bildabruf durch eine Sicherheitsabfrage blockiert."
+    },
+    {
+      "name": "ImmoScout24 · Weiher",
+      "url": "https://www.immobilienscout24.de/expose/170073313",
+      "result": "Originalanzeige meldet ausdrücklich deaktiviert und nicht mehr verfügbar. Nicht in den Kartenbestand übernommen."
+    }
+  ],
+  "updates": [
+    "Die fiktiven Wohnungen und generierten Wohnungsbilder aus dem Mockup wurden nicht übernommen.",
+    "Die bekannten Angebote werden nicht als neue Treffer gezählt.",
+    "Ritterstraße 33 in Weiher: Originalanzeige deaktiviert; nicht mehr als verfügbares Angebot geführt.",
+    "Die neue Klärgruppe macht fehlende Adresse und Kostenwidersprüche sichtbar, ohne Budgeteinhaltung oder Katzensicherheit zu behaupten."
+  ],
+  "listings": [
+    {
+      "id": "garant-753-192",
+      "title": "Großzügig wohnen in Waldangelloch",
+      "place": "Sinsheim · Waldangelloch",
+      "address": null,
+      "provider": "GARANT Immobilien",
+      "url": "https://www.garant-immo.de/immobilien/detail/sinsheim-etagenwohnung-mieten-77001593",
+      "original_active": true,
+      "verified_at": "2026-09-07T18:42:00+02:00",
+      "status": "known",
+      "group": "clarify",
+      "priority": 80,
+      "area": 94,
+      "rooms": 3.5,
+      "floor": 1,
+      "floor_label": "1. Obergeschoss",
+      "cold": 940,
+      "warm": 1250,
+      "mandatory_total": null,
+      "budget_verified": false,
+      "location_verified": false,
+      "route_plausible": true,
+      "route": "Ortsteil voraussichtlich im Suchbereich; tatsächliche Fahrstrecke zur Industriestraße 3 ohne genaue Adresse ungeklärt.",
+      "availability": "Nach Absprache; Beschreibung nennt zusätzlich 01.06.2026. Aktuellen Einzugstermin erfragen.",
+      "listing_date": null,
+      "reason": "Die beschriebene verkehrsberuhigte Straße und Naturnähe sind positive Lagehinweise. Vor einer Entscheidung müssen Adresse und Gesamtkosten geklärt werden.",
+      "location_notes": "Der Anbieter beschreibt Waldangelloch als ruhig und naturnah. Die unmittelbare Straße und ein sicher nutzbarer Ausgang für die Katzen sind nicht geprüft.",
+      "outside": "Überdachter Balkon. Kein Garten belegt.",
+      "pets": "Nicht angegeben; Freigänger-Katzen ausdrücklich abklären.",
+      "tags": [
+        "Ruhige Lage laut Anbieter",
+        "Balkon",
+        "Kosten offen"
+      ],
+      "costs": [
+        {
+          "label": "Nebenkosten",
+          "value": "250 € laut Anzeige"
+        },
+        {
+          "label": "Heizkosten",
+          "value": "80 € laut Anzeige; Stromheizung, Einzelgeräte"
+        },
+        {
+          "label": "Stellplatz",
+          "value": "30 € monatlich; Pflicht und Einbeziehung ungeklärt"
+        },
+        {
+          "label": "Kaution",
+          "value": "1.940 € laut Anzeige"
+        }
+      ],
+      "cost_notes": "Die ausgewiesenen 1.250 € Gesamtmiete passen nicht zu 940 + 250 + 80 = 1.270 €. Mit zusätzlich berechnetem Stellplatz wären es 1.300 €. Ob Beträge enthalten oder fehlerhaft sind, muss der Anbieter erklären; keine bestätigte Budgeteinhaltung.",
+      "questions": [
+        "Adresse und vollständige monatliche Pflichtkosten beim Anbieter erfragen.",
+        "Sind Heizkosten und Stellplatz in der Gesamtmiete enthalten, und welcher Betrag stimmt?",
+        "Sind Freigänger-Katzen erlaubt und wie gelangen sie hinaus und wieder hinein?",
+        "Sind es 3 oder 3,5 Zimmer? Überschrift und Datenfeld unterscheiden sich."
+      ],
+      "risks": [
+        "Mögliche Überschreitung der absoluten Budgetgrenze.",
+        "Exakte Verkehrslage und Katzenzugang unbekannt."
+      ],
+      "images": [
+        {
+          "url": "https://www.garant-immo.de/sharing/objekt_77001593_77090288_l.jpg",
+          "source": "https://www.garant-immo.de/immobilien/detail/sinsheim-etagenwohnung-mieten-77001593",
+          "caption": "Ansicht aus dem Originalexposé"
+        },
+        {
+          "url": "https://www.garant-immo.de/sharing/objekt_77001593_77090290_m.jpg",
+          "source": "https://www.garant-immo.de/immobilien/detail/sinsheim-etagenwohnung-mieten-77001593",
+          "caption": "Weitere Anzeigenansicht"
+        },
+        {
+          "url": "https://www.garant-immo.de/sharing/objekt_77001593_77090294_m.jpg",
+          "source": "https://www.garant-immo.de/immobilien/detail/sinsheim-etagenwohnung-mieten-77001593",
+          "caption": "Weitere Anzeigenansicht"
+        }
+      ]
+    },
+    {
+      "id": "immowelt-a91bcab9",
+      "title": "Einbauküche und großer Balkon in Mühlhausen",
+      "place": "69242 Mühlhausen",
+      "address": null,
+      "provider": "Felix Hartmann Immobilien · Immowelt",
+      "url": "https://www.immowelt.de/expose/a91bcab9-72d4-42e4-8ee3-34518455452b",
+      "original_active": true,
+      "verified_at": "2026-09-07T18:42:00+02:00",
+      "status": "known",
+      "group": "clarify",
+      "priority": 65,
+      "area": 65,
+      "rooms": 2.5,
+      "floor": 1,
+      "floor_label": "1. Obergeschoss laut Exposé",
+      "cold": 775,
+      "warm": 975,
+      "mandatory_total": null,
+      "budget_verified": false,
+      "location_verified": false,
+      "route_plausible": true,
+      "route": "Mühlhausen liegt voraussichtlich im Suchbereich. Die genaue Fahrstrecke zur Industriestraße 3 ist ohne Adresse ungeklärt.",
+      "availability": "Sofort laut Anzeige",
+      "listing_date": null,
+      "reason": "Größe, Zimmerzahl und ausgewiesene Warmmiete liegen im bisherigen Rahmen. Ob die Lage für die Katzen geeignet ist, lässt sich ohne Adresse noch nicht beurteilen.",
+      "location_notes": "Die Anzeige beschreibt Verkehrsanbindung, aber keine belegte abgelegene Randlage. Ein Balkon ist kein Nachweis einer geeigneten Umgebung für Freigänger.",
+      "outside": "Großer Balkon. Garten oder direkter Ausgang nicht belegt.",
+      "pets": "Nicht angegeben; Haltung von Freigänger-Katzen erfragen.",
+      "tags": [
+        "Einbauküche",
+        "Balkon",
+        "Adresse fehlt"
+      ],
+      "costs": [
+        {
+          "label": "Nebenkosten",
+          "value": "200 €"
+        },
+        {
+          "label": "Heizkosten",
+          "value": "In den Nebenkosten enthalten"
+        },
+        {
+          "label": "Stellplatz",
+          "value": "Kostenfeld ohne Betrag; Pflicht und Verfügbarkeit ungeklärt"
+        },
+        {
+          "label": "Kaution",
+          "value": "3 Monatsmieten laut Anzeige; Berechnungsbasis erfragen"
+        }
+      ],
+      "cost_notes": "775 € Kaltmiete plus 200 € Nebenkosten ergeben die ausgewiesenen 975 € Warmmiete. Eventuelle zusätzliche Pflichtkosten für einen Stellplatz sind noch offen.",
+      "questions": [
+        "Genaue Adresse erfragen, um die unmittelbare Umgebung zu prüfen.",
+        "Gibt es einen sinnvollen Ausgang für die Katzen und ist ihre Haltung erlaubt?",
+        "Sind Stellplatz oder weitere Leistungen verpflichtend und was kosten sie?"
+      ],
+      "risks": [
+        "Keine belastbare Aussage über unmittelbaren Verkehr möglich.",
+        "Katzenzugang aus dem 1. Obergeschoss offen."
+      ],
+      "images": []
+    }
+  ]
+}
