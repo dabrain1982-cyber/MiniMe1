@@ -287,6 +287,42 @@ def landscape(height=120, position=50):
         st.html(f'<img alt="Ruhiger See im warmen Abendlicht" src="data:image/png;base64,{encoded}" style="width:100%;height:{height}px;object-fit:cover;object-position:50% {position}%;border-radius:16px;display:block">')
 
 
+def overview_hero(subtitle: str) -> None:
+    import base64
+    from html import escape
+
+    asset = APP_DIR / "assets" / "abendruhe.png"
+    image = ""
+    if asset.exists():
+        encoded = base64.b64encode(asset.read_bytes()).decode("ascii")
+        image = f"url(data:image/png;base64,{encoded})"
+    st.html(f"""
+    <section style="min-height:270px;border-radius:26px;padding:30px 34px;display:flex;align-items:flex-end;
+      color:white;overflow:hidden;background-image:linear-gradient(90deg,rgba(10,25,48,.88),rgba(10,25,48,.26)),{image};
+      background-size:cover;background-position:50% 54%;box-shadow:0 18px 42px rgba(30,45,70,.15)">
+      <div><div style="font-size:15px;font-weight:750;letter-spacing:.12em;opacity:.84">DEIN FINANZIELLES GESAMTBILD</div>
+      <div style="font-size:clamp(34px,5vw,64px);line-height:1.04;font-weight:800;margin:8px 0 12px">Geld, aber übersichtlich.</div>
+      <div style="font-size:18px;font-weight:600;opacity:.92">{escape(subtitle)}</div></div>
+    </section>
+    """)
+
+
+def render_balance_history(summary: pd.DataFrame) -> None:
+    with st.container(border=True):
+        st.subheader("Entwicklung der Monatsendstände")
+        line = (
+            alt.Chart(summary)
+            .mark_line(point=True, strokeWidth=4, color=COLORS["blue"])
+            .encode(
+                x=alt.X("Monat:N", sort=summary["Monat"].tolist(), title=None, axis=alt.Axis(labelAngle=0)),
+                y=alt.Y("Endkontostand:Q", title="Euro", scale=alt.Scale(zero=False)),
+                tooltip=["Monat:N", alt.Tooltip("Endkontostand:Q", format=",.2f")],
+            )
+            .properties(height=285)
+        )
+        st.altair_chart(line, width="stretch")
+
+
 def metric_row(items: list[tuple[str, str, str | None, str]], averages=None) -> None:
     groups = [items[:2], items[2:]] if len(items) == 4 else ([items] if len(items) <= 3 else [items[:3], items[3:]])
     for group in groups:
@@ -355,37 +391,46 @@ def overview_insights(summary: pd.DataFrame, tx_df: pd.DataFrame) -> list[str]:
 
 def render_recurring_overview(tx_rows: list[dict]) -> None:
     from recurring_overview import observed_income_sources, observed_obligations
+    from html import escape
 
     st.subheader("Laufende Zahlungen und Einnahmequellen")
-    st.caption(
-        "Aus vorhandenen Buchungen erkannt. ‚Erstmals erfasst‘ ist nicht der Vertragsbeginn. "
-        "Kandidaten sind noch keine bestätigte rechtliche Verpflichtung oder offene Forderung."
-    )
+    st.caption("Aus den Buchungstexten erkannt. ‚Seit … erfasst‘ ist der erste sichtbare Zahlungsmonat, nicht zwingend der Vertragsbeginn.")
     obligations = observed_obligations(tx_rows)
     income = observed_income_sources(tx_rows)
-    for title, rows, total_label in (
-        ("Verbindlichkeiten", obligations, "Bisher gezahlt"),
-        ("Einnahmequellen", income, "Bisher erhalten"),
+    for title, rows, total_label, accent in (
+        ("Verbindlichkeiten", obligations, "bisher gezahlt", "#5271ee"),
+        ("Einnahmequellen", income, "bisher erhalten", "#19a366"),
     ):
-        with st.container(border=True):
-            st.markdown(f"### {title}")
-            if not rows:
-                st.caption("Noch keine ausreichend belegten Einträge erkannt.")
-                continue
-            for item in rows:
-                count_label = "1 Buchung" if item["Buchungen"] == 1 else f"{item['Buchungen']} Buchungen"
-                st.markdown(f"**{item['Name']}** · {item['Rhythmus']}")
-                st.write(
-                    f"{total_label}: **{euro(int(round(item['Bisher'] * 100)))}** aus {count_label} · "
-                    f"Betrag/Spanne: {item['Betrag / Spanne']} · erstmals {item['Erstmals erfasst']} · "
-                    f"zuletzt {item['Zuletzt erfasst']} · {item['Status']}"
-                )
+        total = sum(item["Bisher"] for item in rows)
+        heading = f"{len(rows)} erkannte {title} · {euro(int(round(total * 100)))} {total_label}"
+        cards = []
+        for item in rows:
+            cards.append(f"""
+              <article class="flow-card"><div class="flow-kind">{escape(item['Art'])}</div>
+                <div class="flow-provider">{escape(item['Anbieter'])}</div>
+                <div class="flow-amount">{escape(item['Betrag'])}</div>
+                <div class="flow-meta">{escape(item['Rhythmus'])} · {escape(item['Erfasst seit'])}</div>
+                <div class="flow-total">{total_label}: <strong>{escape(euro(int(round(item['Bisher'] * 100))))}</strong></div>
+              </article>""")
+        empty = '<div class="flow-empty">Noch keine ausreichend belegten Einträge erkannt.</div>' if not rows else ""
+        st.html(f"""
+        <section class="flow-section" style="--accent:{accent}"><div class="flow-heading">{escape(heading)}</div>
+          <div class="flow-grid">{''.join(cards)}{empty}</div></section>
+        <style>
+          .flow-section{{background:rgba(255,255,255,.96);border:1px solid #dfe5ef;border-radius:20px;padding:20px;margin:0 0 16px}}
+          .flow-heading{{font-size:20px;font-weight:800;color:#14243b;margin-bottom:14px}}
+          .flow-grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}}
+          .flow-card{{border:1px solid #e1e7f0;border-top:4px solid var(--accent);border-radius:14px;padding:14px 15px;background:#f9fbfe;min-height:145px}}
+          .flow-kind{{font-size:18px;font-weight:800;color:#14243b}} .flow-provider{{font-size:14px;color:#617087;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
+          .flow-amount{{font-size:21px;font-weight:750;color:#14243b;margin-top:14px}} .flow-meta,.flow-total{{font-size:14px;line-height:1.45;color:#536178;margin-top:7px}}
+          .flow-total{{border-top:1px solid #e3e8f1;padding-top:7px}} .flow-empty{{font-size:16px;color:#617087}}
+        </style>""")
 
 
 def render_overview(statements: list[dict], tx_rows: list[dict]) -> None:
-    st.markdown("#### DEIN FINANZIELLES GESAMTBILD")
-    st.title("Geld, aber übersichtlich.")
     if not statements:
+        st.markdown("#### DEIN FINANZIELLES GESAMTBILD")
+        st.title("Geld, aber übersichtlich.")
         st.caption("Noch keine echten Monatswerte – und erfreulicherweise auch keine erfundenen.")
         st.info(
             "Lade links einen textbasierten PDF-Kontoauszug hoch. Erst nach Vorschau und Prüfung wird er lokal gespeichert.",
@@ -402,7 +447,9 @@ def render_overview(statements: list[dict], tx_rows: list[dict]) -> None:
     unconfirmed = sum(not row["confirmed"] for row in statements)
     month_word = "eingelesener Monat" if len(statements) == 1 else "eingelesene Monate"
     subtitle = f"{summary.iloc[0]['Monat']} bis {summary.iloc[-1]['Monat']} · {len(statements)} {month_word}"
-    st.caption(subtitle + (f" · {unconfirmed} davon nicht abgestimmt" if unconfirmed else " · cent-genau abgestimmt"))
+    subtitle += f" · {unconfirmed} davon nicht abgestimmt" if unconfirmed else " · cent-genau abgestimmt"
+    overview_hero(subtitle)
+    render_balance_history(summary)
     metric_row(
         [
             ("Zuwachs " + summary.iloc[-1]["Monat"], euro(int(round(summary.iloc[-1]["Kontozuwachs"] * 100)), force_sign=True), None, "normal"),
@@ -417,28 +464,28 @@ def render_overview(statements: list[dict], tx_rows: list[dict]) -> None:
     st.html(timeline_html(summary['Monat'].tolist(),
         [item['ending_cents'] - item['beginning_cents'] for item in statements],
         amazon_values, euro), unsafe_allow_javascript=True)
+    render_recurring_overview(tx_rows)
     with st.expander("Einnahmen, Ausgaben und Erstattungen ergänzend"):
         st.write(f"Einnahmen: {euro(totals['income_cents'])} · Ausgaben: {euro(totals['expense_cents'])} · Erstattungen einschließlich Kautionsrückzahlung: {euro(totals['refund_cents'])}")
     chart_col, category_col = st.columns([1.15, 0.85])
     with chart_col:
         with st.container(border=True):
-            st.subheader("Entwicklung der Monatsendstände")
-            line = (
-                alt.Chart(summary)
-                .mark_line(point=True, strokeWidth=4, color=COLORS["blue"])
-                .encode(
-                    x=alt.X("Monat:N", sort=summary["Monat"].tolist(), title=None, axis=alt.Axis(labelAngle=0)),
-                    y=alt.Y("Endkontostand:Q", title="Euro", scale=alt.Scale(zero=False)),
-                    tooltip=["Monat:N", alt.Tooltip("Endkontostand:Q", format=",.2f")],
-                )
-                .properties(height=260)
-            )
-            st.altair_chart(line, width="stretch")
-        with st.container(border=True):
             st.subheader("Der ruhige Blick")
-            landscape(150)
+            landscape(125)
             for insight in overview_insights(summary, tx_df):
                 st.write(insight)
+        with st.container(border=True):
+            st.subheader("Relevante Händler")
+            merchant_df = tx_df[(tx_df["amount_cents"] < 0) & tx_df["merchant"].ne("")]
+            if merchant_df.empty:
+                st.caption("Noch keine eindeutig erkannten Händler.")
+            else:
+                merchants = merchant_df.groupby("merchant", as_index=False).agg(
+                    Ausgaben=("amount_eur", lambda values: abs(values.sum())),
+                    Buchungen=("id", "count"),
+                ).sort_values("Ausgaben", ascending=False).head(10)
+                merchants["Ausgaben"] = merchants["Ausgaben"].map(lambda value: euro(int(round(value * 100))))
+                st.dataframe(merchants, width="stretch", hide_index=True)
     with category_col:
         with st.container(border=True):
             st.subheader("Wohin das Geld fließt")
@@ -447,30 +494,6 @@ def render_overview(statements: list[dict], tx_rows: list[dict]) -> None:
                 st.caption("Noch keine auswertbaren Ausgaben.")
             else:
                 render_expense_ranking(expense_df)
-
-    with st.container(border=True):
-        st.subheader("Relevante Händler")
-        merchant_df = tx_df[(tx_df["amount_cents"] < 0) & tx_df["merchant"].ne("")]
-        if merchant_df.empty:
-            st.caption("Noch keine eindeutig erkannten Händler.")
-        else:
-            merchants = merchant_df.groupby("merchant", as_index=False).agg(
-                Ausgaben=("amount_eur", lambda values: abs(values.sum())),
-                Buchungen=("id", "count"),
-                Durchschnitt=("amount_eur", lambda values: abs(values.mean())),
-            ).sort_values("Ausgaben", ascending=False).head(12)
-            st.dataframe(
-                merchants,
-                hide_index=True,
-                column_config={
-                    "merchant": st.column_config.TextColumn("Händler", pinned=True),
-                    "Ausgaben": st.column_config.NumberColumn("Ausgaben", format="euro"),
-                    "Buchungen": st.column_config.NumberColumn("Buchungen", format="%d"),
-                    "Durchschnitt": st.column_config.NumberColumn("Ø Betrag", format="euro"),
-                },
-            )
-    render_recurring_overview(tx_rows)
-
 
 def render_amazon(tx_rows: list[dict], statements: list[dict]) -> None:
     with st.container(border=True):

@@ -10,7 +10,6 @@ class StreamlitAppTests(unittest.TestCase):
         app = AppTest.from_file(str(app_path), default_timeout=15).run()
         self.assertFalse(app.exception)
         self.assertEqual(len(app.tabs), 3)
-        self.assertTrue(any("Geld, aber übersichtlich" in title.value for title in app.title))
         self.assertTrue(any("Laufende Zahlungen und Einnahmequellen" in item.value for item in app.subheader))
 
 
