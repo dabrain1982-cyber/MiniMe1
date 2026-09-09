@@ -772,6 +772,23 @@ def import_statement(db_path: Path, parsed: ParsedStatement) -> dict[str, int | 
     expected = current_account_token(db_path)
     if expected and expected != parsed.account_token:
         raise ParseError("Dieser Kontoauszug gehört nicht zu dem bereits angelegten Konto. Der Import wurde gestoppt.")
+    period_start = date.fromisoformat(parsed.period_start)
+    period_end = date.fromisoformat(parsed.period_end)
+    with connect_db(db_path) as conn:
+        previous = conn.execute(
+            "SELECT period_end, ending_cents FROM statements WHERE account_token = ? AND period_end < ? ORDER BY period_end DESC LIMIT 1",
+            (parsed.account_token, parsed.period_start),
+        ).fetchone()
+        following = conn.execute(
+            "SELECT period_start, beginning_cents FROM statements WHERE account_token = ? AND period_start > ? ORDER BY period_start LIMIT 1",
+            (parsed.account_token, parsed.period_end),
+        ).fetchone()
+    if previous and date.fromisoformat(previous["period_end"]) + timedelta(days=1) == period_start:
+        if int(previous["ending_cents"]) != parsed.beginning_cents:
+            raise ParseError("Der Anfangssaldo passt nicht zum Endsaldo des vorherigen Monats. Der Import wurde gestoppt.")
+    if following and period_end + timedelta(days=1) == date.fromisoformat(following["period_start"]):
+        if parsed.ending_cents != int(following["beginning_cents"]):
+            raise ParseError("Der Endsaldo passt nicht zum Anfangssaldo des folgenden Monats. Der Import wurde gestoppt.")
     now = datetime.now().astimezone().isoformat(timespec="seconds")
     with connect_db(db_path) as conn:
         try:
@@ -841,11 +858,16 @@ def import_statement(db_path: Path, parsed: ParsedStatement) -> dict[str, int | 
             "UPDATE statements SET tx_count_imported = ? WHERE id = ?",
             (imported, statement_id),
         )
+    has_gap = bool(
+        (previous and date.fromisoformat(previous["period_end"]) + timedelta(days=1) != period_start)
+        or (following and period_end + timedelta(days=1) != date.fromisoformat(following["period_start"]))
+    )
     return {
         "duplicate": False,
         "statement_id": statement_id,
         "imported": imported,
         "overlap_duplicates": overlap,
+        "continuity_gap": has_gap,
     }
 
 

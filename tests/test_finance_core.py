@@ -86,6 +86,20 @@ class FinanceCoreTests(unittest.TestCase):
         self.assertEqual(len(load_statements(self.db)), 1)
         self.assertEqual(len(load_transactions(self.db)), 3)
 
+    def test_adjacent_statement_with_wrong_opening_balance_is_rejected(self):
+        import_statement(self.db, self.statement())
+        following = self.statement()
+        following.file_hash = "file-two"
+        following.period_start = "2026-09-01"
+        following.period_end = "2026-09-30"
+        following.beginning_cents = 1
+        following.ending_cents = 244_514
+        for index, item in enumerate(following.transactions):
+            item.booking_date = f"2026-09-0{index + 2}"
+            item.fingerprint = f"september-{index}"
+        with self.assertRaisesRegex(Exception, "Anfangssaldo"):
+            import_statement(self.db, following)
+
     def test_income_expense_and_internal_are_separate(self):
         rows = [item.__dict__ for item in self.statement().transactions]
         totals = aggregate_amounts(rows)

@@ -75,7 +75,10 @@ st.html(
       background: white; border: 1px solid #dfe5ef; border-radius: 20px;
       padding: 1.05rem 1.15rem; box-shadow: 0 10px 28px rgba(43,55,80,.055);
     }
-    [data-testid="stMetricValue"] { font-size: 1.55rem; white-space: nowrap; }
+    [data-testid="stMetricLabel"] { font-size: 1rem; }
+    [data-testid="stMetricValue"] { font-size: 1.75rem; white-space: nowrap; }
+    [data-testid="stCaptionContainer"] { font-size: .98rem; line-height: 1.5; color: #536178; }
+    .stTabs [data-baseweb="tab"] { font-size: 1rem; }
     [data-testid="stVerticalBlockBorderWrapper"] {
       background: rgba(255,255,255,.96); border-color: #dfe5ef; border-radius: 20px;
       box-shadow: 0 10px 28px rgba(43,55,80,.045);
@@ -148,7 +151,7 @@ def render_expense_ranking(expenses: pd.DataFrame) -> None:
     for label, cents in grouped.items():
         share = f"{100 * cents / total:.1f}".replace('.', ',')
         st.markdown(f"**{label}** — {euro(int(cents))} · {share} %")
-        st.progress(float(cents / grouped.iloc[0]))
+        st.progress(float(cents / total), text=f"{share} % aller Ausgaben")
 
 
 def render_import_area() -> None:
@@ -252,6 +255,8 @@ def render_import_area() -> None:
                             f"{result['overlap_duplicates']} überlappende Dubletten übersprungen.",
                             icon=":material/check_circle:",
                         )
+                        if result.get("continuity_gap"):
+                            st.warning("Der Auszug ist abgestimmt, aber zwischen den gespeicherten Zeiträumen besteht eine Lücke.")
                         st.rerun()
 
 
@@ -271,7 +276,7 @@ def render_status(statements: list[dict], tx_rows: list[dict]) -> None:
             st.badge("Bereit für den ersten Auszug", color="blue", icon=":material/hourglass_empty:")
         render_import_area()
         st.space("small")
-        st.caption(f"Lokale Datenbank: {DB_PATH}")
+        st.caption("Originalbilanz · Verarbeitung und Speicherung erfolgen lokal auf diesem PC.")
 
 
 def landscape(height=120, position=50):
@@ -283,7 +288,7 @@ def landscape(height=120, position=50):
 
 
 def metric_row(items: list[tuple[str, str, str | None, str]], averages=None) -> None:
-    groups = [items] if len(items) <= 4 else [items[:3], items[3:]]
+    groups = [items[:2], items[2:]] if len(items) == 4 else ([items] if len(items) <= 3 else [items[:3], items[3:]])
     for group in groups:
         columns = st.columns(len(group))
         for column, (label, value, delta, color) in zip(columns, group):
@@ -292,11 +297,11 @@ def metric_row(items: list[tuple[str, str, str | None, str]], averages=None) -> 
                     from html import escape
                     decreasing = bool(delta and delta.startswith(("-", "−")))
                     delta_color = "#168451" if decreasing == (color == "inverse") else "#bd4545"
-                    st.html(f'''<div style="position:relative;height:154px;padding:16px;background:white;border:1px solid #dfe5ef;border-radius:16px">
-                        <div style="text-align:right;font-size:12px;color:#52627a" title="Durchschnitt über alle eingelesenen Monate">Ø / Monat: {escape(averages[label])}</div>
-                        <div style="font-size:14px;margin-top:8px">{escape(label)}</div>
-                        <div style="font-size:30px;font-weight:600">{escape(value)}</div>
-                        <div style="font-size:14px;color:{delta_color}">{escape(delta or '')}</div></div>''')
+                    st.html(f'''<div style="position:relative;min-height:166px;padding:18px;background:white;border:1px solid #dfe5ef;border-radius:16px">
+                        <div style="text-align:right;font-size:16px;color:#52627a" title="Durchschnitt über alle eingelesenen Monate">Ø / Monat: {escape(averages[label])}</div>
+                        <div style="font-size:16px;margin-top:10px">{escape(label)}</div>
+                        <div style="font-size:32px;font-weight:650">{escape(value)}</div>
+                        <div style="font-size:16px;color:{delta_color}">{escape(delta or '')}</div></div>''')
                     continue
                 st.metric(
                     label,
@@ -346,6 +351,35 @@ def overview_insights(summary: pd.DataFrame, tx_df: pd.DataFrame) -> list[str]:
     elif not tx_df.empty:
         insights.append("Alle gespeicherten Buchungen haben aktuell eine bestätigte oder automatisch nachvollziehbare Kategorie.")
     return insights[:3]
+
+
+def render_recurring_overview(tx_rows: list[dict]) -> None:
+    from recurring_overview import observed_income_sources, observed_obligations
+
+    st.subheader("Laufende Zahlungen und Einnahmequellen")
+    st.caption(
+        "Aus vorhandenen Buchungen erkannt. ‚Erstmals erfasst‘ ist nicht der Vertragsbeginn. "
+        "Kandidaten sind noch keine bestätigte rechtliche Verpflichtung oder offene Forderung."
+    )
+    obligations = observed_obligations(tx_rows)
+    income = observed_income_sources(tx_rows)
+    for title, rows, total_label in (
+        ("Verbindlichkeiten", obligations, "Bisher gezahlt"),
+        ("Einnahmequellen", income, "Bisher erhalten"),
+    ):
+        with st.container(border=True):
+            st.markdown(f"### {title}")
+            if not rows:
+                st.caption("Noch keine ausreichend belegten Einträge erkannt.")
+                continue
+            for item in rows:
+                count_label = "1 Buchung" if item["Buchungen"] == 1 else f"{item['Buchungen']} Buchungen"
+                st.markdown(f"**{item['Name']}** · {item['Rhythmus']}")
+                st.write(
+                    f"{total_label}: **{euro(int(round(item['Bisher'] * 100)))}** aus {count_label} · "
+                    f"Betrag/Spanne: {item['Betrag / Spanne']} · erstmals {item['Erstmals erfasst']} · "
+                    f"zuletzt {item['Zuletzt erfasst']} · {item['Status']}"
+                )
 
 
 def render_overview(statements: list[dict], tx_rows: list[dict]) -> None:
@@ -435,6 +469,7 @@ def render_overview(statements: list[dict], tx_rows: list[dict]) -> None:
                     "Durchschnitt": st.column_config.NumberColumn("Ø Betrag", format="euro"),
                 },
             )
+    render_recurring_overview(tx_rows)
 
 
 def render_amazon(tx_rows: list[dict], statements: list[dict]) -> None:
@@ -470,15 +505,12 @@ def build_waterfall(statement: dict, tx: list[dict]) -> pd.DataFrame:
         category = "Amazon-Einkäufe" if row["merchant"] == "Amazon" else "Amazon Prime" if row["merchant"] == "Amazon Prime" else row["main_category"]
         categories[category] = categories.get(category, 0) + (-int(row["amount_cents"]))
     ordered = sorted(categories.items(), key=lambda item: item[1], reverse=True)
-    top = ordered[:4]
-    other_expenses = sum(value for _, value in ordered[4:])
+    top = ordered
     steps: list[tuple[str, int, str]] = [("Anfangsstand", int(statement["beginning_cents"]), "Saldo")]
     if amounts["income_cents"]:
         steps.append(("Einnahmen", amounts["income_cents"], "Zugang"))
     for name, value in top:
         steps.append((name, -value, "Ausgabe"))
-    if other_expenses:
-        steps.append(("Weitere Ausgaben", -other_expenses, "Ausgabe"))
     ending = int(statement["ending_cents"])
     other = sum(int(row["amount_cents"]) for row in tx if row["main_category"] == INTERNAL_CATEGORY or (int(row["amount_cents"]) > 0 and row["main_category"] in {REFUND_CATEGORY, REVIEW_CATEGORY}))
     if other:
@@ -555,7 +587,7 @@ def render_month(statements: list[dict], tx_rows: list[dict]) -> None:
             alt.Chart(waterfall_df)
             .mark_bar(cornerRadius=5)
             .encode(
-                x=alt.X("Schritt:N", sort=waterfall_df["Schritt"].tolist(), title=None, axis=alt.Axis(labelAngle=-25)),
+                x=alt.X("Schritt:N", sort=waterfall_df["Schritt"].tolist(), title=None, axis=alt.Axis(labelAngle=-35, labelLimit=180)),
                 y=alt.Y("Start:Q", title="Kontostand in Euro"),
                 y2="Ende:Q",
                 color=alt.Color(
@@ -565,10 +597,10 @@ def render_month(statements: list[dict], tx_rows: list[dict]) -> None:
                 ),
                 tooltip=["Schritt:N", alt.Tooltip("Betrag:Q", format=",.2f"), alt.Tooltip("Ende:Q", format=",.2f")],
             )
-            .properties(height=335)
+            .properties(height=410)
         )
         st.altair_chart(chart, width="stretch")
-        st.caption("Höchstens vier größte Ausgabenkategorien; Rest als „Weitere Ausgaben“. Weitere Kontobewegungen umfassen z. B. Erstattungen oder interne Umbuchungen.")
+        st.caption("Alle Ausgabenkategorien sind einzeln aufgeführt. Weitere Kontobewegungen umfassen z. B. Erstattungen oder interne Umbuchungen.")
 
     render_amazon(month_rows, [statement])
     left, right = st.columns([1.3, 0.85])
@@ -696,7 +728,10 @@ def render_improvement(statements: list[dict], tx_rows: list[dict]) -> None:
             st.write(proposal['benefit'])
             st.markdown('**Möglicher Nachteil**')
             st.write(proposal['drawback'])
-            st.caption('Nur vorgeschlagen, nicht umgesetzt. Wir besprechen Deine Entscheidung hier im GPT-Chat.')
+            if proposal.get('implemented_at'):
+                st.success(f"Umgesetzt und geprüft am {proposal['implemented_at'][:10]}.", icon=":material/check_circle:")
+            else:
+                st.caption('Noch nicht umgesetzt. Wir besprechen Deine Entscheidung hier im GPT-Chat.')
 
 
 statements = load_statements(DB_PATH)
@@ -724,5 +759,3 @@ with tabs[1]:
     render_month(statements, all_transactions)
 with tabs[2]:
     render_improvement(statements, all_transactions)
-
-st.caption("Private lokale Auswertung · keine Anlage-, Kredit-, Rechts- oder Steuerberatung")
