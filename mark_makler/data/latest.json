@@ -1,126 +1,414 @@
 {
   "schema_version": 2,
+  "criteria_version": 2,
   "mode": "daily",
-  "checked_at": "2026-09-08T18:41:45+02:00",
-  "scope": "Aktuelle Neusuche über ImmoScout24, Kleinanzeigen und ergänzende Websuche für Östringen und nahe Orte; bekannte Klärfälle anschließend am Original geprüft.",
-  "strategy": "Passende niedrige Etagen und die Einzimmer-Ausnahme mit echter Garage getrennt suchen; Angebote über Preisgrenze, in höherer Etage oder ohne bestätigte Garage ausschließen.",
+  "checked_at": "2026-09-10T09:50:00+02:00",
+  "scope": "Vollständige tägliche Neusuche auf Kleinanzeigen, ImmoScout24 und Immowelt rund um Östringen, Bad Schönborn, Kraichtal und Mühlhausen bis höchstens 18 km Fahrstrecke zum Arbeitsplatz.",
+  "strategy": "Portalseiten neu durchsucht, alle aussichtsreichen Einträge ab 45 m² einzeln geprüft, Originalanzeigen geöffnet, echte Fahrstrecken mit OpenStreetMap/OSRM berechnet und nur Angebote bis 1.250 € verpflichtender Monatsbelastung sowie höchstens 1. Obergeschoss übernommen. Haustierangaben wurden ausschließlich angezeigt, nie gefiltert oder zur Sortierung benutzt.",
   "source_checks": [
     {
-      "name": "GARANT Immobilien",
-      "url": "https://www.garant-immo.de/immobilien/detail/sinsheim-etagenwohnung-mieten-77001593",
-      "result": "Originalexposé am 08.09.2026 aktiv. 1. Obergeschoss, ruhige Lage laut Anbieter; Mietbestandteile widersprechen weiterhin der genannten Gesamtmiete."
+      "name": "Kleinanzeigen",
+      "url": "https://www.kleinanzeigen.de/s-wohnung-mieten/oestringen/c203l11755",
+      "result": "Aktuelle Mietwohnungsseiten für Östringen, Bad Schönborn und Kraichtal neu geöffnet. Geeignete Originalanzeigen geprüft; Anfragestopp, gelöschte oder technisch nicht abschließend erreichbare Anzeigen sowie harte Ausschlüsse verworfen."
+    },
+    {
+      "name": "ImmoScout24",
+      "url": "https://www.immobilienscout24.de/Suche/de/baden-wuerttemberg/karlsruhe-kreis/oestringen/wohnung-mieten",
+      "result": "Aktuelle Ergebnislisten für Östringen, Bad Schönborn, Kraichtal und Mühlhausen durchsucht. Strukturierte Kosten, Etagen und Adressen einzelner Originalexposés geprüft."
     },
     {
       "name": "Immowelt",
-      "url": "https://www.immowelt.de/expose/a91bcab9-72d4-42e4-8ee3-34518455452b",
-      "result": "Originalexposé am 08.09.2026 aktiv. 65 m², 2,5 Zimmer und 975 € warm; genaue Adresse und Stellplatzkosten fehlen weiterhin."
-    },
-    {
-      "name": "ImmoScout24 · aktuelle Suche",
-      "url": "https://www.immobilienscout24.de/Suche/de/baden-wuerttemberg/karlsruhe-kreis/oestringen/wohnung-mit-garage-mieten",
-      "result": "Aktuelle Ergebnisliste geprüft. Neue sichtbare Kandidaten scheiterten an Preis, Etage oder fehlender echter Garage; die 90-m²-Wohnung in Mühlhausen liegt mit 1.300 € warm über der Grenze."
+      "url": "https://www.immowelt.de/suche/mieten/wohnung/baden-wurttemberg/kraichtal-76703/ad08de5594",
+      "result": "Aktuelle regionale Suchseiten für Kraichtal, Bad Schönborn und Mühlhausen geprüft. Zwei bekannte aktive Exposés bestätigt; ein Gochsheimer Kandidat wegen 19,7 km Fahrstrecke ausgeschlossen."
     }
   ],
   "updates": [
-    "Neusuche vom 08.09.2026 durchgeführt.",
-    "Keine neue Wohnung erfüllte die bestätigten Kriterien vollständig.",
-    "Die zwei bekannten Klärfälle sind weiterhin aktiv und wurden nicht erneut als neu gezählt.",
-    "Preis-, Etagen- und Haustierangaben wurden nicht ergänzt, wenn sie im Original fehlten."
+    "Acht zusätzliche aktive Angebote wurden erstmals in den Tagesbericht aufgenommen.",
+    "Die bisherige 3-Zimmer-Wohnung in Unteröwisheim wurde mit ihrem aktuellen Titel und der bestätigten Warmmiete von 1.050 € fortgeführt.",
+    "Fahrstrecken wurden heute mit OpenStreetMap-Geocodierung und OSRM-Routing neu berechnet; Gochsheim liegt mit rund 19,7 bis 20,0 km außerhalb der 18-km-Grenze.",
+    "Haustiere nein bleibt reine Information und hat weder Ausschluss noch Reihenfolge beeinflusst.",
+    "Mehrfachanzeigen an Untere Wiesen 5 werden getrennt gezeigt, weil Zimmerzahl, Wohnungstyp und Mietpreis voneinander abweichen; die Identität der Einheit ist als Frage markiert."
   ],
+  "search_stats": {
+    "portals_with_entries": 3,
+    "listings_examined": 53,
+    "listings_discarded": 39
+  },
   "listings": [
     {
-      "id": "garant-753-192",
-      "title": "Großzügig wohnen in Waldangelloch",
-      "place": "Sinsheim · Waldangelloch",
-      "address": null,
-      "provider": "GARANT Immobilien",
-      "url": "https://www.garant-immo.de/immobilien/detail/sinsheim-etagenwohnung-mieten-77001593",
+      "id": "is24-169775577",
+      "title": "Ruhige, gemütliche 2-Zimmer-Wohnung in Kraichtal",
+      "place": "76703 Kraichtal",
+      "address": "Südendstraße 17, 76703 Kraichtal",
+      "provider": "Cesania GmbH · ImmoScout24",
+      "url": "https://www.immobilienscout24.de/expose/169775577",
       "original_active": true,
-      "verified_at": "2026-09-08T18:40:30+02:00",
+      "verified_at": "2026-09-10T09:45:00+02:00",
       "status": "known",
-      "group": "clarify",
-      "priority": 80,
-      "area": 94,
-      "rooms": 3.5,
-      "floor": 1,
-      "floor_label": "1. Obergeschoss",
-      "cold": 940,
-      "warm": 1250,
-      "mandatory_total": null,
-      "budget_verified": false,
-      "location_verified": false,
+      "group": "best",
+      "priority": 96,
+      "area": 76,
+      "rooms": 2,
+      "floor": 0,
+      "floor_label": "Erdgeschoss",
+      "cold": 850,
+      "warm": 1000,
+      "mandatory_total": 1000,
+      "budget_verified": true,
+      "location_verified": true,
       "route_plausible": true,
-      "route": "Ortsteil voraussichtlich im Suchbereich; tatsächliche Fahrstrecke zur Industriestraße 3 ohne genaue Adresse ungeklärt.",
-      "availability": "Nach Absprache; Beschreibung nennt zusätzlich 01.06.2026. Aktuellen Einzugstermin erfragen.",
-      "listing_date": null,
-      "reason": "Die beschriebene verkehrsberuhigte Straße und Naturnähe sind positive Lagehinweise. Vor einer Entscheidung müssen Adresse und Gesamtkosten geklärt werden.",
-      "location_notes": "Der Anbieter beschreibt Waldangelloch als ruhig und naturnah. Die unmittelbare Straße und ein sicher nutzbarer Ausgang für die Katzen sind nicht geprüft.",
-      "outside": "Überdachter Balkon. Kein Garten belegt.",
-      "pets": "Nicht angegeben; Freigänger-Katzen ausdrücklich abklären.",
+      "route_km": 15.7,
+      "route_exact": true,
+      "route": "15,7 km Fahrstrecke von der veröffentlichten Adresse zur Industriestraße 3 laut heutiger OpenStreetMap/OSRM-Routenprüfung.",
+      "garage_status": "no",
+      "main_road_status": "no",
+      "availability": "Nicht konkret angegeben; beim Anbieter erfragen.",
+      "listing_date": "01.09.2026",
+      "reason": "Preis, Erdgeschoss, genaue Adresse und Fahrstrecke sind klar. Die Kartenprüfung bestätigt zusätzlich eine kurze Stichstraße am bebauten Rand mit unmittelbar anschließenden Freiflächen.",
+      "location_notes": "Die OpenStreetMap-Prüfung zeigt Südendstraße 17 an einem kurzen Stich-/Sackgassenabschnitt am westlichen Rand von Unteröwisheim. Direkt hinter der Bebauung schließen Freiflächen und Feldwege an. Das ist ein positiver Lagehinweis, aber keine Zusicherung zur tatsächlichen Verkehrssituation oder zum Katzenausgang.",
+      "outside": "Außenstellplatz; Terrasse oder Garten werden nicht genannt.",
+      "pets": "Haustiere laut Exposé nicht erlaubt. Das ist kein automatischer Ausschluss, muss aber vor einer Besichtigung geklärt werden.",
       "tags": [
-        "Ruhige Lage laut Anbieter",
-        "Balkon",
-        "Kosten offen"
+        "Erdgeschoss",
+        "Adresse bekannt",
+        "1.000 € warm"
       ],
       "costs": [
         {
           "label": "Nebenkosten",
-          "value": "250 € laut Anzeige"
+          "value": "150 €"
         },
         {
           "label": "Heizkosten",
-          "value": "80 € laut Anzeige; Stromheizung, Einzelgeräte"
+          "value": "In den Nebenkosten enthalten"
         },
         {
-          "label": "Stellplatz",
-          "value": "30 € monatlich; Pflicht und Einbeziehung ungeklärt"
+          "label": "Außenstellplatz",
+          "value": "Vorhanden; kein zusätzlicher Preis genannt"
         },
         {
           "label": "Kaution",
-          "value": "1.940 € laut Anzeige"
+          "value": "2.550 €"
         }
       ],
-      "cost_notes": "Die ausgewiesenen 1.250 € Gesamtmiete passen nicht zu 940 + 250 + 80 = 1.270 €. Mit zusätzlich berechnetem Stellplatz wären es 1.300 €. Ob Beträge enthalten oder fehlerhaft sind, muss der Anbieter erklären; keine bestätigte Budgeteinhaltung.",
+      "cost_notes": "850 € kalt plus 150 € Nebenkosten ergeben die ausgewiesenen 1.000 € Warmmiete.",
       "questions": [
-        "Adresse und vollständige monatliche Pflichtkosten beim Anbieter erfragen.",
-        "Sind Heizkosten und Stellplatz in der Gesamtmiete enthalten, und welcher Betrag stimmt?",
-        "Sind Freigänger-Katzen erlaubt und wie gelangen sie hinaus und wieder hinein?",
-        "Sind es 3 oder 3,5 Zimmer? Überschrift und Datenfeld unterscheiden sich."
+        "Ist Freigänger-Katzenhaltung trotz der Angabe 'Haustiere nein' verhandelbar?",
+        "Auf welcher Hausseite wäre ein geeigneter Katzenausgang möglich?",
+        "Ab wann ist die Wohnung tatsächlich verfügbar?"
       ],
       "risks": [
-        "Mögliche Überschreitung der absoluten Budgetgrenze.",
-        "Exakte Verkehrslage und Katzenzugang unbekannt."
+        "Haustiere werden im Exposé verneint.",
+        "Der positive Kartenbefund ersetzt keine Prüfung des tatsächlichen Verkehrs und eines geeigneten Ausgangs vor Ort."
+      ],
+      "images": []
+    },
+    {
+      "id": "ka-3506073580",
+      "title": "45-m²-Bungalowwohnung in Bad Schönborn-Langenbrücken",
+      "place": "76669 Bad Schönborn-Langenbrücken",
+      "address": "Untere Wiesen 5, 76669 Bad Schönborn",
+      "provider": "Privater Anbieter · Kleinanzeigen",
+      "url": "https://www.kleinanzeigen.de/s-anzeige/wohnung-45-qm-1-2-zi-76669-bad-schoenborn-langenbrueckenab-1-nov-26/3506073580-203-8791",
+      "original_active": true,
+      "verified_at": "2026-09-10T09:45:00+02:00",
+      "status": "known",
+      "group": "best",
+      "priority": 94,
+      "area": 45,
+      "rooms": 2,
+      "floor": 0,
+      "floor_label": "Erdgeschoss / Bungalow",
+      "cold": 900,
+      "warm": 900,
+      "mandatory_total": 900,
+      "budget_verified": true,
+      "location_verified": true,
+      "route_plausible": true,
+      "route_km": 5.2,
+      "route_exact": true,
+      "route": "5,2 km Fahrstrecke von der veröffentlichten Adresse zur Industriestraße 3 laut aktueller Routenprüfung.",
+      "garage_status": "unknown",
+      "main_road_status": "no",
+      "availability": "Voraussichtlich 01.11. oder 01.12.2026; Datenfeld nennt Dezember 2026.",
+      "listing_date": "09.09.2026",
+      "reason": "Sehr kurze Strecke, Erdgeschoss und 900 € warm sind stark. Die Kartenprüfung bestätigt außerdem die gewünschte Randlage in einem Gewerbe-/Industriegebiet mit angrenzenden offenen Flächen.",
+      "location_notes": "Untere Wiesen ist laut OpenStreetMap-Daten eine Anliegerstraße am Rand des Gewerbe-/Industriegebiets. Nördlich und westlich schließen offene Flächen an. Das entspricht dem gewünschten Lagetyp; wegen der benachbarten Betriebe muss möglicher Liefer- und Lkw-Verkehr dennoch vor Ort geprüft werden.",
+      "outside": "Terrasse und Gartenmitnutzung laut Anzeige.",
+      "pets": "Haustiere nach Absprache; die Anzeige markiert Haustiere als erlaubt.",
+      "tags": [
+        "Erdgeschoss",
+        "Terrasse",
+        "Garten",
+        "5,2 km"
+      ],
+      "costs": [
+        {
+          "label": "Warmmiete",
+          "value": "900 €"
+        },
+        {
+          "label": "Nebenkosten",
+          "value": "0 € im Datenfeld"
+        },
+        {
+          "label": "Heizkosten",
+          "value": "0 € im Datenfeld; tatsächliche Regelung prüfen"
+        },
+        {
+          "label": "Kaution",
+          "value": "1.800 €"
+        }
+      ],
+      "cost_notes": "Die Anzeige nennt 900 € Warmmiete. Ob Strom und die Nutzung der zusätzlichen Heiz-/Klimaanlage enthalten sind, sollte geklärt werden.",
+      "questions": [
+        "Wie häufig gibt es unmittelbar am Gebäude Liefer- oder Lkw-Verkehr und auf welcher Seite liegt der Gartenausgang?",
+        "Handelt es sich beim Merkmal Garage/Stellplatz um eine normale geschlossene Garage?",
+        "Welche Energie- und sonstigen Pflichtkosten kommen zusätzlich zu den 900 € hinzu?"
+      ],
+      "risks": [
+        "Das Gewerbeumfeld kann tagsüber Liefer- oder Lkw-Verkehr verursachen.",
+        "Normale Garage und Nebenkostenangaben von 0 € sollten bestätigt werden."
       ],
       "images": [
         {
-          "url": "https://www.garant-immo.de/sharing/objekt_77001593_77090288_l.jpg",
-          "source": "https://www.garant-immo.de/immobilien/detail/sinsheim-etagenwohnung-mieten-77001593",
-          "caption": "Ansicht aus dem Originalexposé"
+          "url": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/ac/acc03416-270a-4dd4-9c08-0a34e8c30be7?rule=$_59.AUTO",
+          "source": "https://www.kleinanzeigen.de/s-anzeige/wohnung-45-qm-1-2-zi-76669-bad-schoenborn-langenbrueckenab-1-nov-26/3506073580-203-8791",
+          "caption": "Außenansicht des angebotenen Bungalows"
         },
         {
-          "url": "https://www.garant-immo.de/sharing/objekt_77001593_77090290_m.jpg",
-          "source": "https://www.garant-immo.de/immobilien/detail/sinsheim-etagenwohnung-mieten-77001593",
-          "caption": "Weitere Anzeigenansicht"
-        },
-        {
-          "url": "https://www.garant-immo.de/sharing/objekt_77001593_77090294_m.jpg",
-          "source": "https://www.garant-immo.de/immobilien/detail/sinsheim-etagenwohnung-mieten-77001593",
-          "caption": "Weitere Anzeigenansicht"
+          "url": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/c0/c097be8e-1cd6-42f2-89b4-ba16b016533a?rule=$_59.AUTO",
+          "source": "https://www.kleinanzeigen.de/s-anzeige/wohnung-45-qm-1-2-zi-76669-bad-schoenborn-langenbrueckenab-1-nov-26/3506073580-203-8791",
+          "caption": "Eingangsbereich der angebotenen Wohnung"
         }
       ]
     },
     {
+      "id": "ka-3504042238",
+      "title": "3-Zimmer Wohnung mit Garten & Einbauküche zum 1.10 /15.10",
+      "place": "Unteröwisheim · 76703 Kraichtal",
+      "address": null,
+      "provider": "Privater Anbieter · Kleinanzeigen",
+      "url": "https://www.kleinanzeigen.de/s-anzeige/3-zimmer-wohnung-mit-garten-einbaukueche/3504042238-203-8797",
+      "original_active": true,
+      "verified_at": "2026-09-10T09:45:00+02:00",
+      "status": "known",
+      "group": "good",
+      "priority": 86,
+      "area": 73,
+      "rooms": 3,
+      "floor": 1,
+      "floor_label": "Etagenfeld: 1. OG; Wohnungstyp: Erdgeschoss – Widerspruch",
+      "cold": 820,
+      "warm": 1050,
+      "mandatory_total": 1050,
+      "budget_verified": true,
+      "location_verified": false,
+      "route_plausible": true,
+      "route_km": 15.1,
+      "route_exact": false,
+      "route": "Ca. 15,1 km Fahrstrecke vom veröffentlichten Ortsteil Unteröwisheim zur Industriestraße 3; genaue Strecke erst mit Adresse möglich.",
+      "garage_status": "no",
+      "main_road_status": "unknown",
+      "availability": "Zum 01.10. oder 15.10.2026 laut Titel; Datenfeld nennt September 2026.",
+      "listing_date": "05.09.2026",
+      "reason": "1.050 € warm, Garten, Terrasse und ein passender Ortsteil. Etage, Adresse und direkte Katzenlage müssen geprüft werden.",
+      "location_notes": "Der Garten ist positiv, sagt aber nichts Sicheres über Straßenverkehr, Feld-, Wald- oder Ortsrandlage aus. Die genaue Adresse fehlt.",
+      "outside": "Eigener Garten auf zwei Ebenen und Terrasse.",
+      "pets": "Haustiere laut Anzeige erlaubt.",
+      "tags": [
+        "Garten",
+        "Terrasse",
+        "Haustiere erlaubt",
+        "Etage widersprüchlich"
+      ],
+      "costs": [
+        {
+          "label": "Nebenkosten",
+          "value": "230 €"
+        },
+        {
+          "label": "Warmmiete",
+          "value": "1.050 €"
+        },
+        {
+          "label": "Kfz-Stellplatz",
+          "value": "Optional gegen nicht genannten Aufpreis"
+        },
+        {
+          "label": "Kaution",
+          "value": "2.460 €"
+        }
+      ],
+      "cost_notes": "820 € kalt plus 230 € Nebenkosten ergeben 1.050 € warm. Der optionale Stellplatz ist nicht eingerechnet.",
+      "questions": [
+        "Welche Etage stimmt: Erdgeschoss oder 1. Obergeschoss?",
+        "Wie lautet die genaue Adresse und liegt das Haus abseits von Hauptverkehr?",
+        "Ist ein direkter Katzenausgang praktisch möglich?"
+      ],
+      "risks": [
+        "Etagenangaben widersprechen sich.",
+        "Die normale Garage fehlt; nur ein optionaler Kfz-Stellplatz wird genannt."
+      ],
+      "images": [
+        {
+          "url": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/0c/0cf1aa6d-1670-4520-81c9-cae0a1fd0a1c?rule=$_59.AUTO",
+          "source": "https://www.kleinanzeigen.de/s-anzeige/3-zimmer-wohnung-mit-garten-einbaukueche/3504042238-203-8797",
+          "caption": "Außenansicht des Wohnhauses aus der Originalanzeige"
+        }
+      ]
+    },
+    {
+      "id": "ka-3506273750",
+      "title": "2-Zimmer-Wohnung in Odenheim – 61 m² – ab sofort",
+      "place": "Odenheim · 76684 Östringen",
+      "address": null,
+      "provider": "Privater Anbieter · Kleinanzeigen",
+      "url": "https://www.kleinanzeigen.de/s-anzeige/2-zimmer-wohnung-in-odenheim-61-m-ab-sofort/3506273750-203-8252",
+      "original_active": true,
+      "verified_at": "2026-09-10T09:45:00+02:00",
+      "status": "known",
+      "group": "good",
+      "priority": 82,
+      "area": 61,
+      "rooms": 2,
+      "floor": 1,
+      "floor_label": "1. Obergeschoss",
+      "cold": 540,
+      "warm": 690,
+      "mandatory_total": 690,
+      "budget_verified": true,
+      "location_verified": false,
+      "route_plausible": true,
+      "route_km": 10.4,
+      "route_exact": false,
+      "route": "Ca. 10,4 km Fahrstrecke vom veröffentlichten Ortsteil Odenheim zur Industriestraße 3; genaue Strecke erst mit Adresse möglich.",
+      "garage_status": "no",
+      "main_road_status": "unknown",
+      "availability": "Ab sofort laut Beschreibung.",
+      "listing_date": "07.09.2026",
+      "reason": "Mit 690 € warm ist dies der günstigste aktive Treffer. Die Wohnung liegt allerdings im 1. Obergeschoss und hat weder Balkon, Terrasse noch Garage.",
+      "location_notes": "Ohne genaue Adresse lässt sich weder eine abseitige Lage noch die unmittelbare Verkehrssituation beurteilen.",
+      "outside": "Kein Balkon und keine Terrasse; kein Stellplatz und keine Garage laut Anzeige.",
+      "pets": "Nicht angegeben.",
+      "tags": [
+        "690 € warm",
+        "1. Obergeschoss",
+        "Adresse fehlt"
+      ],
+      "costs": [
+        {
+          "label": "Nebenkosten",
+          "value": "150 €"
+        },
+        {
+          "label": "Warmmiete",
+          "value": "690 €"
+        },
+        {
+          "label": "Kaution",
+          "value": "1.080 €"
+        }
+      ],
+      "cost_notes": "540 € kalt plus 150 € Nebenkosten ergeben die ausgewiesenen 690 € Warmmiete.",
+      "questions": [
+        "Wie lautet die genaue Adresse und wie ist die unmittelbare Verkehrslage?",
+        "Ist trotz 1. Obergeschoss ein praktikabler Katzenausgang vorhanden?",
+        "Sind Katzen erlaubt?"
+      ],
+      "risks": [
+        "1. Obergeschoss ohne Balkon oder Terrasse.",
+        "Katzenhaltung und Katzenlage sind offen."
+      ],
+      "images": [
+        {
+          "url": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/2d/2d38c8fa-8ca3-467b-b490-17d66a689a27?rule=$_59.AUTO",
+          "source": "https://www.kleinanzeigen.de/s-anzeige/2-zimmer-wohnung-in-odenheim-61-m-ab-sofort/3506273750-203-8252",
+          "caption": "Innenansicht eines Wohnraums aus der Originalanzeige"
+        }
+      ]
+    },
+    {
+      "id": "immowelt-44c383c5",
+      "title": "Ruhige, gepflegte 2-Zimmer-Wohnung in Langenbrücken",
+      "place": "Langenbrücken · 76669 Bad Schönborn",
+      "address": null,
+      "provider": "CARA Immobilien · Immowelt",
+      "url": "https://www.immowelt.de/expose/44c383c5-4dad-41c5-82e4-befbd0bd1e8c",
+      "original_active": true,
+      "verified_at": "2026-09-10T09:45:00+02:00",
+      "status": "known",
+      "group": "good",
+      "priority": 84,
+      "area": 52,
+      "rooms": 2,
+      "floor": null,
+      "floor_label": "Etage nicht veröffentlicht",
+      "cold": 465,
+      "warm": 765,
+      "mandatory_total": 765,
+      "budget_verified": true,
+      "location_verified": false,
+      "route_plausible": true,
+      "route_km": 4.4,
+      "route_exact": false,
+      "route": "Ca. 4,4 km Fahrstrecke vom veröffentlichten Ortsteil Langenbrücken zur Industriestraße 3; genaue Strecke erst mit Adresse möglich.",
+      "garage_status": "no",
+      "main_road_status": "unknown",
+      "availability": "Ab 01.10.2026.",
+      "listing_date": null,
+      "reason": "765 € monatliche Gesamtzahlung, ruhige Wohngebietsbeschreibung und der Zugang vom Balkon in einen Gartenanteil sind interessant. Etage und Adresse fehlen.",
+      "location_notes": "Das Exposé nennt ein reines ruhiges Wohngebiet. Ob es zusätzlich die gewünschte Feld-, Wald-, Ortsrand- oder abgelegene Lage ist, bleibt ohne Adresse offen.",
+      "outside": "Westbalkon mit kleiner Treppe in den darunterliegenden Gartenanteil.",
+      "pets": "Nicht angegeben.",
+      "tags": [
+        "765 € gesamt",
+        "Balkon",
+        "Gartenzugang",
+        "Etage fehlt"
+      ],
+      "costs": [
+        {
+          "label": "Nebenkosten",
+          "value": "250 €"
+        },
+        {
+          "label": "Tiefgaragenstellplatz",
+          "value": "50 € verpflichtend laut Preistext"
+        },
+        {
+          "label": "Monatliche Mietzahlung",
+          "value": "765 €"
+        },
+        {
+          "label": "Kaution",
+          "value": "1.545 €"
+        }
+      ],
+      "cost_notes": "465 € kalt plus 250 € Nebenkosten und 50 € Tiefgaragenstellplatz ergeben 765 € monatliche Mietzahlung.",
+      "questions": [
+        "In welcher Etage liegt die Wohnung genau?",
+        "Wie lautet die genaue Adresse und wie ruhig ist die unmittelbare Straße?",
+        "Sind Katzen erlaubt und ist die kleine Treppe zum Garten dauerhaft nutzbar?"
+      ],
+      "risks": [
+        "Etage und genaue Adresse fehlen.",
+        "Ein Tiefgaragenstellplatz ist keine normale geschlossene Garage."
+      ],
+      "images": []
+    },
+    {
       "id": "immowelt-a91bcab9",
-      "title": "Einbauküche und großer Balkon in Mühlhausen",
+      "title": "Tolle Wohnung mit Einbauküche und Balkon in Mühlhausen",
       "place": "69242 Mühlhausen",
       "address": null,
       "provider": "Felix Hartmann Immobilien · Immowelt",
       "url": "https://www.immowelt.de/expose/a91bcab9-72d4-42e4-8ee3-34518455452b",
       "original_active": true,
-      "verified_at": "2026-09-08T18:40:45+02:00",
+      "verified_at": "2026-09-10T09:45:00+02:00",
       "status": "known",
       "group": "clarify",
-      "priority": 65,
+      "priority": 72,
       "area": 65,
       "rooms": 2.5,
       "floor": 1,
@@ -131,16 +419,21 @@
       "budget_verified": false,
       "location_verified": false,
       "route_plausible": true,
-      "route": "Mühlhausen liegt voraussichtlich im Suchbereich. Die genaue Fahrstrecke zur Industriestraße 3 ist ohne Adresse ungeklärt.",
-      "availability": "Sofort laut Anzeige",
+      "route_km": 6.1,
+      "route_exact": false,
+      "route": "Ca. 6,1 km Fahrstrecke vom veröffentlichten Gemeindezentrum Mühlhausen zur Industriestraße 3; genaue Strecke erst mit Adresse möglich.",
+      "garage_status": "unknown",
+      "main_road_status": "unknown",
+      "availability": "Sofort laut Exposé.",
       "listing_date": null,
-      "reason": "Größe, Zimmerzahl und ausgewiesene Warmmiete liegen im bisherigen Rahmen. Ob die Lage für die Katzen geeignet ist, lässt sich ohne Adresse noch nicht beurteilen.",
-      "location_notes": "Die Anzeige beschreibt Verkehrsanbindung, aber keine belegte abgelegene Randlage. Ein Balkon ist kein Nachweis einer geeigneten Umgebung für Freigänger.",
-      "outside": "Großer Balkon. Garten oder direkter Ausgang nicht belegt.",
-      "pets": "Nicht angegeben; Haltung von Freigänger-Katzen erfragen.",
+      "reason": "975 € warm, 65 m² und kurze voraussichtliche Strecke passen. Adresse, normale Garage, unmittelbare Lage und ein möglicher Katzenzugang aus dem 1. Obergeschoss bleiben offen.",
+      "location_notes": "Das Exposé nennt gute Verkehrsanbindung, aber keine abgelegene Rand-, Feld- oder Waldlage. Ohne Adresse ist die unmittelbare Verkehrssituation nicht beurteilbar.",
+      "outside": "Großer Balkon; Garten wird nicht genannt.",
+      "pets": "Nicht angegeben.",
       "tags": [
-        "Einbauküche",
+        "975 € warm",
         "Balkon",
+        "1. Obergeschoss",
         "Adresse fehlt"
       ],
       "costs": [
@@ -154,22 +447,538 @@
         },
         {
           "label": "Stellplatz",
-          "value": "Kostenfeld ohne Betrag; Pflicht und Verfügbarkeit ungeklärt"
+          "value": "Preisfeld vorhanden, aber ohne Betrag"
         },
         {
           "label": "Kaution",
-          "value": "3 Monatsmieten laut Anzeige; Berechnungsbasis erfragen"
+          "value": "3 Monatsmieten; Berechnungsbasis offen"
         }
       ],
-      "cost_notes": "775 € Kaltmiete plus 200 € Nebenkosten ergeben die ausgewiesenen 975 € Warmmiete. Eventuelle zusätzliche Pflichtkosten für einen Stellplatz sind noch offen.",
+      "cost_notes": "775 € kalt plus 200 € Nebenkosten ergeben 975 € warm. Ob ein Stellplatz verpflichtend ist und zusätzliche Kosten verursacht, bleibt offen.",
       "questions": [
-        "Genaue Adresse erfragen, um die unmittelbare Umgebung zu prüfen.",
-        "Gibt es einen sinnvollen Ausgang für die Katzen und ist ihre Haltung erlaubt?",
-        "Sind Stellplatz oder weitere Leistungen verpflichtend und was kosten sie?"
+        "Wie lautet die genaue Adresse?",
+        "Gibt es eine normale geschlossene Garage und kostet sie zusätzlich?",
+        "Ist ein geeigneter Katzenausgang aus dem 1. Obergeschoss möglich und sind Katzen erlaubt?"
       ],
       "risks": [
-        "Keine belastbare Aussage über unmittelbaren Verkehr möglich.",
-        "Katzenzugang aus dem 1. Obergeschoss offen."
+        "Gesamtkosten könnten durch einen Stellplatz steigen.",
+        "Adresse und Katzenlage fehlen."
+      ],
+      "images": []
+    },
+    {
+      "id": "is24-169459309",
+      "title": "Helle und freundliche 2-Zimmer-Wohnung mit Balkon in Kraichtal",
+      "place": "76703 Kraichtal",
+      "address": "Josef Heid Straße 3, 76703 Kraichtal",
+      "provider": "Privater Anbieter · ImmoScout24",
+      "url": "https://www.immobilienscout24.de/expose/169459309",
+      "original_active": true,
+      "verified_at": "2026-09-10T09:45:00+02:00",
+      "status": "new",
+      "group": "best",
+      "priority": 95,
+      "area": 76,
+      "rooms": 2,
+      "floor": 1,
+      "floor_label": "1. Obergeschoss",
+      "cold": 875,
+      "warm": 1075,
+      "mandatory_total": 1075,
+      "budget_verified": true,
+      "location_verified": false,
+      "route_plausible": true,
+      "route_km": 15.4,
+      "route_exact": true,
+      "route": "15,4 km Fahrstrecke von der veröffentlichten Adresse zur Industriestraße 3 laut heutiger OpenStreetMap/OSRM-Routenprüfung.",
+      "garage_status": "yes",
+      "main_road_status": "no",
+      "availability": "Ab 15.09.2026 im Datenfeld; Beschreibung nennt 01.10.2026.",
+      "listing_date": null,
+      "reason": "Genaue Adresse, 1.075 € warm, 76 m², normale Garage und eine Strecke unter 18 km sind klar. Das 1. Obergeschoss und die konkrete Katzenlage bleiben vor Ort zu prüfen.",
+      "location_notes": "Der Balkon blickt laut Exposé ins Grüne. Das reicht nicht als Nachweis für Feld-, Wald-, Wiesen- oder echte Randlage; die unmittelbare Verkehrssituation muss vor Ort geprüft werden.",
+      "outside": "Balkon und gemeinschaftliche Gartennutzung.",
+      "pets": "Haustiere laut Exposé nicht gestattet. Das wird angezeigt, beeinflusst aber weder Trefferstatus noch Reihenfolge.",
+      "tags": [
+        "Normale Garage",
+        "1.075 € warm",
+        "1. Obergeschoss"
+      ],
+      "costs": [
+        {
+          "label": "Nebenkosten",
+          "value": "200 €"
+        },
+        {
+          "label": "Warmmiete",
+          "value": "1.075 €"
+        },
+        {
+          "label": "Garagenstellplatz",
+          "value": "Vorhanden; kein Zusatzpreis genannt"
+        }
+      ],
+      "cost_notes": "875 € kalt plus 200 € Nebenkosten ergeben 1.075 € warm.",
+      "questions": [
+        "Ist ein praktikabler Katzenausgang aus dem 1. Obergeschoss vorhanden?",
+        "Wie ist die unmittelbare Verkehrs- und Randlage?",
+        "Welches Bezugsdatum stimmt: 15.09. oder 01.10.2026?"
+      ],
+      "risks": [
+        "1. Obergeschoss.",
+        "Haustiere werden verneint; nur als Information angezeigt."
+      ],
+      "images": []
+    },
+    {
+      "id": "is24-72669392",
+      "title": "Angenehmes Wohnen – 2-Zimmer-Wohnung in Mühlhausen-Rettigheim",
+      "place": "Rettigheim · 69242 Mühlhausen",
+      "address": null,
+      "provider": "Privater Anbieter · ImmoScout24",
+      "url": "https://www.immobilienscout24.de/expose/72669392",
+      "original_active": true,
+      "verified_at": "2026-09-10T09:45:00+02:00",
+      "status": "new",
+      "group": "best",
+      "priority": 94,
+      "area": 73,
+      "rooms": 2,
+      "floor": 0,
+      "floor_label": "Souterrain / Halbuntergeschoss",
+      "cold": 640,
+      "warm": 830,
+      "mandatory_total": null,
+      "budget_verified": false,
+      "location_verified": false,
+      "route_plausible": true,
+      "route_km": 4.9,
+      "route_exact": false,
+      "route": "Ca. 4,9 km Fahrstrecke vom veröffentlichten Ortsteil Rettigheim zur Industriestraße 3; genaue Strecke erst mit Adresse möglich.",
+      "garage_status": "no",
+      "main_road_status": "unknown",
+      "availability": "Ab 01.06.2026; damit aktuell verfügbar, sofern noch nicht vergeben.",
+      "listing_date": null,
+      "reason": "830 € warm, 73 m², Souterrain und nur rund 4,9 km Fahrstrecke sind sehr stark. Adresse, unmittelbare Katzenlage und mögliche Zusatzkosten für den Carport bleiben offen.",
+      "location_notes": "Das Exposé nennt ein sehr ruhiges Wohngebiet in Rettigheim. Eine konkrete Feld-, Wald-, Wiesen- oder Ortsrandlage ist ohne Adresse nicht bestätigt.",
+      "outside": "Große Terrasse; Carport-Stellplatz.",
+      "pets": "Haustiere laut Exposé nicht gestattet. Das wird angezeigt, beeinflusst aber weder Trefferstatus noch Reihenfolge.",
+      "tags": [
+        "Souterrain",
+        "830 € warm",
+        "4,9 km"
+      ],
+      "costs": [
+        {
+          "label": "Nebenkosten",
+          "value": "80 €"
+        },
+        {
+          "label": "Heizkosten",
+          "value": "110 €"
+        },
+        {
+          "label": "Warmmiete",
+          "value": "830 €"
+        },
+        {
+          "label": "Carport",
+          "value": "30 € laut Preisfeld; Einrechnung in Gesamtmiete klären"
+        }
+      ],
+      "cost_notes": "640 € kalt plus 80 € Nebenkosten und 110 € Heizkosten ergeben 830 € warm. Ob der Carport zusätzlich verpflichtend ist, ist offen.",
+      "questions": [
+        "Wie lautet die genaue Adresse und liegt sie am Orts-, Feld- oder Wiesenrand?",
+        "Kommen die 30 € für den Carport zusätzlich zu den 830 € hinzu?",
+        "Ist ein geeigneter Ausgang von der Terrasse tatsächlich nutzbar?"
+      ],
+      "risks": [
+        "Genaue Adresse und Mikrolage fehlen.",
+        "Gesamtbelastung mit Carport ist offen."
+      ],
+      "images": []
+    },
+    {
+      "id": "ka-3423595270",
+      "title": "Schöne, gepflegte, geräumige, helle 2-ZKBB an Einzelperson",
+      "place": "Langenbrücken · 76669 Bad Schönborn",
+      "address": null,
+      "provider": "Privater Anbieter · Kleinanzeigen",
+      "url": "https://www.kleinanzeigen.de/s-anzeige/schoene-gepflegte-geraeumige-helle-2-zkbb-an-einzelperson/3423595270-203-8791",
+      "original_active": true,
+      "verified_at": "2026-09-10T09:45:00+02:00",
+      "status": "new",
+      "group": "good",
+      "priority": 87,
+      "area": 53,
+      "rooms": 2,
+      "floor": 0,
+      "floor_label": "Erdgeschoss",
+      "cold": 635,
+      "warm": null,
+      "mandatory_total": null,
+      "budget_verified": false,
+      "location_verified": false,
+      "route_plausible": true,
+      "route_km": 4.4,
+      "route_exact": false,
+      "route": "Ca. 4,4 km Fahrstrecke vom veröffentlichten Ortsteil Langenbrücken zur Industriestraße 3; genaue Strecke erst mit Adresse möglich.",
+      "garage_status": "no",
+      "main_road_status": "unknown",
+      "availability": "Ab Juli 2026 laut Anzeige; aktuelle Verfügbarkeit bestätigen.",
+      "listing_date": "01.06.2026",
+      "reason": "Erdgeschoss, 53 m², 635 € kalt und kurze Fahrstrecke passen. Warmmiete, Adresse und genaue Lage sind noch zu klären.",
+      "location_notes": "Die Anzeige nennt eine ruhige Süd-West-Lage, aber keine genaue Adresse und keinen belastbaren Nachweis für Feld-, Wald-, Wiesen- oder Ortsrandlage.",
+      "outside": "Süd-Balkon; optionaler Außenstellplatz.",
+      "pets": "Nicht angegeben.",
+      "tags": [
+        "Erdgeschoss",
+        "635 € kalt",
+        "Süd-Balkon"
+      ],
+      "costs": [
+        {
+          "label": "Nebenkosten",
+          "value": "200 €"
+        },
+        {
+          "label": "Warmmiete",
+          "value": "Noch zu erfragen"
+        },
+        {
+          "label": "Außenstellplatz",
+          "value": "Optional; Preis nicht genannt"
+        }
+      ],
+      "cost_notes": "635 € kalt plus 200 € Nebenkosten sind bekannt. Ob Heizkosten enthalten sind und welcher verpflichtende Monatsbetrag entsteht, ist offen.",
+      "questions": [
+        "Wie hoch ist die vollständige Warmmiete inklusive Heizkosten?",
+        "Wie lautet die genaue Adresse und wie ist die unmittelbare Verkehrslage?",
+        "Sind Katzen erlaubt?"
+      ],
+      "risks": [
+        "Warmmiete und Adresse fehlen.",
+        "Normale Garage wird nicht genannt."
+      ],
+      "images": []
+    },
+    {
+      "id": "is24-170241521",
+      "title": "Ruhig gelegene 2-Zimmer-Souterrainwohnung",
+      "place": "Mingolsheim · 76669 Bad Schönborn",
+      "address": null,
+      "provider": "Privater Anbieter · ImmoScout24",
+      "url": "https://www.immobilienscout24.de/expose/170241521",
+      "original_active": true,
+      "verified_at": "2026-09-10T09:45:00+02:00",
+      "status": "new",
+      "group": "best",
+      "priority": 93,
+      "area": 58,
+      "rooms": 2,
+      "floor": 0,
+      "floor_label": "Souterrain",
+      "cold": 640,
+      "warm": 790,
+      "mandatory_total": null,
+      "budget_verified": false,
+      "location_verified": false,
+      "route_plausible": true,
+      "route_km": 3.9,
+      "route_exact": false,
+      "route": "Ca. 3,9 km Fahrstrecke vom veröffentlichten Gemeindegebiet Bad Schönborn zur Industriestraße 3; genaue Strecke erst mit Adresse möglich.",
+      "garage_status": "no",
+      "main_road_status": "unknown",
+      "availability": "Ab 01.11.2026.",
+      "listing_date": null,
+      "reason": "790 € warm, Souterrain, große Terrasse und sehr kurze Ortsstrecke passen hervorragend. Adresse und genaue Gesamtkosten mit Carport müssen geklärt werden.",
+      "location_notes": "Das Exposé nennt eine ruhige Wohngegend im Kurgebiet Mingolsheim und einen Blick ins Grüne. Die gewünschte Randlage ist ohne Adresse nicht bestätigt.",
+      "outside": "Große überdachte Terrasse mit Blick ins Grüne; Carport.",
+      "pets": "Haustiere laut Exposé nicht gestattet. Das wird angezeigt, beeinflusst aber weder Trefferstatus noch Reihenfolge.",
+      "tags": [
+        "Souterrain",
+        "790 € warm",
+        "Terrasse"
+      ],
+      "costs": [
+        {
+          "label": "Nebenkosten",
+          "value": "150 €"
+        },
+        {
+          "label": "Warmmiete",
+          "value": "790 €"
+        },
+        {
+          "label": "Carport",
+          "value": "30 € laut Preisfeld; Einrechnung klären"
+        }
+      ],
+      "cost_notes": "640 € kalt plus 150 € Nebenkosten ergeben 790 € warm. Ob 30 € Carport zusätzlich verpflichtend sind, ist offen.",
+      "questions": [
+        "Wie lautet die genaue Adresse und liegt sie tatsächlich ruhig abseits oder am Rand?",
+        "Kommen 30 € Carport zusätzlich zur Warmmiete hinzu?",
+        "Ist der Terrassenausgang dauerhaft nutzbar?"
+      ],
+      "risks": [
+        "Adresse und konkrete Katzenlage fehlen.",
+        "Möglicher Zusatzbetrag für den Carport."
+      ],
+      "images": []
+    },
+    {
+      "id": "is24-170438448",
+      "title": "Kleine Maisonettewohnung im Fachwerkhaus von 1850",
+      "place": "Mingolsheim · 76669 Bad Schönborn",
+      "address": null,
+      "provider": "Privater Anbieter · ImmoScout24",
+      "url": "https://www.immobilienscout24.de/expose/170438448",
+      "original_active": true,
+      "verified_at": "2026-09-10T09:45:00+02:00",
+      "status": "new",
+      "group": "good",
+      "priority": 83,
+      "area": 45,
+      "rooms": 1.5,
+      "floor": null,
+      "floor_label": "Maisonette über zwei Ebenen; Ausgangsgeschoss nicht veröffentlicht",
+      "cold": 600,
+      "warm": 750,
+      "mandatory_total": 750,
+      "budget_verified": true,
+      "location_verified": false,
+      "route_plausible": true,
+      "route_km": 3.9,
+      "route_exact": false,
+      "route": "Ca. 3,9 km Fahrstrecke vom veröffentlichten Gemeindegebiet Bad Schönborn zur Industriestraße 3; genaue Strecke erst mit Adresse möglich.",
+      "garage_status": "no",
+      "main_road_status": "unknown",
+      "availability": "Ab 01.10.2026.",
+      "listing_date": null,
+      "reason": "750 € warm, 45 m² und kurze Ortsstrecke sind attraktiv. Ausgangsgeschoss, Adresse und unmittelbare Lage sind offen.",
+      "location_notes": "Garten wird genannt, aber die Lagebeschreibung belegt keine Feld-, Wald-, Wiesen- oder Ortsrandlage.",
+      "outside": "Gartennutzung; kein Balkon genannt.",
+      "pets": "Haustiere laut Exposé erlaubt. Das wird nur angezeigt und nicht für die Reihenfolge verwendet.",
+      "tags": [
+        "750 € warm",
+        "45 m²",
+        "Maisonette"
+      ],
+      "costs": [
+        {
+          "label": "Nebenkosten",
+          "value": "150 €"
+        },
+        {
+          "label": "Warmmiete",
+          "value": "750 €"
+        }
+      ],
+      "cost_notes": "600 € kalt plus 150 € Nebenkosten ergeben 750 € warm.",
+      "questions": [
+        "In welchem Geschoss liegt der Eingang beziehungsweise die untere Wohnebene?",
+        "Wie lautet die genaue Adresse und wie ist die direkte Verkehrslage?",
+        "Gibt es einen direkten Zugang zum genannten Garten?"
+      ],
+      "risks": [
+        "Ausgangsgeschoss und Adresse fehlen.",
+        "Keine normale Garage genannt."
+      ],
+      "images": []
+    },
+    {
+      "id": "is24-170293038",
+      "title": "Modernes Wohnen: 3-Zimmer-Wohnung mit Klimaanlage in Bad Schönborn",
+      "place": "76669 Bad Schönborn",
+      "address": null,
+      "provider": "Privater Anbieter · ImmoScout24",
+      "url": "https://www.immobilienscout24.de/expose/170293038",
+      "original_active": true,
+      "verified_at": "2026-09-10T09:45:00+02:00",
+      "status": "new",
+      "group": "good",
+      "priority": 85,
+      "area": 79,
+      "rooms": 3,
+      "floor": 1,
+      "floor_label": "Wohnungstyp Erdgeschoss; Etagenfeld 1. OG – Widerspruch",
+      "cold": 870,
+      "warm": 1080,
+      "mandatory_total": null,
+      "budget_verified": false,
+      "location_verified": false,
+      "route_plausible": true,
+      "route_km": 3.9,
+      "route_exact": false,
+      "route": "Ca. 3,9 km Fahrstrecke vom veröffentlichten Gemeindegebiet Bad Schönborn zur Industriestraße 3; genaue Strecke erst mit Adresse möglich.",
+      "garage_status": "no",
+      "main_road_status": "unknown",
+      "availability": "Ab 01.10.2026.",
+      "listing_date": null,
+      "reason": "79 m², höchstens 1. Obergeschoss und 1.080 € warm passen. Stellplatzkosten, Etagenwiderspruch, Adresse und Katzenlage sind offen.",
+      "location_notes": "Das Exposé nennt keine genaue Adresse und keine belastbare Rand-, Feld-, Wald- oder Wiesenlage.",
+      "outside": "Balkon und Loggia; zwei Außenstellplätze.",
+      "pets": "Haustiere nach Vereinbarung. Das wird nur angezeigt und nicht für die Reihenfolge verwendet.",
+      "tags": [
+        "1.080 € warm",
+        "79 m²",
+        "Etage widersprüchlich"
+      ],
+      "costs": [
+        {
+          "label": "Nebenkosten",
+          "value": "210 €"
+        },
+        {
+          "label": "Warmmiete",
+          "value": "1.080 €"
+        },
+        {
+          "label": "Zwei Außenstellplätze",
+          "value": "100 € laut Preisfeld; Einrechnung klären"
+        }
+      ],
+      "cost_notes": "870 € kalt plus 210 € Nebenkosten ergeben 1.080 € warm. Ob 100 € für die Stellplätze zusätzlich verpflichtend sind, ist offen.",
+      "questions": [
+        "Welche Etage stimmt: Erdgeschoss oder 1. Obergeschoss?",
+        "Sind die 100 € Stellplatzkosten bereits in 1.080 € enthalten?",
+        "Wie lautet die genaue Adresse und wie ist die unmittelbare Lage?"
+      ],
+      "risks": [
+        "Etagenangaben widersprechen sich.",
+        "Verpflichtende Gesamtbelastung mit Stellplätzen ist offen."
+      ],
+      "images": []
+    },
+    {
+      "id": "is24-170235223",
+      "title": "Neubau-Erstbezug ab 10/2026 mit Klima, Einbauküche und Balkon",
+      "place": "Unteröwisheim · 76703 Kraichtal",
+      "address": "Fabrikstraße 27, 76703 Kraichtal",
+      "provider": "Privater Anbieter · ImmoScout24",
+      "url": "https://www.immobilienscout24.de/expose/170235223",
+      "original_active": true,
+      "verified_at": "2026-09-10T09:45:00+02:00",
+      "status": "new",
+      "group": "good",
+      "priority": 91,
+      "area": 60.8,
+      "rooms": 2,
+      "floor": 1,
+      "floor_label": "1. Obergeschoss",
+      "cold": 1050,
+      "warm": 1170,
+      "mandatory_total": 1170,
+      "budget_verified": true,
+      "location_verified": false,
+      "route_plausible": true,
+      "route_km": 15.4,
+      "route_exact": true,
+      "route": "15,4 km Fahrstrecke von der veröffentlichten Adresse zur Industriestraße 3 laut heutiger OpenStreetMap/OSRM-Routenprüfung.",
+      "garage_status": "no",
+      "main_road_status": "no",
+      "availability": "Ab Oktober 2026.",
+      "listing_date": null,
+      "reason": "Genaue Adresse, 60,8 m², 1.170 € warm und 15,4 km Fahrstrecke passen. Das 1. Obergeschoss und die konkrete Katzenlage sind offen.",
+      "location_notes": "Das Exposé nennt ein ruhigeres Wohnumfeld, aber keinen belastbaren Feld-, Wald-, Wiesen- oder Ortsrandnachweis. Die Nähe zur Stadtbahn muss vor Ort auf Verkehr und Ausgangssituation geprüft werden.",
+      "outside": "Balkon; eigener Außenstellplatz.",
+      "pets": "Nicht angegeben.",
+      "tags": [
+        "Neubau",
+        "1.170 € warm",
+        "1. Obergeschoss"
+      ],
+      "costs": [
+        {
+          "label": "Wohnung inklusive Einbauküche",
+          "value": "990 €"
+        },
+        {
+          "label": "Pflichtstellplatz",
+          "value": "60 €"
+        },
+        {
+          "label": "Nebenkosten",
+          "value": "120 €"
+        },
+        {
+          "label": "Warmmiete",
+          "value": "1.170 €"
+        }
+      ],
+      "cost_notes": "990 € Wohnung inklusive Küche plus 60 € Stellplatz und 120 € Nebenkosten ergeben 1.170 € warm.",
+      "questions": [
+        "Ist ein praktikabler Katzenausgang aus dem 1. Obergeschoss möglich?",
+        "Wie stark sind Bahn- und Straßenverkehr unmittelbar am Gebäude?",
+        "Sind Katzen erlaubt?"
+      ],
+      "risks": [
+        "1. Obergeschoss.",
+        "Konkrete Katzenlage nicht bestätigt."
+      ],
+      "images": []
+    },
+    {
+      "id": "is24-128614201",
+      "title": "45 m² Maisonette an Untere Wiesen 5",
+      "place": "Langenbrücken · 76669 Bad Schönborn",
+      "address": "Untere Wiesen 5, 76669 Bad Schönborn",
+      "provider": "Franz Morsch Dienstleistungen · ImmoScout24",
+      "url": "https://www.immobilienscout24.de/expose/128614201",
+      "original_active": true,
+      "verified_at": "2026-09-10T09:45:00+02:00",
+      "status": "new",
+      "group": "good",
+      "priority": 89,
+      "area": 45,
+      "rooms": 2.5,
+      "floor": 1,
+      "floor_label": "1. Obergeschoss / Maisonette",
+      "cold": 700,
+      "warm": 950,
+      "mandatory_total": 950,
+      "budget_verified": true,
+      "location_verified": true,
+      "route_plausible": true,
+      "route_km": 5.2,
+      "route_exact": true,
+      "route": "5,2 km Fahrstrecke von der veröffentlichten Adresse zur Industriestraße 3 laut heutiger OpenStreetMap/OSRM-Routenprüfung.",
+      "garage_status": "no",
+      "main_road_status": "no",
+      "availability": "Ab 14.08.2026; aktuelle Verfügbarkeit bestätigen.",
+      "listing_date": null,
+      "reason": "950 € warm, genaue Adresse und kurze Fahrstrecke passen. Wegen des 1. Obergeschosses muss der Katzenausgang geprüft werden.",
+      "location_notes": "Untere Wiesen liegt am Rand eines Gewerbe-/Industriegebiets mit angrenzenden offenen Flächen. Möglicher Liefer- und Lkw-Verkehr bleibt vor Ort zu prüfen.",
+      "outside": "Stellplatz; kein Balkon oder Garten ausgewiesen.",
+      "pets": "Haustiere laut Exposé erlaubt. Das wird nur angezeigt und nicht für die Reihenfolge verwendet.",
+      "tags": [
+        "950 € warm",
+        "1. Obergeschoss",
+        "5,2 km"
+      ],
+      "costs": [
+        {
+          "label": "Nebenkosten",
+          "value": "250 €"
+        },
+        {
+          "label": "Warmmiete",
+          "value": "950 €"
+        },
+        {
+          "label": "Stellplatz",
+          "value": "Vorhanden; kein Zusatzpreis genannt"
+        }
+      ],
+      "cost_notes": "700 € kalt plus 250 € Nebenkosten ergeben 950 € warm.",
+      "questions": [
+        "Ist dies eine andere Einheit als die Kleinanzeigen-Bungalowwohnung an derselben Adresse?",
+        "Ist ein praktikabler Katzenausgang aus dem 1. Obergeschoss möglich?",
+        "Wie häufig gibt es Liefer- oder Lkw-Verkehr?"
+      ],
+      "risks": [
+        "Möglicher Mehrfach- oder Paralleleintrag an derselben Adresse mit abweichenden Eckdaten.",
+        "1. Obergeschoss ohne ausgewiesenen Außenbereich."
       ],
       "images": []
     }
@@ -178,87 +987,108 @@
     "status": "complete",
     "actions": [
       {
-        "id": "discovery-20260908",
+        "id": "discovery-20260910",
         "kind": "discovery",
-        "source": "Websuche",
-        "url": "https://www.google.com/search?q=Wohnung+mieten+Oestringen+Muehlhausen+Bad+Schoenborn",
-        "query": "Wohnung mieten Östringen Mühlhausen Bad Schönborn Erdgeschoss ruhig; Östringen Wohnung 1 Zimmer Garage mieten; Wohnung mieten Angelbachtal Malsch Kronau Garage Erdgeschoss",
-        "checked_at": "2026-09-08T18:39:00+02:00",
+        "source": "Aktuelle Webentdeckung",
+        "url": "https://www.google.com/search?q=wohnung+mieten+oestringen+bad+schoenborn+kraichtal+muehlhausen",
+        "query": "Aktuelle Mietwohnungen und geeignete Portale rund um Östringen, Bad Schönborn, Kraichtal und Mühlhausen",
+        "checked_at": "2026-09-10T09:05:00+02:00",
         "outcome": "ok",
-        "result": "Aktuelle Portale, regionale Treffer und mehrere konkrete Anzeigen gefunden; ungeeignete ältere Aggregatortreffer getrennt erkannt.",
-        "evidence_ref": "turn1 search results"
+        "result": "Aktuelle Suchseiten und konkrete Kandidaten auf Kleinanzeigen, ImmoScout24 und Immowelt entdeckt.",
+        "evidence_ref": "Websuche 10.09.2026"
       },
       {
-        "id": "source-immoscout-20260908",
-        "kind": "source_search",
-        "source": "ImmoScout24",
-        "url": "https://www.immobilienscout24.de/Suche/de/baden-wuerttemberg/karlsruhe-kreis/oestringen/wohnung-mit-garage-mieten",
-        "query": "Wohnungen mit Garage zur Miete in Östringen samt angrenzenden Ergebnissen",
-        "checked_at": "2026-09-08T18:39:30+02:00",
-        "outcome": "ok",
-        "result": "Sieben lokale Ergebnisse und angrenzende Treffer geprüft; sichtbare neue Kandidaten wegen Preis, Etage oder fehlender bestätigter Garage nicht übernommen.",
-        "evidence_ref": "turn1search3"
-      },
-      {
-        "id": "source-kleinanzeigen-20260908",
+        "id": "source-kleinanzeigen-20260910",
         "kind": "source_search",
         "source": "Kleinanzeigen",
-        "url": "https://www.kleinanzeigen.de/s-wohnung-mieten/bad-schoenborn/erdgeschosswohnung-mieten/k0c203l15113",
-        "query": "Erdgeschosswohnungen zur Miete in Bad Schönborn und Umgebung",
-        "checked_at": "2026-09-08T18:39:45+02:00",
+        "url": "https://www.kleinanzeigen.de/s-wohnung-mieten/oestringen/c203l11755",
+        "query": "Mietwohnungen Östringen, Bad Schönborn und Kraichtal; mindestens 45 m²; Preise, Etagen und Aktivität geprüft",
+        "checked_at": "2026-09-10T09:15:00+02:00",
         "outcome": "ok",
-        "result": "Aktuelle Ergebnisliste geprüft; kompakte Treffer ohne bestätigte echte Garage und weitere unvollständige Angebote nicht als passend veröffentlicht.",
-        "evidence_ref": "turn1search6"
+        "result": "Aktuelle Ergebnislisten neu geprüft. Geeignete aktive Originalanzeigen übernommen; einige Originalseiten waren technisch nicht abschließend abrufbar und wurden nicht ausgegeben.",
+        "evidence_ref": "Kleinanzeigen Such- und Originalseiten 10.09.2026"
       },
       {
-        "id": "recheck-garant-20260908",
-        "kind": "recheck",
-        "source": "GARANT Immobilien",
-        "url": "https://www.garant-immo.de/immobilien/detail/sinsheim-etagenwohnung-mieten-77001593",
-        "query": "Originalanzeige 753.192 erneut auf Aktivität, Etage und Kosten geprüft",
-        "checked_at": "2026-09-08T18:40:30+02:00",
+        "id": "source-immoscout-20260910",
+        "kind": "source_search",
+        "source": "ImmoScout24",
+        "url": "https://www.immobilienscout24.de/Suche/de/baden-wuerttemberg/karlsruhe-kreis/oestringen/wohnung-mieten",
+        "query": "Aktuelle Mietwohnungen Östringen, Bad Schönborn, Kraichtal und Mühlhausen",
+        "checked_at": "2026-09-10T09:25:00+02:00",
         "outcome": "ok",
-        "result": "Anzeige aktiv; Kostenwiderspruch und fehlende genaue Adresse bleiben offen.",
-        "evidence_ref": "turn2view0"
+        "result": "Vier regionale Ergebnislisten und aussichtsreiche Originalexposés geprüft; passende aktive Angebote übernommen, Etagen ab dem 2. Obergeschoss und Preise über der Grenze verworfen.",
+        "evidence_ref": "ImmoScout24 Such- und Exposéseiten 10.09.2026"
       },
       {
-        "id": "recheck-immowelt-20260908",
-        "kind": "recheck",
+        "id": "source-immowelt-20260910",
+        "kind": "source_search",
         "source": "Immowelt",
-        "url": "https://www.immowelt.de/expose/a91bcab9-72d4-42e4-8ee3-34518455452b",
-        "query": "Originalanzeige a91bcab9 erneut auf Aktivität, Etage und Kosten geprüft",
-        "checked_at": "2026-09-08T18:40:45+02:00",
+        "url": "https://www.immowelt.de/suche/mieten/wohnung/baden-wurttemberg/kraichtal-76703/ad08de5594",
+        "query": "Aktuelle Mietwohnungen Kraichtal, Bad Schönborn und Mühlhausen",
+        "checked_at": "2026-09-10T09:32:00+02:00",
         "outcome": "ok",
-        "result": "Anzeige aktiv; genaue Adresse, unmittelbare Katzenlage und Stellplatzkosten bleiben offen.",
-        "evidence_ref": "turn2view1"
+        "result": "Regionale Ergebnislisten und Originalexposés geprüft; bekannte Treffer bestätigt, Gochsheim wegen mehr als 18 km verworfen.",
+        "evidence_ref": "Immowelt Such- und Originalseiten 10.09.2026"
+      },
+      {
+        "id": "followup-routes-20260910",
+        "kind": "follow_up",
+        "source": "OpenStreetMap und OSRM",
+        "url": "https://router.project-osrm.org/",
+        "query": "Fahrstrecken aller aussichtsreichen Adressen oder veröffentlichten Ortsmarker zur Industriestraße 3, 76684 Östringen",
+        "checked_at": "2026-09-10T09:40:00+02:00",
+        "outcome": "ok",
+        "result": "Fahrstrecken neu berechnet. Alle veröffentlichten Treffer liegen bei höchstens 15,7 km; Gochsheim und Vorstadtstraße 58 wurden mit 19,7 bis 20,0 km ausgeschlossen.",
+        "evidence_ref": "Nominatim-Geocodierung und OSRM-Routing 10.09.2026"
+      },
+      {
+        "id": "recheck-originals-20260910",
+        "kind": "recheck",
+        "source": "Originalanzeigen",
+        "url": "https://www.immobilienscout24.de/",
+        "query": "Abschließende Aktivitätsprüfung aller ausgewählten Originalanzeigen",
+        "checked_at": "2026-09-10T09:45:00+02:00",
+        "outcome": "blocked",
+        "result": "Alle 14 ausgegebenen Anzeigen waren während des Laufs auf ihren Originalseiten aktiv. Beim gebündelten Abschlussabruf lieferten einige Portale technische Cache-/Sicherheitsfehler; diese Angebote waren kurz zuvor direkt geöffnet und aktiv geprüft worden.",
+        "problem": "Der gebündelte Abschlussabruf mehrerer zuvor aktiver Originalseiten wurde teilweise durch Cache- oder URL-Sicherheitsfehler des Recherchewerkzeugs blockiert.",
+        "resolution": "Nur Anzeigen wurden ausgegeben, deren direkte Originalseite im selben Lauf zuvor vollständig aktiv geöffnet worden war; reine Suchtreffer blieben ausgeschlossen.",
+        "evidence_ref": "Web-Originalprüfung 10.09.2026"
       }
     ],
     "source_decisions": [
       {
-        "source": "ImmoScout24",
-        "url": "https://www.immobilienscout24.de/Suche/de/baden-wuerttemberg/karlsruhe-kreis/oestringen/wohnung-mit-garage-mieten",
-        "decision": "search",
-        "reason": "Aktuelle lokale Ergebnisliste mit Garage- und Umgebungsbezug verfügbar."
-      },
-      {
         "source": "Kleinanzeigen",
-        "url": "https://www.kleinanzeigen.de/s-wohnung-mieten/bad-schoenborn/erdgeschosswohnung-mieten/k0c203l15113",
+        "url": "https://www.kleinanzeigen.de/s-wohnung-mieten/oestringen/c203l11755",
         "decision": "search",
-        "reason": "Aktuelle private und regionale Erdgeschossangebote im nahen Suchgebiet sichtbar."
+        "reason": "Viele private Angebote in den relevanten Orten und Ortsteilen."
       },
       {
-        "source": "Athaus",
-        "url": "https://www.athaus.ai/properties/161afadc-06b0-4ddf-b28e-abcfb45c5a98",
+        "source": "ImmoScout24",
+        "url": "https://www.immobilienscout24.de/Suche/de/baden-wuerttemberg/karlsruhe-kreis/oestringen/wohnung-mieten",
+        "decision": "search",
+        "reason": "Strukturierte Angaben zu Etage, Kosten und teilweise genauer Adresse."
+      },
+      {
+        "source": "Immowelt",
+        "url": "https://www.immowelt.de/suche/mieten/wohnung/baden-wurttemberg/kraichtal-76703/ad08de5594",
+        "decision": "search",
+        "reason": "Ergänzende regionale Maklerangebote und detaillierte Kostenaufschlüsselungen."
+      },
+      {
+        "source": "Aggregatoren",
+        "url": "https://www.immosuchmaschine.de/",
         "decision": "skip",
-        "reason": "Der gefundene aktuelle Kandidat liegt im Dachgeschoss, nennt keine Warmmiete und schließt Haustiere aus."
+        "reason": "Nur zur Entdeckung und zum Quervergleich verwendet; nie als Bestätigung einer Wohnung."
       }
     ],
     "review": {
-      "findings": "Die neue Suche brachte mehrere Anzeigen, aber keinen neuen vollständig passenden Treffer. Häufigste Ausschlussgründe waren höhere Etage, Überschreitung der Warmmietgrenze oder keine bestätigte echte Garage bei kompakten Wohnungen.",
+      "findings": "Die Suche liefert mit den gelockerten Kriterien deutlich mehr echte Chancen. Der wichtigste Qualitätshebel bleibt die Trennung von bekannter Adresse und bestätigter Katzenlage. Die heutige Routenberechnung verhindert außerdem, dass Gochsheim trotz regionaler Nähe fälschlich innerhalb der 18-km-Grenze erscheint.",
       "open_gaps": [],
-      "follow_up_action_ids": [],
-      "stop_reason": "Die ausgewählten aktuellen Ergebnislisten, ergänzende Webentdeckung und die beiden bekannten Originalanzeigen wurden für diesen Tageslauf geprüft.",
-      "criteria_proposal": "Keine Änderung vorgeschlagen"
+      "follow_up_action_ids": [
+        "followup-routes-20260910"
+      ],
+      "stop_reason": "Drei Hauptportale wurden neu durchsucht, 53 relevante Einträge beurteilt, 39 verworfen, Fahrstrecken neu berechnet und 14 aktive Originalanzeigen geprüft.",
+      "criteria_proposal": "Kriterien unverändert lassen. Die größere Trefferzahl zeigt, dass 45 m², unbekannte Etage als gelb und 18 km Fahrstrecke genügend Chancen liefern, ohne die festen Preis-, Etagen- oder Hauptstraßenregeln zu lockern."
     }
   }
 }
