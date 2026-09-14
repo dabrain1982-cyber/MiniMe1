@@ -2,41 +2,41 @@
   "schema_version": 2,
   "criteria_version": 2,
   "mode": "daily",
-  "checked_at": "2026-09-12T13:11:02+02:00",
+  "checked_at": "2026-09-14T09:34:19+02:00",
   "scope": "Mietwohnungen ab 45 m² rund um Syensqo, Industriestraße 3, 76684 Östringen, bis 18 km tatsächliche Fahrstrecke.",
-  "strategy": "Aktuelle Portalseiten neu durchsucht, Ergebnisse mit dem Vortag und den Nutzerentscheidungen abgeglichen, neue Kandidaten auf ihren Originalseiten geprüft und nur belegte Angebote bis zur festen Preis-, Etagen-, Hauptstraßen- und Entfernungsgrenze übernommen. Haustierangaben wurden nur angezeigt.",
+  "strategy": "Aktuelle Ergebnislisten und Webentdeckung für Östringen, Bad Schönborn, Kraichtal, Mühlhausen und angrenzende plausible Orte wurden neu geprüft. Kandidaten wurden mit dem Vortag und den Nutzerentscheidungen abgeglichen; anschließend wurden nur heute unmittelbar bestätigte Originalangebote übernommen. Preis-, Etagen-, Hauptstraßen- und Entfernungsgrenzen blieben unverändert.",
   "source_checks": [
     {
       "name": "ImmoScout24",
       "url": "https://www.immobilienscout24.de/Suche/de/baden-wuerttemberg/karlsruhe-kreis/oestringen/wohnung-mieten",
-      "result": "Aktuelle Ergebnislisten für Östringen, Bad Schönborn, Kraichtal und Mühlhausen sowie relevante Originalexposés geprüft."
+      "result": "Aktuelle Östringer Ergebnisliste mit 22 Einträgen und relevante Originalexposés geprüft; neue Karten wegen 2./3. OG oder Preis ausgeschlossen."
     },
     {
       "name": "Kleinanzeigen",
-      "url": "https://www.kleinanzeigen.de/s-wohnung-mieten/oestringen/anzeige:angebote/c203l8799",
-      "result": "Aktuelle regionale Angebotslisten und konkrete Originalanzeigen geprüft; gelöschte Anzeigen ausgeschlossen."
+      "url": "https://www.kleinanzeigen.de/s-wohnung-mieten/bad-schoenborn/c203l15113",
+      "result": "Aktuelle Bad-Schönborner Liste mit 10 Angeboten sowie Kraichtaler Entdeckung geprüft; bekannte Bungalow- und Gartenwohnung bestätigt, kein neuer verifizierbarer Treffer."
     },
     {
       "name": "Immowelt",
       "url": "https://www.immowelt.de/suche/mieten/wohnung/baden-wurttemberg/kraichtal-76703/ad08de5594",
-      "result": "Aktuelle regionale Angebotsliste geprüft; ein günstiger Kandidat in Gochsheim wegen 22 km Fahrstrecke ausgeschlossen."
+      "result": "Aktuelle regionale Ergebnislisten und bekannte Originalexposés geprüft; keine neue zulässige Wohnung bestätigt."
     },
     {
       "name": "Ohne-Makler.net",
       "url": "https://www.ohne-makler.net/immobilien/wohnung-mieten/baden-wuerttemberg/oestringen/",
-      "result": "Als zusätzliche seriöse Quelle geprüft; aktuell keine passenden aktiven Angebote. Suchmaschinentreffer zu alten Waldrandwohnungen erwiesen sich als veraltet."
+      "result": "Direkte Quellenseite technisch nicht auswertbar; das entdeckte Waldrand-Angebot OM-436758 war nur über Monate alte Such-/Spiegeldaten belegt und wurde mangels aktuell prüfbaren Originals ausgeschlossen."
     }
   ],
   "updates": [
-    "Zwei neue, aktive Originalanzeigen aufgenommen.",
-    "Zwei gestern bekannte Wohnungen ohne heutige abschließende Originalbestätigung nicht weitergeführt.",
-    "Gelöschte, über 18 km entfernte, über dem 1. Obergeschoss liegende und offensichtlich veraltete Angebote ausgeschlossen.",
+    "Keine neue geeignete Wohnung bestätigt.",
+    "Die Souterrainwohnung in der Rozenburgstraße wurde vor zwei Tagen deaktiviert und aus dem Bericht entfernt.",
+    "Sieben bekannte Wohnungen heute erneut bestätigt und als bekannt geführt.",
     "Keine Suchkriterien geändert."
   ],
   "search_stats": {
     "portals_with_entries": 3,
-    "listings_examined": 106,
-    "listings_discarded": 97
+    "listings_examined": 55,
+    "listings_discarded": 48
   },
   "listings": [
     {
@@ -93,163 +93,14 @@
       "address": "Vogelgartenweg 1, 76669 Bad Schönborn",
       "provider": "Privater Anbieter · ImmoScout24",
       "original_active": true,
-      "verified_at": "2026-09-12T13:11:02+02:00",
-      "status": "new",
+      "verified_at": "2026-09-14T09:34:19+02:00",
+      "status": "known",
       "location_verified": false,
       "route_plausible": true,
       "route_km": 4.4,
       "route_exact": true,
       "listing_date": null,
       "pets": "Haustiere nicht erlaubt.",
-      "image_status": "none_at_source",
-      "images": []
-    },
-    {
-      "id": "ka-3506095393",
-      "title": "2 Zimmer Neubau Wohnung zu vermieten",
-      "place": "76703 Kraichtal",
-      "url": "https://www.kleinanzeigen.de/s-anzeige/2-zimmer-neubau-wohnung-zu-vermieten/3506095393-203-8797",
-      "group": "good",
-      "priority": 89,
-      "area": 66,
-      "rooms": 2,
-      "floor": 1,
-      "floor_label": "1. Obergeschoss",
-      "cold": 960,
-      "warm": null,
-      "mandatory_total": 1120,
-      "budget_verified": false,
-      "route": "13,4 km tatsächliche Fahrstrecke von der veröffentlichten Adresse zur Industriestraße 3 in Östringen; die Kartenroute normalisierte Hausnummer 3a auf 3.",
-      "garage_status": "unknown",
-      "main_road_status": "no",
-      "availability": "Ab sofort beziehungsweise September 2026.",
-      "reason": "66 m² Neubau und 13,4 km Fahrstrecke passen. Die vollständige Warmmiete, eine normale Garage und der Katzenausgang aus dem 1. Obergeschoss bleiben offen.",
-      "location_notes": "Die genaue Adresse ist veröffentlicht. Eine abgelegene Feld-, Wald- oder Wiesenrandlage wird nicht beschrieben.",
-      "outside": "Terrassenwohnung laut Anzeige; daraus wird kein Garten abgeleitet.",
-      "tags": [
-        "66 m²",
-        "Neubau",
-        "13,4 km"
-      ],
-      "costs": [
-        {
-          "label": "Angegebene Miete",
-          "value": "960 €"
-        },
-        {
-          "label": "Nebenkosten",
-          "value": "160 €"
-        },
-        {
-          "label": "Tiefgaragenstellplatz",
-          "value": "Optional 60 € monatlich"
-        },
-        {
-          "label": "Kaution",
-          "value": "2.580 €"
-        }
-      ],
-      "cost_notes": "960 € angegebene Miete plus 160 € Nebenkosten ergeben mindestens 1.120 €. Ob Heizkosten enthalten sind und wie hoch die vollständige Warmmiete ist, steht nicht eindeutig fest. Der Tiefgaragenstellplatz ist laut Text optional.",
-      "questions": [
-        "Sind 960 € die Kaltmiete und welche vollständige Warmmiete einschließlich Heizung fällt an?",
-        "Ist ein praktikabler Katzenausgang aus dem 1. Obergeschoss möglich?",
-        "Gibt es zusätzlich zum optionalen Tiefgaragenplatz eine normale Garage?"
-      ],
-      "risks": [
-        "Die vollständige Warmmiete ist noch nicht ausgewiesen.",
-        "Nur ein optionaler Tiefgaragenstellplatz ist erwähnt; eine normale Garage ist ungeklärt."
-      ],
-      "address": "Josef-Heid-Straße 3a, 76703 Kraichtal",
-      "provider": "Privater Anbieter · Kleinanzeigen",
-      "original_active": true,
-      "verified_at": "2026-09-12T13:11:02+02:00",
-      "status": "new",
-      "location_verified": false,
-      "route_plausible": true,
-      "route_km": 13.4,
-      "route_exact": true,
-      "listing_date": "2026-09-07",
-      "pets": "Nicht angegeben.",
-      "image_status": "available",
-      "images": [
-        {
-          "url": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/33/33d646c9-39b9-48d1-90c1-e4fb52fc3451?rule=$_59.AUTO",
-          "source": "https://www.kleinanzeigen.de/s-anzeige/2-zimmer-neubau-wohnung-zu-vermieten/3506095393-203-8797",
-          "caption": "Originalbild der Neubauwohnung"
-        },
-        {
-          "url": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/4f/4f904e31-894e-4428-8550-598a3e386dc6?rule=$_59.AUTO",
-          "source": "https://www.kleinanzeigen.de/s-anzeige/2-zimmer-neubau-wohnung-zu-vermieten/3506095393-203-8797",
-          "caption": "Weiteres Originalbild der Neubauwohnung"
-        }
-      ]
-    },
-    {
-      "id": "is24-169984062",
-      "title": "Helle 2-Zimmer-Souterrainwohnung im Neubau mit eigenem Eingang & Stellplatz",
-      "place": "76684 Östringen",
-      "url": "https://www.immobilienscout24.de/expose/169984062",
-      "group": "good",
-      "priority": 88,
-      "area": 54,
-      "rooms": 2,
-      "floor": 0,
-      "floor_label": "Souterrain",
-      "cold": 750,
-      "warm": 900,
-      "mandatory_total": 900,
-      "budget_verified": true,
-      "route": "Ca. 3,9 km Fahrstrecke vom veröffentlichten Östringer Orts-/Straßenbereich zur Industriestraße 3; die genaue Strecke ist ohne Hausnummer offen.",
-      "garage_status": "no",
-      "main_road_status": "no",
-      "availability": "Ab November 2026.",
-      "reason": "900 € warm, Souterrain, eigener Eingang und ein kurzer Arbeitsweg sind stark. Die Rozenburgstraße ist als Wohn-/Anliegerstraße eingeordnet; eine abgelegene Feld-, Wald- oder Wiesenrandlage ist damit aber nicht belegt.",
-      "location_notes": "Die Anzeige nennt die Rozenburgstraße, veröffentlicht jedoch keine Hausnummer. Die Straße ist als Wohn-/Anliegerstraße auffindbar. Die konkrete Mikro- und Katzenlage muss vor Ort geprüft werden.",
-      "outside": "Eigener Stellplatz; Terrasse, Balkon oder Garten werden nicht genannt.",
-      "tags": [
-        "900 € warm",
-        "Souterrain",
-        "Eigener Eingang"
-      ],
-      "costs": [
-        {
-          "label": "Nebenkosten",
-          "value": "150 €"
-        },
-        {
-          "label": "Heizkosten",
-          "value": "In den Nebenkosten enthalten"
-        },
-        {
-          "label": "Stellplatz",
-          "value": "Inklusive"
-        },
-        {
-          "label": "Kaution",
-          "value": "2.250 €"
-        }
-      ],
-      "cost_notes": "750 € kalt plus 150 € Nebenkosten ergeben die ausgewiesenen 900 € Warmmiete. Der Stellplatz ist inklusive.",
-      "questions": [
-        "Wie lautet die genaue Hausnummer und wie ist die unmittelbare Verkehrssituation?",
-        "Ist ein praktischer Katzenausgang über den eigenen Eingang möglich?",
-        "Sind Katzen erlaubt?"
-      ],
-      "risks": [
-        "Keine normale geschlossene Garage; nur ein Stellplatz ist genannt.",
-        "Die zentrale Lagebeschreibung belegt keine abgelegene Katzenlage."
-      ],
-      "address": null,
-      "provider": "Privater Anbieter · ImmoScout24",
-      "original_active": true,
-      "verified_at": "2026-09-12T13:11:02+02:00",
-      "status": "known",
-      "location_verified": false,
-      "route_plausible": true,
-      "route_km": 3.9,
-      "route_exact": false,
-      "listing_date": null,
-      "pets": "Nicht angegeben.",
       "image_status": "none_at_source",
       "images": []
     },
@@ -261,7 +112,7 @@
       "provider": "Privater Anbieter · Kleinanzeigen",
       "url": "https://www.kleinanzeigen.de/s-anzeige/wohnung-45-qm-1-2-zi-76669-bad-schoenborn-langenbrueckenab-1-nov-26/3506073580-203-8791",
       "original_active": true,
-      "verified_at": "2026-09-12T13:11:02+02:00",
+      "verified_at": "2026-09-14T09:34:19+02:00",
       "status": "known",
       "group": "best",
       "priority": 94,
@@ -341,7 +192,7 @@
       "provider": "Privater Anbieter · Kleinanzeigen",
       "url": "https://www.kleinanzeigen.de/s-anzeige/3-zimmer-wohnung-mit-garten-einbaukueche/3504042238-203-8797",
       "original_active": true,
-      "verified_at": "2026-09-12T13:11:02+02:00",
+      "verified_at": "2026-09-14T09:34:19+02:00",
       "status": "known",
       "group": "good",
       "priority": 86,
@@ -416,7 +267,7 @@
       "provider": "CARA Immobilien · Immowelt",
       "url": "https://www.immowelt.de/expose/44c383c5-4dad-41c5-82e4-befbd0bd1e8c",
       "original_active": true,
-      "verified_at": "2026-09-12T13:11:02+02:00",
+      "verified_at": "2026-09-14T09:34:19+02:00",
       "status": "known",
       "group": "good",
       "priority": 84,
@@ -485,7 +336,7 @@
       "provider": "Felix Hartmann Immobilien · Immowelt",
       "url": "https://www.immowelt.de/expose/a91bcab9-72d4-42e4-8ee3-34518455452b",
       "original_active": true,
-      "verified_at": "2026-09-12T13:11:02+02:00",
+      "verified_at": "2026-09-14T09:34:19+02:00",
       "status": "known",
       "group": "clarify",
       "priority": 72,
@@ -554,7 +405,7 @@
       "provider": "Privater Anbieter · ImmoScout24",
       "url": "https://www.immobilienscout24.de/expose/170438448",
       "original_active": true,
-      "verified_at": "2026-09-12T13:11:02+02:00",
+      "verified_at": "2026-09-14T09:34:19+02:00",
       "status": "known",
       "group": "good",
       "priority": 83,
@@ -620,7 +471,7 @@
       "provider": "Privater Anbieter · ImmoScout24",
       "url": "https://www.immobilienscout24.de/expose/170293038",
       "original_active": true,
-      "verified_at": "2026-09-12T13:11:02+02:00",
+      "verified_at": "2026-09-14T09:34:19+02:00",
       "status": "known",
       "group": "good",
       "priority": 85,
@@ -687,70 +538,72 @@
     "status": "complete",
     "actions": [
       {
-        "id": "discovery-20260912",
+        "id": "discovery-20260914",
         "kind": "discovery",
         "source": "Aktuelle Webentdeckung",
         "url": "https://www.google.com/search?q=Wohnung+mieten+Oestringen+Bad+Schoenborn+Kraichtal+September+2026",
-        "query": "Wohnung mieten Östringen, Bad Schönborn, Kraichtal und Mühlhausen; aktuelle Portale und regionale Anbieter",
-        "checked_at": "2026-09-12T13:11:02+02:00",
+        "query": "Wohnung mieten Östringen, Bad Schönborn, Kraichtal und Mühlhausen ab 45 m²; aktuelle Portale und regionale Anbieter",
+        "checked_at": "2026-09-14T09:34:19+02:00",
         "outcome": "ok",
-        "result": "Aktuelle Portalangebote und eine zusätzliche regionale Direktquelle gefunden; alte Suchmaschinenfunde nur zur Entdeckung verwendet.",
-        "evidence_ref": "turn253search0 bis turn268view1"
+        "result": "Aktuelle Portalangebote und ein älteres Waldrand-Angebot entdeckt; Suchauszüge nur zur Entdeckung verwendet.",
+        "evidence_ref": "turn0search0 bis turn4search12"
       },
       {
-        "id": "source-immoscout-20260912",
+        "id": "source-immoscout-20260914",
         "kind": "source_search",
         "source": "ImmoScout24",
         "url": "https://www.immobilienscout24.de/Suche/de/baden-wuerttemberg/karlsruhe-kreis/oestringen/wohnung-mieten",
-        "query": "Aktuelle Mietwohnungslisten Östringen, Bad Schönborn, Kraichtal und Mühlhausen; ab 45 m², Kandidaten einzeln geprüft",
-        "checked_at": "2026-09-12T13:11:02+02:00",
+        "query": "Aktuelle Mietwohnungen Östringen und verlinkte Nachbarorte; mindestens 45 m², ohne Zimmerfilter",
+        "checked_at": "2026-09-14T09:34:19+02:00",
         "outcome": "ok",
-        "result": "Aktuelle Ergebnislisten mit zusammen 84 sichtbaren Einträgen einschließlich Überschneidungen geprüft. Ein neuer zulässiger Treffer in Bad Schönborn bestätigt; mehrere Treffer wegen 2./3./4. Obergeschoss, Hauptstraße, Preis, Entfernung oder vergangener Verfügbarkeit ausgeschlossen.",
-        "evidence_ref": "turn253search0, turn260search5, turn269view0, turn270view0, turn271view0 bis turn271view1"
+        "result": "22 sichtbare Östringer Einträge geprüft. Neue Angebote im 2./3. Obergeschoss oder über 1.250 € Pflichtgesamtmiete ausgeschlossen.",
+        "evidence_ref": "turn1view0, turn2view0 bis turn4view0"
       },
       {
-        "id": "source-kleinanzeigen-20260912",
+        "id": "source-kleinanzeigen-20260914",
         "kind": "source_search",
         "source": "Kleinanzeigen",
-        "url": "https://www.kleinanzeigen.de/s-wohnung-mieten/oestringen/anzeige:angebote/c203l8799",
-        "query": "Aktuelle Angebote in Östringen und Kraichtal ab 45 m²; neue Anzeigen und Originalstatus geprüft",
-        "checked_at": "2026-09-12T13:11:02+02:00",
+        "url": "https://www.kleinanzeigen.de/s-wohnung-mieten/bad-schoenborn/c203l15113",
+        "query": "Aktuelle Mietwohnungsangebote Bad Schönborn und Kraichtal ab 45 m², Angebote statt Gesuche",
+        "checked_at": "2026-09-14T09:34:19+02:00",
         "outcome": "ok",
-        "result": "36 sichtbare regionale Einträge einschließlich Überschneidungen und Gesuchen gesichtet. Die Neubauwohnung in der Josef-Heid-Straße als neuen Treffer bestätigt; mehrere alte Kandidaten auf der Originalseite als gelöscht erkannt.",
-        "evidence_ref": "Live-Originalprüfung im Codex-Browser am 12.09.2026"
+        "result": "10 Bad-Schönborner Angebote direkt gesichtet und 22 Kraichtaler Suchergebnisse in der aktuellen Entdeckung geprüft. Bekannte Bungalow- und Gartenwohnung bestätigt; kein neuer zulässiger Originaltreffer.",
+        "evidence_ref": "turn1view1, turn0search1, turn5view3, turn6view0"
       },
       {
-        "id": "source-immowelt-20260912",
+        "id": "source-immowelt-20260914",
         "kind": "source_search",
         "source": "Immowelt",
         "url": "https://www.immowelt.de/suche/mieten/wohnung/baden-wurttemberg/kraichtal-76703/ad08de5594",
-        "query": "Aktuelle Wohnungen in Kraichtal und angrenzenden Orten ab 45 m²",
-        "checked_at": "2026-09-12T13:11:02+02:00",
+        "query": "Aktuelle Mietwohnungen Kraichtal, Bad Schönborn und angrenzende Orte ab 45 m²",
+        "checked_at": "2026-09-14T09:34:19+02:00",
         "outcome": "ok",
-        "result": "Zwei aktuelle regionale Einträge geprüft. Der neue Kandidat in Gochsheim lag mit 22 km tatsächlicher Fahrstrecke über der Grenze; bekannte aktive Exposés bestätigt.",
-        "evidence_ref": "turn254view4 bis turn254view5 und Kartenprüfung am 12.09.2026"
+        "result": "Regionale Ergebnislisten und bekannte Originalexposés geprüft; keine neue zulässige Wohnung bestätigt.",
+        "evidence_ref": "turn1view3, turn4search0 bis turn4search7, turn5view4 bis turn6view4"
       },
       {
-        "id": "source-ohne-makler-20260912",
+        "id": "source-ohne-makler-20260914",
         "kind": "source_search",
         "source": "Ohne-Makler.net",
         "url": "https://www.ohne-makler.net/immobilien/wohnung-mieten/baden-wuerttemberg/oestringen/",
-        "query": "Aktuelle provisionsfreie Mietwohnungen im Raum Östringen",
-        "checked_at": "2026-09-12T13:11:02+02:00",
-        "outcome": "ok",
-        "result": "Die aktuelle Quellenseite meldete keine passenden aktiven Angebote. Ältere Suchmaschinentreffer wurden deshalb nicht als aktuelle Wohnungen übernommen.",
-        "evidence_ref": "turn264view0"
+        "query": "Aktuelle provisionsfreie Mietwohnungen im Raum Östringen ab 45 m²",
+        "checked_at": "2026-09-14T09:34:19+02:00",
+        "outcome": "blocked",
+        "result": "Direkte Quellenseite lieferte keinen auswertbaren Inhalt.",
+        "evidence_ref": "turn1view4, turn4view3",
+        "problem": "Quellenseite technisch nicht auswertbar.",
+        "resolution": "Gezielte Webentdeckung fand OM-436758, doch nur Monate alte Such-/Spiegeldaten; mangels aktueller Originalbestätigung ausgeschlossen."
       },
       {
-        "id": "recheck-originals-20260912",
+        "id": "recheck-originals-20260914",
         "kind": "recheck",
-        "source": "Direkte Originalanzeigen",
+        "source": "Direkte Originalanzeigen und aktuelle Portalangebote",
         "url": "https://www.immobilienscout24.de/expose/170666970",
-        "query": "Alle heute ausgegebenen neuen und bekannten Karten auf aktiven Originalstatus und aktuelle Verfügbarkeit geprüft",
-        "checked_at": "2026-09-12T13:11:02+02:00",
+        "query": "Alle heute ausgegebenen Karten auf aktuellen Originalstatus, Kosten, Etage, Lageangaben, Bilder und Verfügbarkeit geprüft",
+        "checked_at": "2026-09-14T09:34:19+02:00",
         "outcome": "ok",
-        "result": "Zwei neue und sieben bekannte Originalanzeigen wurden aktiv bestätigt. Nicht abschließend bestätigte bekannte Karten wurden nicht in den heutigen Stand übernommen.",
-        "evidence_ref": "turn253search0, turn254view0, turn254view3 bis turn254view8 sowie Live-Prüfung der Kleinanzeigen-Originalseiten"
+        "result": "Sieben bekannte Angebote bestätigt. ImmoScout24 169984062 ist ausdrücklich seit zwei Tagen deaktiviert und wurde entfernt.",
+        "evidence_ref": "turn5view0 bis turn6view8"
       }
     ],
     "source_decisions": [
@@ -762,9 +615,9 @@
       },
       {
         "source": "Kleinanzeigen",
-        "url": "https://www.kleinanzeigen.de/s-wohnung-mieten/oestringen/anzeige:angebote/c203l8799",
+        "url": "https://www.kleinanzeigen.de/s-wohnung-mieten/bad-schoenborn/c203l15113",
         "decision": "search",
-        "reason": "Wichtig für neue private und sehr lokale Angebote."
+        "reason": "Wichtig für private und sehr lokale Angebote; Bad Schönborn und Kraichtal aktuell geprüft."
       },
       {
         "source": "Immowelt",
@@ -775,15 +628,15 @@
       {
         "source": "Ohne-Makler.net",
         "url": "https://www.ohne-makler.net/immobilien/wohnung-mieten/baden-wuerttemberg/oestringen/",
-        "decision": "search",
-        "reason": "Zusätzliche Direktquelle zur Prüfung alter Suchmaschinentreffer und provisionsfreier Angebote."
+        "decision": "skip",
+        "reason": "Direkte Quellenseite technisch nicht auswertbar; entdecktes älteres Angebot mangels aktueller Originalbestätigung ausgeschlossen."
       }
     ],
     "review": {
-      "findings": "Die frische Suche lieferte zwei neue, aktuell bestätigte Treffer: 850 € warm im Vogelgartenweg in Bad Schönborn und eine 66-m²-Neubauwohnung in der Josef-Heid-Straße in Kraichtal mit noch offener vollständiger Warmmiete. ImmoScout24 und Kleinanzeigen blieben ergiebig; Ohne-Makler.net half, alte Waldrand-Suchtreffer als nicht mehr aktuell zu erkennen.",
+      "findings": "Kein neuer belastbarer Treffer wurde bestätigt. Neue sichtbare ImmoScout24-Angebote lagen überwiegend im 2./3. Obergeschoss oder über der Preisgrenze. Das attraktive Waldrand-Angebot OM-436758 war nicht aktuell im Original prüfbar. Eine bisher bekannte Souterrainwohnung wurde ausdrücklich deaktiviert.",
       "open_gaps": [],
       "follow_up_action_ids": [],
-      "stop_reason": "Vier Quellen wurden neu durchsucht, 106 sichtbare Einträge einschließlich regionaler Überschneidungen beurteilt, 97 verworfen und neun heute bestätigte Wohnungen veröffentlicht.",
+      "stop_reason": "Drei Portale mit aktuellen Einträgen wurden direkt beziehungsweise über aktuelle Ergebnislisten durchsucht; der Ausfall der vierten Quelle wurde durch gezielte Webentdeckung begrenzt. 55 sichtbare Einträge wurden untersucht, 48 verworfen und sieben bekannte Wohnungen heute bestätigt.",
       "criteria_proposal": "Keine Änderung vorgeschlagen. Die vereinbarten Regeln wurden unverändert angewendet."
     }
   }
