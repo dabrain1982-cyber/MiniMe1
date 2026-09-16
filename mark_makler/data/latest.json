@@ -2,121 +2,105 @@
   "schema_version": 2,
   "criteria_version": 2,
   "mode": "daily",
-  "checked_at": "2026-09-16T08:05:28+02:00",
+  "checked_at": "2026-09-16T18:11:15+02:00",
   "scope": "Mietwohnungen ab 45 m² rund um Syensqo, Industriestraße 3, 76684 Östringen, bis 18 km tatsächliche Fahrstrecke.",
-  "strategy": "Die aktuellen Ergebnislisten von ImmoScout24, Immowelt und Ohne-Makler wurden ohne Zimmerfilter geprüft und um angrenzende Orte innerhalb der tatsächlichen 18-km-Fahrstrecke erweitert. Kleinanzeigen wurde nur über aktuelle Webentdeckung ausgewertet, weil der direkte Zugriff durch eine gespeicherte Browser-Sicherheitsvorgabe blockiert war; ohne direkt geprüftes Original wurde dort kein Angebot übernommen. Alle ausgegebenen Originalanzeigen, Kosten, Etagen, Bilder und Fahrstrecken wurden heute erneut geprüft.",
+  "strategy": "Die aktuellen Ergebnislisten von ImmoScout24, Immowelt, Kleinanzeigen und Ohne-Makler wurden ohne Zimmerfilter gesichtet; Websuche diente nur der zusätzlichen Entdeckung regionaler Anbieter. Plausible neue oder geänderte Treffer wurden bis zur Originalanzeige und Fahrstrecke geprüft, bekannte unveränderte Treffer im Originalstatus kurz bestätigt. Gespeicherte Ablehnungen und identische Neuveröffentlichungen wurden ausgeschlossen. Wo der direkte Kleinanzeigen-Zugriff blockiert blieb, wird die Lücke ausdrücklich als unvollständig ausgewiesen.",
   "source_checks": [
     {
       "name": "ImmoScout24",
-      "url": "https://www.immobilienscout24.de/Suche/de/baden-wuerttemberg/karlsruhe-kreis/oestringen/wohnung-mieten?livingspace=45.0-&sorting=2",
-      "result": "Vier aktuelle Ortslisten mit zusammen 75 Einträgen für Östringen, Bad Schönborn, Kraichtal und Mühlhausen vollständig gesichtet; passende neue und bekannte Originalexposés direkt geprüft."
+      "url": "https://www.immobilienscout24.de/Suche/de/baden-wuerttemberg/karlsruhe-kreis/kraichtal/wohnung-mieten",
+      "result": "Aktuelle Ortslisten für Östringen, Bad Schönborn, Kraichtal und Mühlhausen mit konkreten Angebotskarten gesichtet. Zwei neue passende Kraichtaler Wohnungen vertieft geprüft; bei deren Bildabruf griff die Portal-Sicherheitsprüfung."
     },
     {
       "name": "Immowelt",
-      "url": "https://www.immowelt.de/suche/mieten/wohnung/baden-wurttemberg/bad-schonborn-76669/ad08de5603",
-      "result": "Aktuelle regionale Liste mit 30 sichtbaren Angeboten einschließlich angrenzender Orte geprüft; zehn plausible Originale vertieft kontrolliert. Das bisherige Langenbrückener Angebot ist gelöscht."
+      "url": "https://www.immowelt.de/suche/mieten/wohnung/baden-wurttemberg/ostringen-76684/ad08de5589",
+      "result": "Aktuelle regionale Liste einschließlich angrenzender Orte gesichtet und plausible Originale geprüft. Gochsheim wurde mit 22,0 km Fahrstrecke ausgeschlossen; Dielheim lag mit mindestens 1.268 € warm über dem Budget."
+    },
+    {
+      "name": "Kleinanzeigen",
+      "url": "https://www.kleinanzeigen.de/s-wohnung-mieten/oestringen/c203l11755",
+      "result": "Aktuelle Listen für Östringen und Bad Schönborn wurden ausgewertet; weitere Ortslisten wurden über aktuelle Webentdeckung geprüft. Mehrere plausible Originalseiten konnten wegen einer gespeicherten Browser-Sperre nicht direkt geöffnet werden und bleiben als offene Lücke dokumentiert."
     },
     {
       "name": "Ohne-Makler.net",
       "url": "https://www.ohne-makler.net/immobilien/wohnung-mieten/baden-wurttemberg/ostringen/?radius=10",
-      "result": "Aktuelle Umkreissuche mit 13 Angeboten geprüft. Plausible Originale in Mühlhausen, Ubstadt, Hilsbach, Dielheim und Rauenberg wurden direkt kontrolliert; sie scheiterten an Pflichtkosten oder Etage."
-    },
-    {
-      "name": "Kleinanzeigen",
-      "url": "https://www.kleinanzeigen.de/s-oestringen/wohnung---mieten/k0l11755",
-      "result": "Gezielte aktuelle Webentdeckung für Östringen, Bad Schönborn, Kraichtal und Mühlhausen durchgeführt. Der direkte Portalzugriff war durch eine gespeicherte Browser-Sicherheitsvorgabe blockiert; deshalb wurde kein Kleinanzeigen-Treffer ohne heute direkt geprüftes Original ausgegeben."
+      "result": "Aktuelle Umkreisliste mit 13 konkreten Angeboten gesichtet. Das einzige näher passende Wieslocher Erdgeschossangebot wurde wegen 1.270 € Pflichtkosten ausgeschlossen."
     }
   ],
   "updates": [
-    "Sechs neue beziehungsweise gegenüber dem letzten erfolgreichen Bericht neu bestätigte Wohnungen aufgenommen.",
-    "Vier bekannte Angebote heute im Original erneut bestätigt.",
-    "Das bisherige Immowelt-Angebot in Langenbrücken ist gelöscht und wurde entfernt.",
-    "Zwei bekannte Kleinanzeigen-Angebote wurden heute nicht ausgegeben, weil ihre Originalseiten nicht direkt geprüft werden konnten.",
-    "Eine zunächst plausible Kellerwohnung in Mühlhausen wurde nach Straßenprüfung wegen bestätigter Verbindungsstraße ausgeschlossen.",
-    "Keine Suchkriterien und keine Routine geändert."
+    "Zwei neue passende Kraichtaler Wohnungen aufgenommen: Südendstraße 17 im Erdgeschoss und Schulstraße 39 im 1. Obergeschoss.",
+    "Fünf bekannte, unveränderte Angebote heute erneut als aktiv bestätigt.",
+    "Fünf vom Nutzer verworfene Angebote sowie deren erkennbare Doppelveröffentlichungen nicht mehr ausgegeben.",
+    "Gochsheim wegen 22,0 km Fahrstrecke, Dielheim und Wiesloch wegen Pflichtkosten über 1.250 € ausgeschlossen.",
+    "Kleinanzeigen-Lücke sichtbar als unvollständig dokumentiert; keine Routine, kein Programm und kein anderes Projekt geändert."
   ],
   "search_stats": {
     "portals_with_entries": 4,
-    "listings_examined": 130,
-    "listings_discarded": 120
+    "listings_examined": 126,
+    "listings_discarded": 116
   },
   "listings": [
     {
-      "id": "iw-64917ac3",
-      "title": "Neubau-Erdgeschosswohnung am Feldrand in Malsch",
-      "place": "69254 Malsch",
-      "address": null,
-      "provider": "Hirzmann + Partner GmbH · Immowelt",
-      "url": "https://www.immowelt.de/expose/64917ac3-facc-4161-8533-09f6664c090c",
+      "id": "is24-169775577",
+      "title": "Ruhige 2-Zimmer-Erdgeschosswohnung in Kraichtal",
+      "place": "76703 Kraichtal",
+      "address": "Südendstraße 17, 76703 Kraichtal",
+      "provider": "Cesania GmbH · ImmoScout24",
+      "url": "https://www.immobilienscout24.de/expose/169775577",
       "original_active": true,
-      "verified_at": "2026-09-16T08:05:28+02:00",
+      "verified_at": "2026-09-16T18:11:15+02:00",
       "status": "new",
       "group": "best",
-      "priority": 99,
-      "area": 50,
+      "priority": 98,
+      "area": 76,
       "rooms": 2,
       "floor": 0,
       "floor_label": "Erdgeschoss",
-      "cold": 775,
-      "warm": 915,
-      "mandatory_total": 940,
+      "cold": 850,
+      "warm": 1000,
+      "mandatory_total": 1000,
       "budget_verified": true,
-      "location_verified": true,
+      "location_verified": false,
       "route_plausible": true,
-      "route_km": 6.4,
-      "route_exact": false,
-      "route": "6,4 km tatsächliche Fahrstrecke vom veröffentlichten Ort Malsch zur Industriestraße 3; die genaue Adresse fehlt.",
+      "route_km": 16.0,
+      "route_exact": true,
+      "route": "16,0 km tatsächliche Fahrstrecke von der Südendstraße 17 zur Industriestraße 3 laut aktueller Routenprüfung.",
       "garage_status": "no",
-      "main_road_status": "unknown",
-      "availability": "Aktive Originalanzeige; Bezug nach Absprache.",
+      "main_road_status": "no",
+      "availability": "Aktiv in der aktuellen Kraichtaler Ortsliste; Bezugstermin im Original nicht veröffentlicht.",
       "listing_date": null,
-      "reason": "Erdgeschoss, Terrasse, ausdrücklich genannte Feldrandlage und höchstens 940 € einschließlich Stellplatz passen sehr gut. Nur die genaue Adresse fehlt.",
-      "location_notes": "Das Original nennt Ortsrand- und Feldrandlage mit Weinbergen und Grünflächen. Die genaue Mikrolage kann erst mit Adresse abschließend geprüft werden.",
-      "outside": "Terrasse direkt am Wohnbereich; Feldrandlage ausdrücklich genannt.",
+      "reason": "Erdgeschoss, 1.000 € warm, ruhiges Zweifamilienhaus und Stellplatz direkt am Haus passen gut. Katzenhaltung und direkter Außenbereich sind nicht genannt.",
+      "location_notes": "Das Original beschreibt ein ruhiges Zweifamilienhaus. Die Südendstraße ist keine bestätigte Hauptstraße; eine Feld-, Wald- oder Wiesenrandlage ist aber nicht belegt.",
+      "outside": "Kein Balkon, keine Terrasse und kein Garten ausdrücklich genannt; Außenstellplatz am Haus.",
       "pets": "Nicht angegeben.",
       "tags": [
         "Erdgeschoss",
-        "Feldrandlage",
-        "940 € mit Stellplatz",
-        "6,4 km"
+        "1.000 € warm",
+        "Ruhiges Zweifamilienhaus",
+        "16,0 km"
       ],
       "costs": [
         {
           "label": "Warmmiete",
-          "value": "915 €"
+          "value": "1.000 €"
         },
         {
           "label": "Außenstellplatz",
-          "value": "25 € monatlich"
-        },
-        {
-          "label": "Kaution",
-          "value": "1.550 €"
+          "value": "Vorhanden; kein separater Pflichtpreis genannt"
         }
       ],
-      "cost_notes": "775 € kalt plus 115 € Nebenkosten ergeben rechnerisch 890 €; das Portal weist 915 € warm aus. Mit dem angebotenen Stellplatz werden vorsichtshalber 940 € angesetzt.",
+      "cost_notes": "850 € kalt plus 150 € Nebenkosten ergeben 1.000 € warm; der Außenstellplatz wird als vorhanden beschrieben.",
       "questions": [
-        "Wie lautet die genaue Adresse und auf welcher Seite liegt die Terrasse zum Feld?",
         "Sind Katzen erlaubt?",
-        "Ist der Stellplatz verpflichtend oder optional?"
+        "Gibt es einen direkten, sicheren Ausgang ins Freie?",
+        "Gehört eine Terrasse oder Gartenfläche zur Wohnung?"
       ],
       "risks": [
-        "Genaue Adresse und Haustierregel fehlen.",
-        "Eine normale geschlossene Garage ist nicht vorhanden."
+        "Katzenhaltung und unmittelbarer Außenbereich sind offen.",
+        "Keine normale Garage genannt."
       ],
-      "image_status": "available",
-      "images": [
-        {
-          "url": "https://mms.immowelt.de/6/e/6/1/6e61f670-f038-4d1a-9dd1-c034180e3d2d.jpg?ci_seal=716da2d3674b592d0f2581d757891397e3f919b7",
-          "source": "https://www.immowelt.de/expose/64917ac3-facc-4161-8533-09f6664c090c",
-          "caption": "Originalbild der Erdgeschosswohnung"
-        },
-        {
-          "url": "https://mms.immowelt.de/7/9/7/2/797295bb-2c9e-4945-8b4e-ca236cb8a7d8.jpg?ci_seal=8ef50b24a46f11f8943fe9e98db684565da816b8",
-          "source": "https://www.immowelt.de/expose/64917ac3-facc-4161-8533-09f6664c090c",
-          "caption": "Weiteres Originalbild der Wohnung"
-        }
-      ]
+      "image_status": "unreachable",
+      "images": []
     },
     {
       "id": "iw-268e8r5c22al",
@@ -126,8 +110,8 @@
       "provider": "Privater Anbieter · Immowelt",
       "url": "https://www.immowelt.de/expose/268e8r5c22al",
       "original_active": true,
-      "verified_at": "2026-09-16T08:05:28+02:00",
-      "status": "new",
+      "verified_at": "2026-09-16T18:11:15+02:00",
+      "status": "known",
       "group": "best",
       "priority": 97,
       "area": 80,
@@ -196,83 +180,6 @@
       ]
     },
     {
-      "id": "is24-170678717",
-      "title": "2-Zimmer-Neubauwohnung mit Terrasse in Unteröwisheim",
-      "place": "Unteröwisheim · 76703 Kraichtal",
-      "address": "Fabrikstraße 27, 76703 Kraichtal",
-      "provider": "Privater Anbieter · ImmoScout24",
-      "url": "https://www.immobilienscout24.de/expose/170678717",
-      "original_active": true,
-      "verified_at": "2026-09-16T08:05:28+02:00",
-      "status": "new",
-      "group": "best",
-      "priority": 95,
-      "area": 50,
-      "rooms": 2,
-      "floor": 0,
-      "floor_label": "Erdgeschoss",
-      "cold": 830,
-      "warm": 950,
-      "mandatory_total": 950,
-      "budget_verified": true,
-      "location_verified": false,
-      "route_plausible": true,
-      "route_km": 13.5,
-      "route_exact": true,
-      "route": "13,5 km tatsächliche Fahrstrecke von der veröffentlichten Adresse zur Industriestraße 3 laut aktueller Routenprüfung.",
-      "garage_status": "no",
-      "main_road_status": "no",
-      "availability": "Ab 01.10.2026; aktive Originalanzeige.",
-      "listing_date": null,
-      "reason": "Erdgeschoss, Terrasse, Gartenmitbenutzung, 950 € warm und Haustiere nach Vereinbarung passen. Es ist eine andere, kleinere Einheit als die vom Nutzer verworfene Wohnung an derselben Adresse.",
-      "location_notes": "Genaue Adresse bestätigt. Die Fabrikstraße ist keine Hauptstraße; eine abgelegene Feld- oder Waldrandlage ist nicht belegt.",
-      "outside": "Terrasse und gemeinschaftlich nutzbarer Garten.",
-      "pets": "Haustiere nach Vereinbarung.",
-      "tags": [
-        "Erdgeschoss",
-        "Terrasse",
-        "Garten",
-        "950 € warm"
-      ],
-      "costs": [
-        {
-          "label": "Warmmiete",
-          "value": "950 €"
-        },
-        {
-          "label": "Außenstellplatz",
-          "value": "In der Kaltmiete enthalten"
-        },
-        {
-          "label": "Kaution",
-          "value": "2.200 €"
-        }
-      ],
-      "cost_notes": "830 € Kaltmiete einschließlich Einbauküche und Stellplatz plus 120 € Nebenkosten ergeben 950 € Warmmiete.",
-      "questions": [
-        "Sind Katzen ausdrücklich erlaubt?",
-        "Ist der Terrassenausgang für Katzen dauerhaft nutzbar?",
-        "Wie stark ist der Gewerbe- und Lieferverkehr im unmittelbaren Umfeld?"
-      ],
-      "risks": [
-        "Die Bauarbeiten sind noch nicht vollständig abgeschlossen.",
-        "Das Gewerbeumfeld kann zeitweise Verkehr verursachen."
-      ],
-      "image_status": "available",
-      "images": [
-        {
-          "url": "https://pictures.immobilienscout24.de/listings/938edaa9-e97d-4355-abd9-f2390bc0b08f-2089312178.jpg/ORIG/resize/1106x830%3E/format/webp/quality/73",
-          "source": "https://www.immobilienscout24.de/expose/170678717",
-          "caption": "Hauseingang aus der aktiven Originalanzeige"
-        },
-        {
-          "url": "https://pictures.immobilienscout24.de/listings/effdc01e-2c11-4531-b15d-430f59527eb8-2089312169.jpg/ORIG/resize/1106x830%3E/format/webp/quality/73",
-          "source": "https://www.immobilienscout24.de/expose/170678717",
-          "caption": "Wohnzimmer aus der aktiven Originalanzeige"
-        }
-      ]
-    },
-    {
       "id": "is24-170438448",
       "title": "Kleine Maisonettewohnung im Fachwerkhaus von 1850",
       "place": "Mingolsheim · 76669 Bad Schönborn",
@@ -280,7 +187,7 @@
       "provider": "Privater Anbieter · ImmoScout24",
       "url": "https://www.immobilienscout24.de/expose/170438448",
       "original_active": true,
-      "verified_at": "2026-09-16T08:05:28+02:00",
+      "verified_at": "2026-09-16T18:11:15+02:00",
       "status": "known",
       "group": "good",
       "priority": 91,
@@ -299,7 +206,7 @@
       "route": "Ca. 3,9 km Fahrstrecke vom veröffentlichten Gemeindegebiet Bad Schönborn zur Industriestraße 3; genaue Strecke erst mit Adresse möglich.",
       "garage_status": "no",
       "main_road_status": "unknown",
-      "availability": "Ab 01.10.2026; heute aktive Originalanzeige.",
+      "availability": "Bezug laut Original ab 01.09.2026; am 16.09.2026 in der aktuellen Ortsliste als Neu sichtbar und Original aktiv.",
       "listing_date": null,
       "reason": "750 € warm, Erdgeschoss als untere Wohnebene, Garten und erlaubte Haustiere sind attraktiv. Adresse und direkter Gartenzugang sind offen.",
       "location_notes": "Garten wird genannt, aber die genaue Adresse und unmittelbare Verkehrslage fehlen.",
@@ -348,7 +255,7 @@
       "provider": "Privater Anbieter · ImmoScout24",
       "url": "https://www.immobilienscout24.de/expose/170666970",
       "original_active": true,
-      "verified_at": "2026-09-16T08:05:28+02:00",
+      "verified_at": "2026-09-16T18:11:15+02:00",
       "status": "known",
       "group": "good",
       "priority": 89,
@@ -406,81 +313,70 @@
       "images": []
     },
     {
-      "id": "is24-170663405",
-      "title": "2-Zimmer-Neubauwohnung in der Josef-Heid-Straße",
-      "place": "Unteröwisheim · 76703 Kraichtal",
-      "address": "Josef-Heid-Straße 3/3a, 76703 Kraichtal",
-      "provider": "Paul Hauber Fliesenverlegung GmbH · ImmoScout24",
-      "url": "https://www.immobilienscout24.de/expose/170663405",
+      "id": "is24-164863082",
+      "title": "Helle 2-Zimmer-Wohnung in Kraichtal",
+      "place": "76703 Kraichtal",
+      "address": "Schulstraße 39, 76703 Kraichtal",
+      "provider": "Privater Anbieter · ImmoScout24",
+      "url": "https://www.immobilienscout24.de/expose/164863082",
       "original_active": true,
-      "verified_at": "2026-09-16T08:05:28+02:00",
+      "verified_at": "2026-09-16T18:11:15+02:00",
       "status": "new",
       "group": "good",
-      "priority": 88,
-      "area": 66,
+      "priority": 87,
+      "area": 69,
       "rooms": 2,
       "floor": 1,
       "floor_label": "1. Obergeschoss",
-      "cold": 960,
-      "warm": 1120,
-      "mandatory_total": 1180,
+      "cold": 730,
+      "warm": 930,
+      "mandatory_total": 950,
       "budget_verified": true,
       "location_verified": false,
       "route_plausible": true,
-      "route_km": 13.4,
+      "route_km": 16.0,
       "route_exact": true,
-      "route": "13,4 km tatsächliche Fahrstrecke von der veröffentlichten Adresse zur Industriestraße 3; die Kartenroute normalisierte 3/3a auf Hausnummer 3.",
+      "route": "16,0 km tatsächliche Fahrstrecke von der Schulstraße 39 zur Industriestraße 3 laut aktueller Routenprüfung.",
       "garage_status": "no",
       "main_road_status": "no",
-      "availability": "Aktive Originalanzeige; Neubau-Erstbezug, Termin nicht konkret veröffentlicht.",
+      "availability": "Bezug laut Original ab 02.09.2026; am 16.09.2026 in der aktuellen Ortsliste als Neu sichtbar.",
       "listing_date": null,
-      "reason": "66 m² Neubau, Balkon, Haustiere nach Vereinbarung und 13,4 km passen. Mit dem ausgewiesenen Tiefgaragenplatz bleiben die Pflichtkosten bei 1.180 €.",
-      "location_notes": "Die Josef-Heid-Straße ist eine Tempo-30-Anliegerstraße. Eine abgelegene Feld-, Wald- oder Wiesenrandlage ist nicht belegt.",
-      "outside": "Balkon; kein eigener Garten genannt.",
-      "pets": "Haustiere nach Vereinbarung.",
+      "reason": "69 m², 950 € einschließlich Stellplatz, Balkon und Gartenmitbenutzung passen. Das 1. Obergeschoss sowie Katzenzugang und Haustierregel bleiben Klärpunkte.",
+      "location_notes": "Die Schulstraße ist als Anliegerstraße beziehungsweise Zufahrtsweg beschrieben und keine bestätigte Hauptstraße. Eine abgelegene Randlage ist nicht belegt.",
+      "outside": "Balkon beziehungsweise Terrasse und Gartenmitbenutzung laut Original.",
+      "pets": "Nicht angegeben.",
       "tags": [
-        "Neubau",
+        "950 € mit Stellplatz",
         "1. Obergeschoss",
-        "1.180 € inklusive Stellplatz",
-        "13,4 km"
+        "Gartenmitbenutzung",
+        "16,0 km"
       ],
       "costs": [
         {
           "label": "Warmmiete",
-          "value": "1.120 €"
+          "value": "930 €"
         },
         {
-          "label": "Tiefgaragenstellplatz",
-          "value": "60 €"
+          "label": "Stellplatz",
+          "value": "20 € monatlich"
         },
         {
           "label": "Kaution",
-          "value": "2.880 €"
+          "value": "2.190 €"
         }
       ],
-      "cost_notes": "960 € kalt plus 160 € Nebenkosten ergeben 1.120 € warm; mit dem ausgewiesenen Tiefgaragenstellplatz werden 1.180 € angesetzt.",
+      "cost_notes": "730 € kalt plus 200 € Nebenkosten ergeben 930 € warm; mit dem ausgewiesenen Stellplatz werden 950 € Pflichtkosten angesetzt.",
       "questions": [
-        "Ist der Tiefgaragenstellplatz verpflichtend?",
-        "Ist ein sicherer Katzenausgang aus dem 1. Obergeschoss möglich?",
-        "Wann ist der konkrete Bezugstermin?"
+        "Sind Katzen erlaubt?",
+        "Ist ein praktikabler Katzenausgang aus dem 1. Obergeschoss möglich?",
+        "Ist die Gartenmitbenutzung auch für Katzen geeignet?"
       ],
       "risks": [
-        "1. Obergeschoss ohne direkten Gartenanschluss.",
-        "Nur Tiefgaragenstellplatz, keine normale Garage."
+        "1. Obergeschoss erschwert freien Katzenausgang.",
+        "Bildabruf war wegen der Portal-Sicherheitsprüfung nicht möglich."
       ],
-      "image_status": "available",
-      "images": [
-        {
-          "url": "https://pictures.immobilienscout24.de/listings/b7f38a0a-615c-44aa-a9fd-0a33e1a5077c-2089022990.jpg/ORIG/resize/1106x830%3E/format/webp/quality/73",
-          "source": "https://www.immobilienscout24.de/expose/170663405",
-          "caption": "Gartenseite des Neubaus aus der Originalanzeige"
-        },
-        {
-          "url": "https://pictures.immobilienscout24.de/listings/f42d028c-18fc-4109-9045-2ada40082ef4-2089022987.jpg/ORIG/resize/1106x830%3E/format/webp/quality/73",
-          "source": "https://www.immobilienscout24.de/expose/170663405",
-          "caption": "Wohnbereich aus der Originalanzeige"
-        }
-      ]
+      "image_status": "unreachable",
+      "images": []
     },
     {
       "id": "is24-170293038",
@@ -490,7 +386,7 @@
       "provider": "Privater Anbieter · ImmoScout24",
       "url": "https://www.immobilienscout24.de/expose/170293038",
       "original_active": true,
-      "verified_at": "2026-09-16T08:05:28+02:00",
+      "verified_at": "2026-09-16T18:11:15+02:00",
       "status": "known",
       "group": "good",
       "priority": 86,
@@ -555,152 +451,6 @@
       ]
     },
     {
-      "id": "iw-2644rb3539wa",
-      "title": "Sanierte 2-Zimmer-Wohnung mit Balkon in Forst",
-      "place": "76694 Forst",
-      "address": null,
-      "provider": "Privater Anbieter · Immowelt",
-      "url": "https://www.immowelt.de/expose/2644rb3539wa",
-      "original_active": true,
-      "verified_at": "2026-09-16T08:05:28+02:00",
-      "status": "new",
-      "group": "good",
-      "priority": 82,
-      "area": 80,
-      "rooms": 2,
-      "floor": 1,
-      "floor_label": "1. Obergeschoss",
-      "cold": 1000,
-      "warm": 1200,
-      "mandatory_total": 1200,
-      "budget_verified": true,
-      "location_verified": false,
-      "route_plausible": true,
-      "route_km": 17.2,
-      "route_exact": false,
-      "route": "17,2 km tatsächliche Fahrstrecke vom veröffentlichten Ort Forst zur Industriestraße 3; genaue Adresse fehlt.",
-      "garage_status": "no",
-      "main_road_status": "unknown",
-      "availability": "Ab 01.12.2026.",
-      "listing_date": null,
-      "reason": "1.200 € warm, 80 m², ruhige Wohnlage und 17,2 km passen knapp. Etage, genaue Adresse und Katzenzugang müssen geprüft werden.",
-      "location_notes": "Das Original beschreibt ruhige Wohnlage, aber keine genaue Adresse oder belegte Randlage.",
-      "outside": "Südbalkon; im Merkmalfeld zusätzlich Terrasse genannt.",
-      "pets": "Haustiere nach Absprache.",
-      "tags": [
-        "1.200 € warm",
-        "1. Obergeschoss",
-        "80 m²",
-        "17,2 km"
-      ],
-      "costs": [
-        {
-          "label": "Warmmiete",
-          "value": "1.200 €"
-        },
-        {
-          "label": "Kaution",
-          "value": "3.000 €"
-        }
-      ],
-      "cost_notes": "1.000 € kalt plus 100 € Nebenkosten und 100 € Heizkosten ergeben 1.200 € warm.",
-      "questions": [
-        "Wie lautet die genaue Adresse?",
-        "Ist ein Katzenausgang aus dem 1. Obergeschoss möglich?",
-        "Sind Katzen konkret erlaubt?"
-      ],
-      "risks": [
-        "Nur 0,8 km Reserve bis zur Entfernungsgrenze.",
-        "Keine normale Garage genannt."
-      ],
-      "image_status": "available",
-      "images": [
-        {
-          "url": "https://mms.immowelt.de/a/f/9/6/af96ffee-d14e-4d55-a588-197b018af260.jpg?ci_seal=013a605d36f5ef73489ac7709169561a0d27a5f5",
-          "source": "https://www.immowelt.de/expose/2644rb3539wa",
-          "caption": "Originalbild der Wohnung in Forst"
-        },
-        {
-          "url": "https://mms.immowelt.de/5/3/1/3/531312f7-3e39-46f9-bd10-81db17dba1dd.jpg?ci_seal=740fa13ae26ccc66721a0d4e8228bed83b14afc9",
-          "source": "https://www.immowelt.de/expose/2644rb3539wa",
-          "caption": "Weiteres Originalbild der Wohnung"
-        }
-      ]
-    },
-    {
-      "id": "iw-ddaca268",
-      "title": "Praktische 3-Zimmer-Wohnung in Wiesloch",
-      "place": "69168 Wiesloch",
-      "address": "Hardtstraße 22, 69168 Wiesloch",
-      "provider": "Vonovia Kundenservice GmbH · Immowelt",
-      "url": "https://www.immowelt.de/expose/ddaca268-5402-4cf2-b0b7-e22d2de68920",
-      "original_active": true,
-      "verified_at": "2026-09-16T08:05:28+02:00",
-      "status": "new",
-      "group": "good",
-      "priority": 81,
-      "area": 69,
-      "rooms": 3,
-      "floor": 1,
-      "floor_label": "1. Obergeschoss",
-      "cold": 782.01,
-      "warm": 1169.01,
-      "mandatory_total": 1169.01,
-      "budget_verified": true,
-      "location_verified": false,
-      "route_plausible": true,
-      "route_km": 14.4,
-      "route_exact": true,
-      "route": "14,4 km tatsächliche Fahrstrecke von der veröffentlichten Adresse zur Industriestraße 3 laut aktueller Routenprüfung.",
-      "garage_status": "no",
-      "main_road_status": "unknown",
-      "availability": "Ab 17.10.2026.",
-      "listing_date": null,
-      "reason": "69 m², 1.169,01 € warm und 14,4 km passen. Der Katzenausgang aus dem 1. Obergeschoss und die Verkehrslage an der Hardtstraße sind offen.",
-      "location_notes": "Die genaue Adresse ist veröffentlicht. Eine abgelegene Randlage ist nicht belegt; eine Bushaltestelle liegt etwa 160 m entfernt.",
-      "outside": "Großer Westbalkon.",
-      "pets": "Nicht angegeben.",
-      "tags": [
-        "1.169 € warm",
-        "1. Obergeschoss",
-        "14,4 km",
-        "Balkon"
-      ],
-      "costs": [
-        {
-          "label": "Warmmiete",
-          "value": "1.169,01 €"
-        },
-        {
-          "label": "Kaution",
-          "value": "2.346,03 €"
-        }
-      ],
-      "cost_notes": "782,01 € kalt plus 173 € Nebenkosten und 214 € Heizkosten ergeben 1.169,01 € warm.",
-      "questions": [
-        "Sind Katzen erlaubt?",
-        "Ist ein sicherer Katzenausgang aus dem 1. Obergeschoss möglich?",
-        "Wie stark ist der Verkehr unmittelbar vor Hausnummer 22?"
-      ],
-      "risks": [
-        "Verkehrslage noch nicht sicher als ruhige Wohnstraße bestätigt.",
-        "Keine normale Garage genannt."
-      ],
-      "image_status": "available",
-      "images": [
-        {
-          "url": "https://mms.immowelt.de/e/0/8/d/e08d851d-739c-4c4b-8929-286b14ba30f3.jpg?ci_seal=f2c17543f75e84f16ffe7e249ec18821bad1ed83",
-          "source": "https://www.immowelt.de/expose/ddaca268-5402-4cf2-b0b7-e22d2de68920",
-          "caption": "Originalbild der Wohnung in der Hardtstraße"
-        },
-        {
-          "url": "https://mms.immowelt.de/6/2/a/b/62ab9f12-02c2-4e19-a64f-208d2bb2b59c.jpg?ci_seal=de5d8f6367584af9157593438621b2dc419d0e42",
-          "source": "https://www.immowelt.de/expose/ddaca268-5402-4cf2-b0b7-e22d2de68920",
-          "caption": "Weiteres Originalbild der Wohnung"
-        }
-      ]
-    },
-    {
       "id": "iw-a91bcab9",
       "title": "Tolle Wohnung mit Einbauküche und Balkon in Mühlhausen",
       "place": "69242 Mühlhausen",
@@ -708,7 +458,7 @@
       "provider": "Felix Hartmann Immobilien · Immowelt",
       "url": "https://www.immowelt.de/expose/a91bcab9-72d4-42e4-8ee3-34518455452b",
       "original_active": true,
-      "verified_at": "2026-09-16T08:05:28+02:00",
+      "verified_at": "2026-09-16T18:11:15+02:00",
       "status": "known",
       "group": "clarify",
       "priority": 72,
@@ -779,109 +529,138 @@
     }
   ],
   "research": {
-    "status": "complete",
+    "status": "incomplete",
     "actions": [
       {
-        "id": "discovery-20260916",
+        "id": "discovery-20260916-startup",
         "kind": "discovery",
         "source": "Aktuelle Webentdeckung",
         "url": "https://www.google.com/search?q=Wohnung+mieten+Oestringen+Bad+Schoenborn+Kraichtal+Muehlhausen+September+2026",
-        "query": "Aktuelle Mietwohnungen Östringen, Bad Schönborn, Kraichtal, Mühlhausen und angrenzende Orte ab 45 m²",
-        "checked_at": "2026-09-16T08:05:28+02:00",
+        "query": "Aktuelle Mietwohnungen und regionale Anbieter in Östringen, Bad Schönborn, Kraichtal, Mühlhausen und angrenzenden Orten",
+        "checked_at": "2026-09-16T18:11:15+02:00",
         "outcome": "ok",
-        "result": "Aktuelle Portallisten, neue Originalangebote und angrenzende plausible Orte entdeckt; Suchauszüge nur zur Entdeckung und nicht als Ersatz für ausgegebene Originale verwendet.",
-        "evidence_ref": "Live-Websuche vom 16.09.2026"
+        "result": "Aktuelle Portallisten, Originale und regionale Fundstellen entdeckt; Suchauszüge nur zur Entdeckung und Gegenprüfung verwendet.",
+        "evidence_ref": "Live-Websuche und aktuelle Portallisten vom 16.09.2026"
       },
       {
-        "id": "source-immoscout-20260916",
+        "id": "source-immoscout-20260916-startup",
         "kind": "source_search",
         "source": "ImmoScout24",
-        "url": "https://www.immobilienscout24.de/Suche/de/baden-wuerttemberg/karlsruhe-kreis/oestringen/wohnung-mieten?livingspace=45.0-&sorting=2",
-        "query": "Aktuelle Mietwohnungen ab 45 m² in Östringen, Bad Schönborn, Kraichtal und Mühlhausen ohne Zimmerfilter",
-        "checked_at": "2026-09-16T08:05:28+02:00",
+        "url": "https://www.immobilienscout24.de/Suche/de/baden-wuerttemberg/karlsruhe-kreis/kraichtal/wohnung-mieten",
+        "query": "Aktuelle Ortslisten Östringen, Bad Schönborn, Kraichtal und Mühlhausen ab 45 m²",
+        "checked_at": "2026-09-16T18:11:15+02:00",
         "outcome": "ok",
-        "result": "19 Östringer, 21 Bad-Schönborner, 18 Kraichtaler und 17 Mühlhausener Einträge gesichtet; plausible Originale direkt geprüft.",
-        "evidence_ref": "Direkte Live-Ergebnislisten und Originalexposés"
+        "result": "Konkrete Angebotskarten gesichtet; passende neue und bekannte Originalinformationen sowie Fahrstrecken geprüft.",
+        "evidence_ref": "Aktuelle Ortslisten, Originalexposés und Google-Maps-Routen"
       },
       {
-        "id": "source-immowelt-20260916",
+        "id": "source-immowelt-20260916-startup",
         "kind": "source_search",
         "source": "Immowelt",
-        "url": "https://www.immowelt.de/suche/mieten/wohnung/baden-wurttemberg/bad-schonborn-76669/ad08de5603",
-        "query": "Aktuelle Mietwohnungen in Bad Schönborn und angrenzenden Orten innerhalb der möglichen 18-km-Fahrstrecke",
-        "checked_at": "2026-09-16T08:05:28+02:00",
+        "url": "https://www.immowelt.de/suche/mieten/wohnung/baden-wurttemberg/ostringen-76684/ad08de5589",
+        "query": "Aktuelle regionale Mietwohnungen rund um Östringen",
+        "checked_at": "2026-09-16T18:11:15+02:00",
         "outcome": "ok",
-        "result": "30 sichtbare regionale Angebote gesichtet und plausible Originale in Kronau, Malsch, Ubstadt-Weiher, Forst, Dielheim, Wiesloch, Kraichtal und Mühlhausen direkt geprüft.",
-        "evidence_ref": "Direkte Live-Ergebnisliste, Originalexposés und Routenprüfung"
+        "result": "Regionale Ergebnisliste und plausible Originale einschließlich Kronau, Mühlhausen, Gochsheim und Dielheim geprüft.",
+        "evidence_ref": "Direkte Live-Liste, Originalexposés und Routenprüfung"
       },
       {
-        "id": "source-ohne-makler-20260916",
+        "id": "source-ohne-makler-20260916-startup",
         "kind": "source_search",
         "source": "Ohne-Makler.net",
         "url": "https://www.ohne-makler.net/immobilien/wohnung-mieten/baden-wurttemberg/ostringen/?radius=10",
-        "query": "Provisionsfreie Mietwohnungen im 10-km-Luftlinienumkreis um Östringen ab 45 m²",
-        "checked_at": "2026-09-16T08:05:28+02:00",
+        "query": "Provisionsfreie Mietwohnungen im relevanten Umkreis ab 45 m²",
+        "checked_at": "2026-09-16T18:11:15+02:00",
         "outcome": "ok",
-        "result": "13 aktuelle Ergebnisse geprüft; mehrere Originale direkt geöffnet. Geeignete neue Doppelveröffentlichungen wurden dedupliziert, übrige Treffer scheiterten an Etage, Kosten oder Fahrstrecke.",
-        "evidence_ref": "Direkte Live-Umkreissuche und Originalexposés"
+        "result": "13 konkrete Angebote gesichtet; plausible Erdgeschosswohnung in Wiesloch direkt geprüft und wegen 1.270 € Pflichtkosten ausgeschlossen.",
+        "evidence_ref": "Direkte Umkreisliste und Originalanzeige 411045"
       },
       {
-        "id": "source-kleinanzeigen-20260916",
+        "id": "source-kleinanzeigen-20260916-startup",
         "kind": "source_search",
         "source": "Kleinanzeigen",
-        "url": "https://www.kleinanzeigen.de/s-oestringen/wohnung---mieten/k0l11755",
-        "query": "Aktuelle Mietwohnungsangebote Östringen, Bad Schönborn, Kraichtal und Mühlhausen ab 45 m²",
-        "checked_at": "2026-09-16T08:05:28+02:00",
+        "url": "https://www.kleinanzeigen.de/s-wohnung-mieten/oestringen/c203l11755",
+        "query": "Aktuelle Mietwohnungen in Östringen, Bad Schönborn, Kraichtal und Mühlhausen ab 45 m²",
+        "checked_at": "2026-09-16T18:11:15+02:00",
         "outcome": "blocked",
-        "result": "Aktuelle Treffer und Ortslisten wurden über Webentdeckung gefunden; der direkte Portalzugriff war nicht zulässig.",
-        "evidence_ref": "Aktuelle Suchmaschinenentdeckung vom 16.09.2026",
-        "problem": "Eine gespeicherte Browser-Sicherheitsvorgabe blockierte den direkten Zugriff auf Kleinanzeigen.",
-        "resolution": "Kleinanzeigen nur zur Entdeckung verwendet. Kein Angebot aus dieser Quelle wurde ohne heute direkt geprüftes Original ausgegeben; drei direkt zugängliche andere Portale und deren Originale deckten die Suche ab."
+        "result": "Aktuelle Listen und mehrere Originale konnten über die Webansicht ausgewertet werden; nicht alle plausiblen Originale waren direkt zugänglich.",
+        "evidence_ref": "Aktuelle Ortslisten und direkt erreichbare Originalanzeigen",
+        "problem": "Eine gespeicherte Browser-Sicherheitsvorgabe blockiert den direkten Zugriff auf Kleinanzeigen und damit die vollständige Tiefenprüfung einzelner plausibler Treffer."
       },
       {
-        "id": "recheck-originals-20260916",
+        "id": "follow-up-kleinanzeigen-20260916",
+        "kind": "follow_up",
+        "source": "Kleinanzeigen-Originale",
+        "url": "https://www.kleinanzeigen.de/s-wohnung-mieten/bad-schoenborn/c203l15113",
+        "query": "Plausible Treffer mit 45 bis 65 m², Erdgeschoss oder 1. Obergeschoss und Preisen bis 1.140 € direkt prüfen",
+        "checked_at": "2026-09-16T18:11:15+02:00",
+        "outcome": "blocked",
+        "result": "Zwei direkt erreichbare Originale geprüft: das Bungalow-Angebot ist eine Neuveröffentlichung einer verworfenen Wohnung; das 53-m²-Angebot nennt keine Haustiere und einen überholten Bezugstermin. Weitere plausible Originale blieben unzugänglich.",
+        "evidence_ref": "Aktuelle Bad-Schönborn-Liste und zwei direkt geladene Originalseiten",
+        "problem": "Gespeicherte Browser-Sicherheitsvorgabe verhindert den direkten Zugriff auf die übrigen Originalseiten."
+      },
+      {
+        "id": "follow-up-is24-media-20260916",
+        "kind": "follow_up",
+        "source": "ImmoScout24-Originalmedien",
+        "url": "https://www.immobilienscout24.de/expose/169775577",
+        "query": "Originalbilder der beiden neuen Kraichtaler Kandidaten abrufen",
+        "checked_at": "2026-09-16T18:11:15+02:00",
+        "outcome": "blocked",
+        "result": "Angebotsdaten wurden aus aktueller Ortsliste und indexierter Originalseite bestätigt; Bilddateien konnten nicht geladen werden.",
+        "evidence_ref": "Aktuelle Kraichtaler Ortsliste, indexierte Originaldetails und Routenprüfung",
+        "problem": "Die ImmoScout24-Roboterprüfung blockierte den direkten Medienabruf."
+      },
+      {
+        "id": "recheck-originals-20260916-startup",
         "kind": "recheck",
         "source": "Originalanzeigen und Routen",
-        "url": "https://www.immobilienscout24.de/expose/170678717",
-        "query": "Alle ausgegebenen Wohnungen auf aktiven Originalstatus, Pflichtkosten, Etage, Bilder, Lage und tatsächliche Fahrstrecke prüfen",
-        "checked_at": "2026-09-16T08:05:28+02:00",
+        "url": "https://www.immowelt.de/expose/268e8r5c22al",
+        "query": "Alle ausgegebenen Wohnungen auf aktuellen Originalstatus, Kosten, Etage, Lage, Entscheidungen und Fahrstrecke prüfen",
+        "checked_at": "2026-09-16T18:11:15+02:00",
         "outcome": "ok",
-        "result": "Zehn ausgegebene Originalangebote vollständig geprüft. Ein bekanntes Immowelt-Angebot ist gelöscht; mehrere neue Treffer wurden wegen 2. OG, Pflichtkosten über 1.250 €, Hauptstraße oder möglicher 3. Etage ausgeschlossen.",
-        "evidence_ref": "Direkte Originalexposés, Bildergalerien und Google-Maps-Routen"
+        "result": "Sieben ausgegebene Kandidaten aktuell bestätigt; verworfene IDs und erkennbare Doppelveröffentlichungen entfernt; zwei neue genaue Fahrstrecken mit 16,0 km bestätigt.",
+        "evidence_ref": "Direkte Originalseiten, aktuelle Ortslisten, Entscheidungsdatei und Google Maps"
       }
     ],
     "source_decisions": [
       {
         "source": "ImmoScout24",
-        "url": "https://www.immobilienscout24.de/Suche/de/baden-wuerttemberg/karlsruhe-kreis/oestringen/wohnung-mieten?livingspace=45.0-&sorting=2",
+        "url": "https://www.immobilienscout24.de/Suche/de/baden-wuerttemberg/karlsruhe-kreis/kraichtal/wohnung-mieten",
         "decision": "search",
-        "reason": "Größter strukturierter Bestand für die vier Kernorte mit Kosten- und Etagenangaben."
+        "reason": "Aktuelle strukturierte Ortslisten mit Kosten- und Etagenangaben."
       },
       {
         "source": "Immowelt",
-        "url": "https://www.immowelt.de/suche/mieten/wohnung/baden-wurttemberg/bad-schonborn-76669/ad08de5603",
+        "url": "https://www.immowelt.de/suche/mieten/wohnung/baden-wurttemberg/ostringen-76684/ad08de5589",
         "decision": "search",
-        "reason": "Aktuelle regionale Liste deckt Kernorte und angrenzende plausible Orte innerhalb der Fahrstrecke ab."
+        "reason": "Regionale Liste deckt Kernorte und angrenzende Orte ab."
+      },
+      {
+        "source": "Kleinanzeigen",
+        "url": "https://www.kleinanzeigen.de/s-wohnung-mieten/oestringen/c203l11755",
+        "decision": "search",
+        "reason": "Aktuelle private Angebote ergänzen die strukturierten Portale."
       },
       {
         "source": "Ohne-Makler.net",
         "url": "https://www.ohne-makler.net/immobilien/wohnung-mieten/baden-wurttemberg/ostringen/?radius=10",
         "decision": "search",
-        "reason": "Direkte private Umkreissuche ergänzt die großen Portale und erlaubt Originalprüfung."
-      },
-      {
-        "source": "Kleinanzeigen",
-        "url": "https://www.kleinanzeigen.de/s-oestringen/wohnung---mieten/k0l11755",
-        "decision": "skip",
-        "reason": "Direkter Zugriff durch gespeicherte Browser-Sicherheitsvorgabe blockiert; Webentdeckung nur als Ergänzung, keine Ausgabe ohne direktes Original."
+        "reason": "Direkte private Umkreissuche ergänzt die großen Portale."
       }
     ],
     "review": {
-      "findings": "Die heutige Vollsuche bestätigt sechs gegenüber dem Bericht vom 14.09. neue beziehungsweise neu wieder sichtbare Kandidaten und vier bekannte aktive Kandidaten. Besonders stark sind die Erdgeschosswohnungen in Malsch, Kronau und Unteröwisheim. Ein zunächst passender Treffer in Mühlhausen wurde wegen bestätigter Verbindungsstraße korrekt ausgeschlossen.",
-      "open_gaps": [],
-      "follow_up_action_ids": [],
-      "stop_reason": "Drei direkt zugängliche Portale wurden vollständig in den relevanten Orts- und Umkreissuchen geprüft, Kleinanzeigen wurde mit begründeter Zugriffsbeschränkung nur zur Entdeckung genutzt. 130 sichtbare Einträge wurden untersucht, 120 verworfen und zehn aktive Originalangebote ausgegeben.",
-      "criteria_proposal": "Keine Änderung vorgeschlagen. Die vereinbarten Preis-, Etagen-, Hauptstraßen-, Fahrstrecken- und Katzenlagenregeln wurden unverändert angewendet."
+      "findings": "Sieben aktuell bestätigte Kandidaten werden ausgegeben, darunter zwei neue Kraichtaler Treffer. Nutzerentscheidungen wurden angewendet; mehrere scheinbar passende Treffer scheiterten erst an Fahrstrecke, Pflichtkosten, Hauptstraße oder einer gespeicherten Ablehnung.",
+      "open_gaps": [
+        "Mehrere plausible Kleinanzeigen-Treffer in Bad Schönborn und Kraichtal konnten wegen der gespeicherten Browser-Sperre nicht bis zur Originalanzeige geprüft werden.",
+        "Die Originalbilder der zwei neuen ImmoScout24-Treffer waren wegen der Portal-Roboterprüfung nicht abrufbar; die Fakten wurden aus aktueller Liste, indexiertem Original und Routenprüfung bestätigt."
+      ],
+      "follow_up_action_ids": [
+        "follow-up-kleinanzeigen-20260916",
+        "follow-up-is24-media-20260916"
+      ],
+      "stop_reason": "Vier Pflichtportale wurden in ihren aktuellen Listen beziehungsweise erreichbaren Webansichten geprüft. Der lokale Teilbericht wird veröffentlicht; der Lauf bleibt unvollständig, weil der direkte Zugriff auf einzelne plausible Kleinanzeigen-Originale gespeichert blockiert ist.",
+      "criteria_proposal": "Keine Änderung vorgeschlagen. Die vereinbarten Preis-, Etagen-, Hauptstraßen-, Fahrstrecken-, Entscheidungs- und Katzenlagenregeln wurden unverändert angewendet."
     }
   }
 }
