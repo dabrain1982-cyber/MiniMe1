@@ -2,14 +2,14 @@
   "schema_version": 2,
   "criteria_version": 2,
   "mode": "daily",
-  "checked_at": "2026-09-16T18:11:15+02:00",
+  "checked_at": "2026-09-16T18:18:02+02:00",
   "scope": "Mietwohnungen ab 45 m² rund um Syensqo, Industriestraße 3, 76684 Östringen, bis 18 km tatsächliche Fahrstrecke.",
-  "strategy": "Die aktuellen Ergebnislisten von ImmoScout24, Immowelt, Kleinanzeigen und Ohne-Makler wurden ohne Zimmerfilter gesichtet; Websuche diente nur der zusätzlichen Entdeckung regionaler Anbieter. Plausible neue oder geänderte Treffer wurden bis zur Originalanzeige und Fahrstrecke geprüft, bekannte unveränderte Treffer im Originalstatus kurz bestätigt. Gespeicherte Ablehnungen und identische Neuveröffentlichungen wurden ausgeschlossen. Wo der direkte Kleinanzeigen-Zugriff blockiert blieb, wird die Lücke ausdrücklich als unvollständig ausgewiesen.",
+  "strategy": "Die aktuellen Ergebnislisten von ImmoScout24, Immowelt, Kleinanzeigen und Ohne-Makler wurden ohne Zimmerfilter gesichtet; Websuche diente nur der zusätzlichen Entdeckung regionaler Anbieter. Nur heute direkt lesbare Originalanzeigen werden als bestätigte Angebote ausgegeben. Zwei plausible ImmoScout24-Treffer und mehrere Kleinanzeigen-Treffer bleiben als unbestätigte Prüflücke dokumentiert, weil ihre Originalseiten heute nicht direkt lesbar waren.",
   "source_checks": [
     {
       "name": "ImmoScout24",
       "url": "https://www.immobilienscout24.de/Suche/de/baden-wuerttemberg/karlsruhe-kreis/kraichtal/wohnung-mieten",
-      "result": "Aktuelle Ortslisten für Östringen, Bad Schönborn, Kraichtal und Mühlhausen mit konkreten Angebotskarten gesichtet. Zwei neue passende Kraichtaler Wohnungen vertieft geprüft; bei deren Bildabruf griff die Portal-Sicherheitsprüfung."
+      "result": "Aktuelle Ortslisten für Östringen, Bad Schönborn, Kraichtal und Mühlhausen mit konkreten Angebotskarten gesichtet. Die Originalseiten der zwei neuen Kraichtaler Treffer waren wegen der Portal-Roboterprüfung heute nicht direkt lesbar; beide werden deshalb nicht als bestätigte Angebote ausgegeben."
     },
     {
       "name": "Immowelt",
@@ -19,7 +19,7 @@
     {
       "name": "Kleinanzeigen",
       "url": "https://www.kleinanzeigen.de/s-wohnung-mieten/oestringen/c203l11755",
-      "result": "Aktuelle Listen für Östringen und Bad Schönborn wurden ausgewertet; weitere Ortslisten wurden über aktuelle Webentdeckung geprüft. Mehrere plausible Originalseiten konnten wegen einer gespeicherten Browser-Sperre nicht direkt geöffnet werden und bleiben als offene Lücke dokumentiert."
+      "result": "Aktuelle Listen für Östringen und Bad Schönborn wurden ausgewertet; weitere Ortslisten wurden über aktuelle Webentdeckung geprüft. Mehrere plausible Originalseiten konnten wegen einer gespeicherten Browser-Berechtigung, die den Zugriff auf kleinanzeigen.de ausdrücklich blockiert, nicht direkt geöffnet werden und bleiben unbestätigte Prüflücken."
     },
     {
       "name": "Ohne-Makler.net",
@@ -28,11 +28,11 @@
     }
   ],
   "updates": [
-    "Zwei neue passende Kraichtaler Wohnungen aufgenommen: Südendstraße 17 im Erdgeschoss und Schulstraße 39 im 1. Obergeschoss.",
+    "Keine neue Wohnung wird als bestätigt ausgegeben, weil die zwei neuen ImmoScout24-Originalseiten heute nicht direkt lesbar waren.",
     "Fünf bekannte, unveränderte Angebote heute erneut als aktiv bestätigt.",
     "Fünf vom Nutzer verworfene Angebote sowie deren erkennbare Doppelveröffentlichungen nicht mehr ausgegeben.",
-    "Gochsheim wegen 22,0 km Fahrstrecke, Dielheim und Wiesloch wegen Pflichtkosten über 1.250 € ausgeschlossen.",
-    "Kleinanzeigen-Lücke sichtbar als unvollständig dokumentiert; keine Routine, kein Programm und kein anderes Projekt geändert."
+    "Zwei plausible ImmoScout24-URLs und mehrere plausible Kleinanzeigen-Treffer als offene, unbestätigte Prüflücken dokumentiert.",
+    "Keine Routine, kein Programm und kein anderes Projekt geändert; kein E-Mail-Versand."
   ],
   "search_stats": {
     "portals_with_entries": 4,
@@ -40,68 +40,6 @@
     "listings_discarded": 116
   },
   "listings": [
-    {
-      "id": "is24-169775577",
-      "title": "Ruhige 2-Zimmer-Erdgeschosswohnung in Kraichtal",
-      "place": "76703 Kraichtal",
-      "address": "Südendstraße 17, 76703 Kraichtal",
-      "provider": "Cesania GmbH · ImmoScout24",
-      "url": "https://www.immobilienscout24.de/expose/169775577",
-      "original_active": true,
-      "verified_at": "2026-09-16T18:11:15+02:00",
-      "status": "new",
-      "group": "best",
-      "priority": 98,
-      "area": 76,
-      "rooms": 2,
-      "floor": 0,
-      "floor_label": "Erdgeschoss",
-      "cold": 850,
-      "warm": 1000,
-      "mandatory_total": 1000,
-      "budget_verified": true,
-      "location_verified": false,
-      "route_plausible": true,
-      "route_km": 16.0,
-      "route_exact": true,
-      "route": "16,0 km tatsächliche Fahrstrecke von der Südendstraße 17 zur Industriestraße 3 laut aktueller Routenprüfung.",
-      "garage_status": "no",
-      "main_road_status": "no",
-      "availability": "Aktiv in der aktuellen Kraichtaler Ortsliste; Bezugstermin im Original nicht veröffentlicht.",
-      "listing_date": null,
-      "reason": "Erdgeschoss, 1.000 € warm, ruhiges Zweifamilienhaus und Stellplatz direkt am Haus passen gut. Katzenhaltung und direkter Außenbereich sind nicht genannt.",
-      "location_notes": "Das Original beschreibt ein ruhiges Zweifamilienhaus. Die Südendstraße ist keine bestätigte Hauptstraße; eine Feld-, Wald- oder Wiesenrandlage ist aber nicht belegt.",
-      "outside": "Kein Balkon, keine Terrasse und kein Garten ausdrücklich genannt; Außenstellplatz am Haus.",
-      "pets": "Nicht angegeben.",
-      "tags": [
-        "Erdgeschoss",
-        "1.000 € warm",
-        "Ruhiges Zweifamilienhaus",
-        "16,0 km"
-      ],
-      "costs": [
-        {
-          "label": "Warmmiete",
-          "value": "1.000 €"
-        },
-        {
-          "label": "Außenstellplatz",
-          "value": "Vorhanden; kein separater Pflichtpreis genannt"
-        }
-      ],
-      "cost_notes": "850 € kalt plus 150 € Nebenkosten ergeben 1.000 € warm; der Außenstellplatz wird als vorhanden beschrieben.",
-      "questions": [
-        "Sind Katzen erlaubt?",
-        "Gibt es einen direkten, sicheren Ausgang ins Freie?",
-        "Gehört eine Terrasse oder Gartenfläche zur Wohnung?"
-      ],
-      "risks": [
-        "Katzenhaltung und unmittelbarer Außenbereich sind offen.",
-        "Keine normale Garage genannt."
-      ],
-      "image_status": "unreachable",
-      "images": []
-    },
     {
       "id": "iw-268e8r5c22al",
       "title": "3-Zimmer-Erdgeschosswohnung mit Gartenmitbenutzung in Kronau",
@@ -313,72 +251,6 @@
       "images": []
     },
     {
-      "id": "is24-164863082",
-      "title": "Helle 2-Zimmer-Wohnung in Kraichtal",
-      "place": "76703 Kraichtal",
-      "address": "Schulstraße 39, 76703 Kraichtal",
-      "provider": "Privater Anbieter · ImmoScout24",
-      "url": "https://www.immobilienscout24.de/expose/164863082",
-      "original_active": true,
-      "verified_at": "2026-09-16T18:11:15+02:00",
-      "status": "new",
-      "group": "good",
-      "priority": 87,
-      "area": 69,
-      "rooms": 2,
-      "floor": 1,
-      "floor_label": "1. Obergeschoss",
-      "cold": 730,
-      "warm": 930,
-      "mandatory_total": 950,
-      "budget_verified": true,
-      "location_verified": false,
-      "route_plausible": true,
-      "route_km": 16.0,
-      "route_exact": true,
-      "route": "16,0 km tatsächliche Fahrstrecke von der Schulstraße 39 zur Industriestraße 3 laut aktueller Routenprüfung.",
-      "garage_status": "no",
-      "main_road_status": "no",
-      "availability": "Bezug laut Original ab 02.09.2026; am 16.09.2026 in der aktuellen Ortsliste als Neu sichtbar.",
-      "listing_date": null,
-      "reason": "69 m², 950 € einschließlich Stellplatz, Balkon und Gartenmitbenutzung passen. Das 1. Obergeschoss sowie Katzenzugang und Haustierregel bleiben Klärpunkte.",
-      "location_notes": "Die Schulstraße ist als Anliegerstraße beziehungsweise Zufahrtsweg beschrieben und keine bestätigte Hauptstraße. Eine abgelegene Randlage ist nicht belegt.",
-      "outside": "Balkon beziehungsweise Terrasse und Gartenmitbenutzung laut Original.",
-      "pets": "Nicht angegeben.",
-      "tags": [
-        "950 € mit Stellplatz",
-        "1. Obergeschoss",
-        "Gartenmitbenutzung",
-        "16,0 km"
-      ],
-      "costs": [
-        {
-          "label": "Warmmiete",
-          "value": "930 €"
-        },
-        {
-          "label": "Stellplatz",
-          "value": "20 € monatlich"
-        },
-        {
-          "label": "Kaution",
-          "value": "2.190 €"
-        }
-      ],
-      "cost_notes": "730 € kalt plus 200 € Nebenkosten ergeben 930 € warm; mit dem ausgewiesenen Stellplatz werden 950 € Pflichtkosten angesetzt.",
-      "questions": [
-        "Sind Katzen erlaubt?",
-        "Ist ein praktikabler Katzenausgang aus dem 1. Obergeschoss möglich?",
-        "Ist die Gartenmitbenutzung auch für Katzen geeignet?"
-      ],
-      "risks": [
-        "1. Obergeschoss erschwert freien Katzenausgang.",
-        "Bildabruf war wegen der Portal-Sicherheitsprüfung nicht möglich."
-      ],
-      "image_status": "unreachable",
-      "images": []
-    },
-    {
       "id": "is24-170293038",
       "title": "3-Zimmer-Wohnung mit Klimaanlage in Bad Schönborn",
       "place": "76669 Bad Schönborn",
@@ -550,7 +422,7 @@
         "query": "Aktuelle Ortslisten Östringen, Bad Schönborn, Kraichtal und Mühlhausen ab 45 m²",
         "checked_at": "2026-09-16T18:11:15+02:00",
         "outcome": "ok",
-        "result": "Konkrete Angebotskarten gesichtet; passende neue und bekannte Originalinformationen sowie Fahrstrecken geprüft.",
+        "result": "Konkrete Angebotskarten gesichtet. Fünf bekannte Originale wurden bestätigt; die zwei neuen Kraichtaler Originalseiten waren heute nicht direkt lesbar und werden nicht ausgegeben.",
         "evidence_ref": "Aktuelle Ortslisten, Originalexposés und Google-Maps-Routen"
       },
       {
@@ -604,12 +476,12 @@
         "kind": "follow_up",
         "source": "ImmoScout24-Originalmedien",
         "url": "https://www.immobilienscout24.de/expose/169775577",
-        "query": "Originalbilder der beiden neuen Kraichtaler Kandidaten abrufen",
+        "query": "Die Originalseiten der zwei neuen Kraichtaler Kandidaten direkt lesen und Originalbilder abrufen",
         "checked_at": "2026-09-16T18:11:15+02:00",
         "outcome": "blocked",
-        "result": "Angebotsdaten wurden aus aktueller Ortsliste und indexierter Originalseite bestätigt; Bilddateien konnten nicht geladen werden.",
-        "evidence_ref": "Aktuelle Kraichtaler Ortsliste, indexierte Originaldetails und Routenprüfung",
-        "problem": "Die ImmoScout24-Roboterprüfung blockierte den direkten Medienabruf."
+        "result": "Die direkte Seite zeigte nur die ImmoScout24-Roboterprüfung. Aktuelle Ortsliste und indexierter Suchauszug reichen nicht als live geöffnetes Original; beide URLs bleiben deshalb unbestätigt.",
+        "evidence_ref": "Direkter Browserabruf zeigte die ImmoScout24-Roboterprüfung; aktuelle Liste und indexierter Suchauszug nur als Entdeckung",
+        "problem": "Die ImmoScout24-Roboterprüfung verhinderte das direkte Lesen der Originalseiten und ihrer Medien."
       },
       {
         "id": "recheck-originals-20260916-startup",
@@ -619,7 +491,7 @@
         "query": "Alle ausgegebenen Wohnungen auf aktuellen Originalstatus, Kosten, Etage, Lage, Entscheidungen und Fahrstrecke prüfen",
         "checked_at": "2026-09-16T18:11:15+02:00",
         "outcome": "ok",
-        "result": "Sieben ausgegebene Kandidaten aktuell bestätigt; verworfene IDs und erkennbare Doppelveröffentlichungen entfernt; zwei neue genaue Fahrstrecken mit 16,0 km bestätigt.",
+        "result": "Fünf bekannte ausgegebene Kandidaten aktuell bestätigt; verworfene IDs und erkennbare Doppelveröffentlichungen entfernt. Die zwei neuen ImmoScout24-Treffer wurden wegen nicht direkt lesbarer Originalseiten aus den listings entfernt.",
         "evidence_ref": "Direkte Originalseiten, aktuelle Ortslisten, Entscheidungsdatei und Google Maps"
       }
     ],
@@ -650,16 +522,16 @@
       }
     ],
     "review": {
-      "findings": "Sieben aktuell bestätigte Kandidaten werden ausgegeben, darunter zwei neue Kraichtaler Treffer. Nutzerentscheidungen wurden angewendet; mehrere scheinbar passende Treffer scheiterten erst an Fahrstrecke, Pflichtkosten, Hauptstraße oder einer gespeicherten Ablehnung.",
+      "findings": "Fünf bekannte Kandidaten werden aktuell bestätigt ausgegeben. Zwei plausible neue Kraichtaler ImmoScout24-Treffer werden ausdrücklich nicht bestätigt, weil ihre Originalseiten heute nur die Portal-Roboterprüfung zeigten; indexierte Suchauszüge gelten nicht als live geöffnetes Original.",
       "open_gaps": [
-        "Mehrere plausible Kleinanzeigen-Treffer in Bad Schönborn und Kraichtal konnten wegen der gespeicherten Browser-Sperre nicht bis zur Originalanzeige geprüft werden.",
-        "Die Originalbilder der zwei neuen ImmoScout24-Treffer waren wegen der Portal-Roboterprüfung nicht abrufbar; die Fakten wurden aus aktueller Liste, indexiertem Original und Routenprüfung bestätigt."
+        "Die ImmoScout24-Originalseiten https://www.immobilienscout24.de/expose/169775577 und https://www.immobilienscout24.de/expose/164863082 waren heute wegen der Portal-Roboterprüfung nicht direkt lesbar; beide Treffer sind unbestätigt und nicht in den listings.",
+        "Mehrere plausible Kleinanzeigen-Treffer in Bad Schönborn und Kraichtal konnten nicht bis zur Originalanzeige geprüft werden. Der belegte Browserfehler lautet sinngemäß: Eine gespeicherte Benutzer-Berechtigung blockiert den Zugriff auf https://www.kleinanzeigen.de."
       ],
       "follow_up_action_ids": [
         "follow-up-kleinanzeigen-20260916",
         "follow-up-is24-media-20260916"
       ],
-      "stop_reason": "Vier Pflichtportale wurden in ihren aktuellen Listen beziehungsweise erreichbaren Webansichten geprüft. Der lokale Teilbericht wird veröffentlicht; der Lauf bleibt unvollständig, weil der direkte Zugriff auf einzelne plausible Kleinanzeigen-Originale gespeichert blockiert ist.",
+      "stop_reason": "Vier Pflichtportale wurden in ihren aktuellen Listen beziehungsweise erreichbaren Webansichten geprüft. Der lokale Teilbericht enthält nur fünf heute bestätigte Originale; zwei ImmoScout24-URLs und mehrere Kleinanzeigen-Treffer bleiben wegen belegter Zugriffssperren offen.",
       "criteria_proposal": "Keine Änderung vorgeschlagen. Die vereinbarten Preis-, Etagen-, Hauptstraßen-, Fahrstrecken-, Entscheidungs- und Katzenlagenregeln wurden unverändert angewendet."
     }
   }
